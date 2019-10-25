@@ -14,16 +14,16 @@ export let MENU_ITEM = [
                 title: 'Assessment'
             },
             {
-                path: 'Employees',
-                title: 'Buttons'
+                path: 'grid',
+                title: 'Employees'
             },
             {
                 path: 'notification',
                 title: 'Equipments'
             },
             {
-                path: 'Vehicles',
-                title: 'Tabs'
+                path: 'grid',
+                title: 'Vehicles'
             }
         ]
     },
@@ -43,10 +43,6 @@ export let MENU_ITEM = [
             {
                 path: 'notification',
                 title: 'Informations'
-            },
-            {
-                path: 'tabs',
-                title: 'Tabs'
             }
         ]
     },
