@@ -48,12 +48,36 @@ export let MENU_ITEM = [
     },
     {
         path: 'profile',
+        title: 'Plan',
+        icon: 'user'
+    },
+    {
+        path: 'profile',
         title: 'User Profile',
         icon: 'user'
     },
     {
+        path: 'profile',
+        title: 'Website',
+        icon: 'buttons',
+        children: [
+            {
+                path: 'grid',
+                title: 'Test1'
+            },
+            {
+                path: 'buttons',
+                title: 'Test2'
+            },
+            {
+                path: 'notification',
+                title: 'Test3'
+            }
+        ]
+    },
+    {
         path: 'ui',
         title: 'Settings',
-        icon: 'settings',
+        icon: 'user',
     }
 ];

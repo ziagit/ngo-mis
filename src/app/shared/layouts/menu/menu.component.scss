@@ -61,7 +61,7 @@
 .item-toggle-on {
     >.menu-link {
         .direction {
-            @include transform(rotate(90deg));
+            @include transform(rotate(-90deg)); //changed from 90deg
         }
     }
 }
