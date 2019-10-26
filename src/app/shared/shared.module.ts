@@ -17,14 +17,29 @@ import { AlertComponent } from './components/alert/alert.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+import {TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+
+
 @NgModule({
   imports: [
+    HttpClientModule,
     CommonModule,
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
     JsonpModule,
+    TranslateModule.forChild({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: createTranslateLoader,
+          deps: [HttpClient]
+      }
+  })
+
   ],
+  providers:[TranslateStore],
   declarations: [
     CardComponent,
     FileTreeComponent,
@@ -49,7 +64,12 @@ import { ProfileComponent } from './components/profile/profile.component';
     PellEditorComponent,
     AlertComponent,
     WeatherComponent,
-    ProfileComponent
+    ProfileComponent,
+    TranslateModule
   ]
 })
 export class SharedModule { }
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
