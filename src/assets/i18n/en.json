@@ -1,5 +1,6 @@
 {
-    
-    "dashboard": " داشبورد"
-    
+    "body":{
+        "dashboard": " داشبورد",
+        "message": "پیام ها"
+    }  
 }

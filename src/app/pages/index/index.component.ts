@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsService } from '../charts/components/echarts/charts.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-index',
@@ -12,7 +13,9 @@ export class IndexComponent implements OnInit {
 
   public AnimationBarOption;
 
-  constructor(private _chartsService: ChartsService) { }
+  constructor(private _chartsService: ChartsService,private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+   }
 
   ngOnInit() {
     this.AnimationBarOption = this._chartsService.getAnimationBarOption();

@@ -7,8 +7,9 @@ import {TranslateService} from '@ngx-translate/core';
   template: `<router-outlet></router-outlet>`
 })
 export class AppComponent {
-  constructor(private translate: TranslateService) {
-    translate.setDefaultLang('en');
-  }
   title = 'app';
+
+    constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+   }
 }

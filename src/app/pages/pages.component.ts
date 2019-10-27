@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-pages',
@@ -6,4 +7,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./pages.component.scss']
 })
 
-export class PagesComponent { }
+export class PagesComponent {}

@@ -9,16 +9,18 @@ import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
 import { LoginComponent } from './login/login.component';
 
+
 @NgModule({
     imports: [
         CommonModule,
         LayoutModule,
         SharedModule,
-        routing
+        routing,
     ],
     declarations: [
         PagesComponent,
         LoginComponent
-    ]
+    ],
+    providers:[]
 })
 export class PagesModule { }

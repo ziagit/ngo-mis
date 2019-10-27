@@ -17,10 +17,15 @@ import { AlertComponent } from './components/alert/alert.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
+import { AlertModule } from 'ngx-bootstrap';
+
 import {TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
+}
 
 @NgModule({
   imports: [
@@ -33,13 +38,13 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
     TranslateModule.forChild({
       loader: {
           provide: TranslateLoader,
-          useFactory: createTranslateLoader,
+          useFactory: HttpLoaderFactory,
           deps: [HttpClient]
       }
   })
 
   ],
-  providers:[TranslateStore],
+  providers:[],
   declarations: [
     CardComponent,
     FileTreeComponent,
@@ -54,6 +59,8 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
     ProfileComponent
   ],
   exports: [
+    TranslateModule,
+    HttpClientModule,
     CardComponent,
     FileTreeComponent,
     TodolistComponent,
@@ -65,11 +72,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
     AlertComponent,
     WeatherComponent,
     ProfileComponent,
-    TranslateModule
   ]
 })
 export class SharedModule { }
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-}
