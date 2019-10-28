@@ -17,11 +17,21 @@ import { AlertComponent } from './components/alert/alert.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-import { AlertModule } from 'ngx-bootstrap';
 
 import {TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
+
+//material modules
+import {
+  MatButtonModule,
+  MatTableModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatInputModule
+} from '@angular/material';
+
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
@@ -29,6 +39,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatTableModule,
     HttpClientModule,
     CommonModule,
     NgxPaginationModule,
@@ -59,6 +75,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatTableModule,
+    MatButtonModule,
+    
     TranslateModule,
     HttpClientModule,
     CardComponent,

@@ -19,7 +19,7 @@ import { LoginComponent } from './login/login.component';
     ],
     declarations: [
         PagesComponent,
-        LoginComponent
+        LoginComponent,
     ],
     providers:[]
 })

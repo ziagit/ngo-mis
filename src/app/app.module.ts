@@ -12,7 +12,7 @@ import { TranslateStore } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
-    AlertModule,
+    
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,

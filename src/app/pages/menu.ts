@@ -5,44 +5,90 @@ export let MENU_ITEM = [
         icon: 'dashboard'
     },
     {
-        path: 'editor',
+        path: 'lookup',
+        title: 'Lookup',
+        icon: 'user',
+        children:[
+            {
+                path: 'budget-type',
+                title: 'Budget type'
+            },
+            {
+                path: 'province',
+                title: 'Province'
+            },
+            {
+                path: 'destrict',
+                title: 'Destrict'
+            }
+        ]
+    },
+    {
+        path: 'organization',
         title: 'Organizations',
         icon: 'pencil',
         children: [
             {
-                path: 'grid',
-                title: 'Assessment'
+                path: 'org-list',
+                title: 'Org list'
             },
             {
-                path: 'grid',
+                path: 'assessments',
+                title: 'Assessments'
+            },
+            {
+                path: 'employees',
                 title: 'Employees'
             },
             {
-                path: 'notification',
+                path: 'equipments',
                 title: 'Equipments'
             },
             {
-                path: 'grid',
+                path: 'vehicles',
                 title: 'Vehicles'
             }
         ]
     },
     {
-        path: 'icon',
+        path: 'project',
+        title: 'Projects',
+        icon: 'pencil',
+        children: [
+            {
+                path: 'project-list',
+                title: 'Project list'
+            },
+            {
+                path: 'employees',
+                title: 'Employees'
+            },
+            {
+                path: 'equipments',
+                title: 'Equipments'
+            },
+            {
+                path: 'vehicles',
+                title: 'Vehicles'
+            }
+        ]
+    },
+    {
+        path: 'projects',
         title: 'Projects',
         icon: 'diamond',
         children: [
             {
-                path: 'grid',
+                path: 'reports',
                 title: 'Reports'
             },
             {
-                path: 'buttons',
-                title: 'Un-reports'
+                path: 'activities',
+                title: 'Activities'
             },
             {
-                path: 'notification',
-                title: 'Informations'
+                path: 'in-activities',
+                title: 'In Activities'
             }
         ]
     },
@@ -57,9 +103,9 @@ export let MENU_ITEM = [
         icon: 'user'
     },
     {
-        path: 'profile',
-        title: 'Website',
-        icon: 'buttons',
+        path: 'users',
+        title: 'Users',
+        icon: 'user',
         children: [
             {
                 path: 'grid',
@@ -77,7 +123,38 @@ export let MENU_ITEM = [
     },
     {
         path: 'ui',
-        title: 'Settings',
-        icon: 'user',
+        title: 'UI Element',
+        icon: 'paint-brush',
+        children: [
+            {
+                path: 'grid',
+                title: 'Bootstrap Grid'
+            },
+            {
+                path: 'buttons',
+                title: 'Buttons'
+            },
+            {
+                path: 'notification',
+                title: 'Notification'
+            },
+            {
+                path: 'tabs',
+                title: 'Tabs'
+            },
+            {
+                path: 'file-tree',
+                title: 'File Tree'
+            },
+            {
+                path: 'modals',
+                title: 'Modals'
+            },
+            {
+                path: 'progress-bar',
+                title: 'ProgressBar'
+            }
+        ]
     }
+
 ];
