@@ -38,7 +38,7 @@ export class OrgListComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddOrganizationComponent, {
-      width: '250px',
+      width: '400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

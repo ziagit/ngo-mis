@@ -1,19 +1,20 @@
 import { Routes, RouterModule } from '@angular/router';
 import { OrganizationComponent } from './organization.component';
-import { ModalsComponent } from '../ui/components/modals/modals.component';
-import { AssessmentComponent } from './components/assessment/assessment.component';
 import { OrgListComponent } from './components/org-list/org-list.component';
+import { DelegationsComponent } from './components/delegations/delegations.component';
+import { TabActivitiesComponent } from './components/tab-activities/tab-activities.component';
 
-const childRoutes: Routes = [
+const orgRoutes: Routes = [
     {
         path: '',
         component: OrganizationComponent,
         children:[
             {path: '', redirectTo: 'org-list', pathMatch: 'full'},
             {path: 'org-list', component: OrgListComponent},
-            {path: 'assessment', component: AssessmentComponent}
+            {path: 'activities', component: TabActivitiesComponent},
+            {path: 'delegations', component: DelegationsComponent},
         ]
     }
 ];
 
-export const routing = RouterModule.forChild(childRoutes);
+export const orgRouting = RouterModule.forChild(orgRoutes);

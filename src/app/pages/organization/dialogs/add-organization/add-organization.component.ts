@@ -25,4 +25,5 @@ export class AddOrganizationComponent implements OnInit {
   callingFunction(data){
     console.log("Data: ", data.value);
   }
+
 }

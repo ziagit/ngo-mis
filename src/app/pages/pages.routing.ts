@@ -13,15 +13,15 @@ export const childRoutes: Routes = [
         children: [
             { path: '', redirectTo: 'index', pathMatch: 'full' },
             { path: 'index', loadChildren: './index/index.module#IndexModule' },
-            { path: 'editor', loadChildren: './editor/editor.module#EditorModule' },
             { path: 'icon', loadChildren: './icon/icon.module#IconModule' },
             { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' },
-            { path: 'form', loadChildren: './form/form.module#FormModule' },
-            { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
-            { path: 'ui', loadChildren: './ui/ui.module#UIModule' },
-            { path: 'table', loadChildren: './table/table.module#TableModule' },
-            { path: 'menu-levels', loadChildren: './menu-levels/menu-levels.module#MenuLevelsModule' },
             { path: 'organization', loadChildren: './organization/organization.module#OrganizationModule' },
+            { path: 'reports', loadChildren: './reports/reports.module#ReportsModule'},
+            { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule'},
+            { path: 'plan', loadChildren: './plan/plan.module#PlanModule'},
+            { path: 'settings', loadChildren: './settings/settings.module#SettingsModule'},
+            
+            
         ]
     }
 ];

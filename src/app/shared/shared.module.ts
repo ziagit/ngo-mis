@@ -29,7 +29,8 @@ import {
   MatDialogModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatInputModule
+  MatInputModule,
+  MatTabsModule
 } from '@angular/material';
 
 
@@ -39,6 +40,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatTabsModule,
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
@@ -75,6 +77,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatTabsModule,
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,

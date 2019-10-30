@@ -1,57 +1,35 @@
 export let MENU_ITEM = [
     {
+        path: 'icon',
+        title: 'Iconss',
+        icon: 'pencil'
+    },
+    {
         path: 'index',
         title: 'Dashboard',
         icon: 'dashboard'
     },
     {
-        path: 'lookup',
-        title: 'Lookup',
-        icon: 'user',
-        children:[
-            {
-                path: 'budget-type',
-                title: 'Budget type'
-            },
-            {
-                path: 'province',
-                title: 'Province'
-            },
-            {
-                path: 'destrict',
-                title: 'Destrict'
-            }
-        ]
-    },
-    {
         path: 'organization',
         title: 'Organizations',
-        icon: 'pencil',
+        icon: 'home',
         children: [
             {
                 path: 'org-list',
                 title: 'Org list'
             },
             {
-                path: 'assessments',
-                title: 'Assessments'
+                path: 'activities',
+                title: 'Activities'
             },
             {
-                path: 'employees',
-                title: 'Employees'
-            },
-            {
-                path: 'equipments',
-                title: 'Equipments'
-            },
-            {
-                path: 'vehicles',
-                title: 'Vehicles'
+                path: 'delegations',
+                title: 'Delegations'
             }
         ]
     },
     {
-        path: 'project',
+        path: 'projects',
         title: 'Projects',
         icon: 'pencil',
         children: [
@@ -74,87 +52,123 @@ export let MENU_ITEM = [
         ]
     },
     {
-        path: 'projects',
-        title: 'Projects',
-        icon: 'diamond',
-        children: [
-            {
-                path: 'reports',
-                title: 'Reports'
-            },
-            {
-                path: 'activities',
-                title: 'Activities'
-            },
-            {
-                path: 'in-activities',
-                title: 'In Activities'
-            }
-        ]
+        path: 'banck-accounts',
+        title: 'Bnak accounts'
     },
     {
-        path: 'profile',
+        path: 'plan',
         title: 'Plan',
         icon: 'user'
     },
     {
-        path: 'profile',
-        title: 'User Profile',
-        icon: 'user'
-    },
-    {
-        path: 'users',
-        title: 'Users',
+        path: 'reports',
+        title: 'Reports',
         icon: 'user',
         children: [
             {
-                path: 'grid',
-                title: 'Test1'
+                path: 'project-info',
+                title: 'Project Information'
             },
             {
-                path: 'buttons',
-                title: 'Test2'
+                path: 'employees',
+                title: 'Employees'
             },
             {
-                path: 'notification',
-                title: 'Test3'
+                path: 'equipments',
+                title: 'Equipments'
+            },
+            {
+                path: 'six-months-report',
+                title: 'Six months report'
+            },
+        ]
+    },
+    {
+        path: 'self-assessments',
+        title: 'Self assessments',
+        icon: 'user',
+        children: [
+            {
+                path: 'internal-assessments',
+                title: 'Internal assessments',
+                children:[
+                    {
+                        path: 'constitution',
+                        title: 'Constitution'
+                    },
+                    {
+                        path: 'in-mng-plan',
+                        title: 'Internal management and plan'
+                    },
+                    {
+                        path: 'finance-procurement',
+                        title: 'Finance and procurement'
+                    },
+                    {
+                        path: 'hr',
+                        title: 'HR'
+                    },
+                    {
+                        path: 'executory',
+                        title: 'Executory'
+                    }
+                ]
+            },
+            {
+                path: 'external-assessments',
+                title: 'External assessments',
+                children:[
+                    {
+                        path: 'constitution',
+                        title: 'Constitution'
+                    },
+                    {
+                        path: 'in-mng-plan',
+                        title: 'Internal management and plan'
+                    },
+                    {
+                        path: 'finance-procurement',
+                        title: 'Finance and procurement'
+                    },
+                    {
+                        path: 'hr',
+                        title: 'HR'
+                    },
+                    {
+                        path: 'executory',
+                        title: 'Executory'
+                    }
+                ]
             }
         ]
     },
     {
-        path: 'ui',
-        title: 'UI Element',
-        icon: 'paint-brush',
-        children: [
+        path: 'settings',
+        title: 'Settings',
+        icon: 'user',
+        children:[
             {
-                path: 'grid',
-                title: 'Bootstrap Grid'
+                path: 'provinces',
+                title: 'Provinces'
             },
             {
-                path: 'buttons',
-                title: 'Buttons'
+                path: 'districts',
+                title: 'Districts'
             },
             {
-                path: 'notification',
-                title: 'Notification'
+                path: 'sectors',
+                title: 'Sectores'
             },
             {
-                path: 'tabs',
-                title: 'Tabs'
-            },
-            {
-                path: 'file-tree',
-                title: 'File Tree'
-            },
-            {
-                path: 'modals',
-                title: 'Modals'
-            },
-            {
-                path: 'progress-bar',
-                title: 'ProgressBar'
+                path: 'types',
+                title: 'Types'
             }
         ]
+    },
+    {
+        path: 'website',
+        title: 'Website',
+        icon: 'pencil'
     }
 
 ];

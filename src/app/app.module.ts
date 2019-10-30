@@ -6,20 +6,19 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AlertModule } from 'ngx-bootstrap';
 import { TranslateStore } from '@ngx-translate/core';
-
 
 @NgModule({
   imports: [
-    
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     PagesModule,
     routing,
   ],
-  providers:[TranslateStore],
+  providers:[
+    TranslateStore
+  ],
   declarations: [
     AppComponent,
   ],

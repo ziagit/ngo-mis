@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { routing } from './organization.routing';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { orgRouting } from './organization.routing';
+import { MatFormFieldModule } from '@angular/material';
 import { MatTableModule } from '@angular/material' 
 import { MatPaginatorModule } from '@angular/material';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
 import { SharedModule } from '../../shared/shared.module';
 import { AddOrganizationComponent } from './dialogs/add-organization/add-organization.component';
 import { OrganizationComponent } from './organization.component';
 import { OrgListComponent } from './components/org-list/org-list.component';
 import { AssessmentComponent } from './components/assessment/assessment.component';
+import { ActivitiesComponent } from './components/activities/activities.component';
+import { InActivitiesComponent } from './components/in-activities/in-activities.component';
+import { DelegationsComponent } from './components/delegations/delegations.component';
+import { TabActivitiesComponent } from './components/tab-activities/tab-activities.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,10 @@ import { AssessmentComponent } from './components/assessment/assessment.componen
     AddOrganizationComponent,
     OrgListComponent,
     AssessmentComponent,
+    ActivitiesComponent,
+    InActivitiesComponent,
+    DelegationsComponent,
+    TabActivitiesComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -27,7 +33,7 @@ import { AssessmentComponent } from './components/assessment/assessment.componen
     MatTableModule,
     MatFormFieldModule,
     CommonModule,
-    routing,
+    orgRouting,
     SharedModule
   ],
   entryComponents:[AddOrganizationComponent]
