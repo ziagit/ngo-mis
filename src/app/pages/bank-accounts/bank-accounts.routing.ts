@@ -9,3 +9,4 @@ const routes: Routes = [
 ];
 
 export const BankRouting = RouterModule.forChild(routes);
+

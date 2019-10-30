@@ -4,6 +4,7 @@ import { BankAccountsComponent } from './bank-accounts.component';
 import { SharedModule } from '../../shared/shared.module';
 import { BankRouting } from './bank-accounts.routing';
 
+
 @NgModule({
   declarations: [
     BankAccountsComponent
@@ -12,6 +13,7 @@ import { BankRouting } from './bank-accounts.routing';
     CommonModule,
     SharedModule,
     BankRouting
+
   ]
 })
 export class BankAccountsModule { }
