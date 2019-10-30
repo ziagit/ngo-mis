@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSectorsTable extends Migration
+class CreateRelatedGoalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateSectorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sectors', function (Blueprint $table) {
+        Schema::create('related_goals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('SectorName');
-            $table->string('Proirity');
+            $table->string('RelatedGoalsdesc');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateSectorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sectors');
+        Schema::dropIfExists('related_goals');
     }
 }
