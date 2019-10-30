@@ -1,10 +1,5 @@
 export let MENU_ITEM = [
     {
-        path: 'icon',
-        title: 'Iconss',
-        icon: 'pencil'
-    },
-    {
         path: 'index',
         title: 'Dashboard',
         icon: 'dashboard'
@@ -31,7 +26,7 @@ export let MENU_ITEM = [
     {
         path: 'projects',
         title: 'Projects',
-        icon: 'pencil',
+        icon: 'pie-chart',
         children: [
             {
                 path: 'project-list',
@@ -53,7 +48,8 @@ export let MENU_ITEM = [
     },
     {
         path: 'banck-accounts',
-        title: 'Bnak accounts'
+        title: 'Bnak accounts',
+        icon: 'tags'
     },
     {
         path: 'plan',
@@ -63,7 +59,7 @@ export let MENU_ITEM = [
     {
         path: 'reports',
         title: 'Reports',
-        icon: 'user',
+        icon: 'file-text-o',
         children: [
             {
                 path: 'project-info',
@@ -86,7 +82,7 @@ export let MENU_ITEM = [
     {
         path: 'self-assessments',
         title: 'Self assessments',
-        icon: 'user',
+        icon: 'check',
         children: [
             {
                 path: 'internal-assessments',
@@ -145,7 +141,7 @@ export let MENU_ITEM = [
     {
         path: 'settings',
         title: 'Settings',
-        icon: 'user',
+        icon: 'cog',
         children:[
             {
                 path: 'provinces',
