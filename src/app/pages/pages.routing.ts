@@ -20,9 +20,8 @@ export const childRoutes: Routes = [
             { path: 'projects', loadChildren: './projects/projects.module#ProjectsModule'},
             { path: 'plan', loadChildren: './plan/plan.module#PlanModule'},
             { path: 'settings', loadChildren: './settings/settings.module#SettingsModule'},
-            { path: 'banck-accounts', loadChildren: './bank-accounts/bank-accounts.module#BankAccountsModule'}
-            
-            
+            { path: 'banck-accounts', loadChildren: './bank-accounts/bank-accounts.module#BankAccountsModule'},
+            {path: 'website', loadChildren: './website-admin/website-admin.module#WebsiteAdminModule'}
         ]
     }
 ];

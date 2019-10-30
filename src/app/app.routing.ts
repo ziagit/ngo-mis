@@ -7,10 +7,14 @@ const appRoutes: Routes = [
     redirectTo: 'pages/index',
     pathMatch: 'full'
   },
+
+  { 
+    path: 'website', loadChildren: './website/website.module#WebsiteModule' 
+  },
   {
     path: '**',
     redirectTo: 'pages/index'
-  }
+  },
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);
