@@ -13,6 +13,7 @@ import { EmployeeTypesComponent } from './components/types/employee-types/employ
 import { EquipmentTypesComponent } from './components/types/equipment-types/equipment-types.component';
 import { OrganizationTypesComponent } from './components/types/organization-types/organization-types.component';
 import { SharedModule } from '../../shared/shared.module';
+import { UsersManagementComponent } from './components/users-management/users-management.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SharedModule } from '../../shared/shared.module';
     DelegationTypesComponent,
     EmployeeTypesComponent,
     EquipmentTypesComponent,
-    OrganizationTypesComponent
+    OrganizationTypesComponent,
+    UsersManagementComponent
   ],
   imports: [
     CommonModule,
