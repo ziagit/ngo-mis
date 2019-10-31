@@ -7,6 +7,8 @@ const appRoutes: Routes = [
     redirectTo: 'pages/index',
     pathMatch: 'full'
   },
+  { path: 'website', loadChildren: './webiste/website.module#websiteRouting'},
+
   {
     path: '**',
     redirectTo: 'pages/index'
