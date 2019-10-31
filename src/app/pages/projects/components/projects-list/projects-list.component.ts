@@ -4,6 +4,8 @@ import { AddProjectComponent } from '../dialogs/add-project/add-project.componen
 import {MatTableDataSource} from '@angular/material/table';
 
 import {MatPaginator} from '@angular/material/paginator';
+import { ProjectService } from '../../services/project.service';
+import { Project } from '../../Project';
 
 export interface PeriodicElement {
   name: string;
@@ -13,7 +15,7 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 4, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
   {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
@@ -27,12 +29,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 
+
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
   styleUrls: ['./projects-list.component.scss']
 })
 export class ProjectsListComponent implements OnInit {
+  
+  projects : Project[] =[];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -41,8 +46,8 @@ export class ProjectsListComponent implements OnInit {
   }
   
   animal:any;
-  constructor(private dialog: MatDialog){
-    
+  constructor(private dialog: MatDialog,private service:ProjectService){
+    this.getProjects();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit(){
@@ -58,6 +63,12 @@ export class ProjectsListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
+    });
+  }
+  getProjects(){
+    this.service.getProjectdata().subscribe((data)=>{
+      this.projects = data;
+      console.log(this.projects[0].id);
     });
   }
 

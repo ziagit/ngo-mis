@@ -26,13 +26,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FormsModule,
     PagesModule,
     routing,
-    TranslateModule.forRoot({
-      loader:{
-        provide:TranslateLoader,
-        useFactory:HttpLoaderFactory,
-        deps:[HttpClient]
-      }
-    })
   ],
   providers:[
     TranslateStore,
