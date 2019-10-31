@@ -6,29 +6,6 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../Project';
-<<<<<<< HEAD
-=======
-
->>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
-
-
-<<<<<<< HEAD
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 4, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  
-];
-=======
->>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
-
 
 
 @Component({
@@ -38,33 +15,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
   
 })
 export class ProjectsListComponent implements OnInit {
-<<<<<<< HEAD
-  
-  projects : Project[] =[];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-=======
-  ELEMENT_DATA: Project[]=[
-      {
-        id:23,
-        projectCode:"string",
-        projectName:"string",
-        projectPrice:"string",
-        budjet_id:"string",
-        govDirectorate:"string",
-        province_id:"string",
-        district_id:"string",
-        projectStartDate:"string",
-        projectEndDate:"string",
-        projectStatus:"string",
-        sector_id:"string",
-        organization_id:"string"},
-  ];
-  res;
+
   displayedColumns: string[] = ['id', 'projectCode', 'projectName', 'projectPrice',"budjet_id","govDirectorate",
   "province_id","district_id","projectStartDate","projectEndDate",'projectStatus','sector_id','organization_id'];
   dataSource;
->>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
+
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -93,15 +48,9 @@ export class ProjectsListComponent implements OnInit {
   }
   getProjects(){
     this.service.getProjectdata().subscribe((data)=>{
-<<<<<<< HEAD
-      this.projects = data;
-      console.log(this.projects[0].id);
-    });
-=======
     this.dataSource =  new MatTableDataSource(data);
   });
     
->>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
   }
 
 }
