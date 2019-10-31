@@ -1,8 +1,6 @@
 {
     "body":{
-        "dashboard": "hkdj",
-        "message": " Messages",
-        "budjet": "bodiga",
-        "project":"Projects"
+        "dashboard": " Dashboard",
+        "message": " Messages"
     }  
 }

@@ -6,14 +6,13 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../Project';
+<<<<<<< HEAD
+=======
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
+>>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
 
+
+<<<<<<< HEAD
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 4, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -27,19 +26,45 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
   
 ];
+=======
+>>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
 
 
 
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
-  styleUrls: ['./projects-list.component.scss']
+  styleUrls: ['./projects-list.component.scss'],
+  
 })
 export class ProjectsListComponent implements OnInit {
+<<<<<<< HEAD
   
   projects : Project[] =[];
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+=======
+  ELEMENT_DATA: Project[]=[
+      {
+        id:23,
+        projectCode:"string",
+        projectName:"string",
+        projectPrice:"string",
+        budjet_id:"string",
+        govDirectorate:"string",
+        province_id:"string",
+        district_id:"string",
+        projectStartDate:"string",
+        projectEndDate:"string",
+        projectStatus:"string",
+        sector_id:"string",
+        organization_id:"string"},
+  ];
+  res;
+  displayedColumns: string[] = ['id', 'projectCode', 'projectName', 'projectPrice',"budjet_id","govDirectorate",
+  "province_id","district_id","projectStartDate","projectEndDate",'projectStatus','sector_id','organization_id'];
+  dataSource;
+>>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -52,6 +77,7 @@ export class ProjectsListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
+    
   }
 
   
@@ -67,9 +93,15 @@ export class ProjectsListComponent implements OnInit {
   }
   getProjects(){
     this.service.getProjectdata().subscribe((data)=>{
+<<<<<<< HEAD
       this.projects = data;
       console.log(this.projects[0].id);
     });
+=======
+    this.dataSource =  new MatTableDataSource(data);
+  });
+    
+>>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
   }
 
 }

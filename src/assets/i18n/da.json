@@ -1,8 +1,18 @@
 {
+    "user":{
+        "login": "وارد شدن",
+        "register": "راجستر",
+        "username": "نام ",
+        "password": "پسورد",
+        "loginToSystem": "ورود به سیستم",
+        "": "",
+        "": "",
+        "": "",
+        "": ""
+    },
     "body":{
         "dashboard": " داشبورد",
-        "message": "پیام ها",
-        "budjet": "بودجه",
-        "project":"پروژه"
+        "message": "پیام ها"
     }  
+
 }

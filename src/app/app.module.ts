@@ -11,12 +11,11 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
 
-/* export function HttpLoaderFactory(http: HttpClient){
-  return new TranslateHttpLoader(http);
-} */
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
 }
+
 @NgModule({
   imports: [
     MatPaginatorModule,
@@ -33,6 +32,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   declarations: [
     AppComponent,
+    
   ],
   bootstrap: [AppComponent]
 })
