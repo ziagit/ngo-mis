@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-<<<<<<< HEAD
+
    public function equipment(){
 
     return $this->hasMany(Equipment::class,"project_id","id");
@@ -67,7 +67,5 @@ class Project extends Model
 
       return $this->hasMany(Bank::class,"project_id","id");
      }
-=======
-    //
->>>>>>> b572c1de445ea422bc618baec329c95701d884f0
+
 }

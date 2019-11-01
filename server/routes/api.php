@@ -36,3 +36,4 @@ Route::resource("inactivies","InactivityController");
 Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
 
+Route::resource('bankaccounts', "BankController");

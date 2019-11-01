@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Mis;
+use DB;
 
 use Illuminate\Database\Eloquent\Model;
 
