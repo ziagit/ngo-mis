@@ -16,9 +16,5 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-<<<<<<< HEAD
-=======
-
 Route::resource('provinces','ProvinceController');
->>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
 Route::resource("projects","ProjectController");
