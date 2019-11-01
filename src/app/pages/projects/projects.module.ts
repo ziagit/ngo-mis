@@ -21,11 +21,6 @@ import { SharedModule } from '../../shared/shared.module';
      AddProjectComponent
     ],
   imports: [
-    ReactiveFormsModule,
-    FormsModule,
-    MatPaginatorModule,
-    MatTableModule,
-    MatFormFieldModule,
     CommonModule,
     routing,
     SharedModule

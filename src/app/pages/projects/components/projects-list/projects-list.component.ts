@@ -8,9 +8,6 @@ import { ProjectService } from '../../services/project.service';
 import { Project } from '../../Project';
 
 
-
-
-
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
@@ -18,26 +15,11 @@ import { Project } from '../../Project';
   
 })
 export class ProjectsListComponent implements OnInit {
-  ELEMENT_DATA: Project[]=[
-      {
-        id:23,
-        projectCode:"string",
-        projectName:"string",
-        projectPrice:"string",
-        budjet_id:"string",
-        govDirectorate:"string",
-        province_id:"string",
-        district_id:"string",
-        projectStartDate:"string",
-        projectEndDate:"string",
-        projectStatus:"string",
-        sector_id:"string",
-        organization_id:"string"},
-  ];
-  res;
+
   displayedColumns: string[] = ['id', 'projectCode', 'projectName', 'projectPrice',"budjet_id","govDirectorate",
   "province_id","district_id","projectStartDate","projectEndDate",'projectStatus','sector_id','organization_id'];
   dataSource;
+
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();

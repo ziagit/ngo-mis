@@ -13,6 +13,5 @@ export class AppComponent {
     constructor(private translate: TranslateService) {
 
       this.translate.setDefaultLang('da');
-
    }
 }
