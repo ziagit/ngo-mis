@@ -6,6 +6,7 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { routing } from './projects.routing';
 import { ProjectsComponent } from './projects.component';
 import { EmployeesComponent } from './components/employees/employees.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EmployeesComponent } from './components/employees/employees.component';
     ],
   imports: [
     CommonModule,
-    routing
+    routing,
+    SharedModule
   ]
 })
 export class ProjectsModule { }
