@@ -7,11 +7,15 @@ import { SharedModule } from '../shared/shared.module';
 
 /* components */
 import { PagesComponent } from './pages.component';
-import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
 
 
 @NgModule({
     imports: [
+        ReactiveFormsModule,
+        FormsModule,
         CommonModule,
         LayoutModule,
         SharedModule,
@@ -20,6 +24,7 @@ import { LoginComponent } from './login/login.component';
     declarations: [
         PagesComponent,
         LoginComponent,
+        RegisterComponent,
     ],
     providers:[]
 })

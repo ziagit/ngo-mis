@@ -30,7 +30,8 @@ import {
   MatFormFieldModule,
   MatSelectModule,
   MatInputModule,
-  MatTabsModule
+  MatTabsModule,
+  MatCardModule
 } from '@angular/material';
 
 
@@ -40,6 +41,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,
@@ -77,6 +79,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,

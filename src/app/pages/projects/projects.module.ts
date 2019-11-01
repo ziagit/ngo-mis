@@ -31,5 +31,6 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule
   ],
   entryComponents:[AddProjectComponent]
+  
 })
 export class ProjectsModule { }
