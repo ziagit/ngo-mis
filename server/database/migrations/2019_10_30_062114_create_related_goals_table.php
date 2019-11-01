@@ -15,7 +15,7 @@ class CreateRelatedGoalsTable extends Migration
     {
         Schema::create('related_goals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('RelatedGoalsdesc');
+            $table->string('relatedGoalsdesc');
             $table->timestamps();
         });
     }
