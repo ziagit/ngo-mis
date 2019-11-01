@@ -35,13 +35,13 @@ import { RelatedTargetsComponent } from './components/loopups/related-targets/re
     EmployeeTypesComponent,
     EquipmentTypesComponent,
     OrganizationTypesComponent,
+    MonitorsComponent,
+    RelatedGoalsComponent,
+    RelatedTargetsComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    MonitorsComponent,
-    RelatedGoalsComponent,
-    RelatedTargetsComponent,
     settingsRouting
   ],
 })
