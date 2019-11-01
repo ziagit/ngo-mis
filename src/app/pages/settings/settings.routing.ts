@@ -1,21 +1,20 @@
 import { Routes, RouterModule } from "@angular/router";
 import { SettingsComponent } from './settings.component';
-import { ProvincesComponent } from './components/provinces/provinces.component';
-import { DistrictsComponent } from './components/districts/districts.component';
-import { SectorsComponent } from './components/sectors/sectors.component';
+
+import { UsersManagementComponent } from './components/users-management/users-management.component';
+import { LookupsComponent } from './components/loopups/lookups.component';
 import { TypesComponent } from './components/types/types.component';
 
-const routes: Routes =[
+const routes: Routes = [
     {
         path: '',
         component: SettingsComponent,
-        children:[
-            {path: '', redirectTo: 'provinces', pathMatch: 'full'},
-            {path: 'provinces', component: ProvincesComponent},
-            {path: 'districts', component: DistrictsComponent},
-            {path: 'sectors', component: SectorsComponent},
-            {path: 'types', component: TypesComponent},
+        children: [
+            { path: '', redirectTo: 'lookups', pathMatch: 'full' },
+            { path: 'lookups', component: LookupsComponent },
+            { path: 'types', component: TypesComponent },
+            { path: 'users-management', component: UsersManagementComponent },
         ]
     }
 ]
-export const routing = RouterModule.forChild(routes);
+export const settingsRouting = RouterModule.forChild(routes);

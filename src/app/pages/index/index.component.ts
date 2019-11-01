@@ -14,7 +14,7 @@ export class IndexComponent implements OnInit {
   public AnimationBarOption;
 
   constructor(private _chartsService: ChartsService,private translate: TranslateService) {
-    this.translate.setDefaultLang('en');
+    /* this.translate.setDefaultLang('en'); */
    }
 
   ngOnInit() {

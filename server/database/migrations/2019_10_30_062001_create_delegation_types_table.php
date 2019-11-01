@@ -15,7 +15,7 @@ class CreateDelegationTypesTable extends Migration
     {
         Schema::create('delegation_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('DelegationType');
+            $table->string('delegationType');
             $table->timestamps();
         });
     }
