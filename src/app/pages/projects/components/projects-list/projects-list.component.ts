@@ -7,7 +7,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../Project';
 
-
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
@@ -50,7 +49,6 @@ export class ProjectsListComponent implements OnInit {
     this.service.getProjectdata().subscribe((data)=>{
     this.dataSource =  new MatTableDataSource(data);
   });
-    
   }
 
 }

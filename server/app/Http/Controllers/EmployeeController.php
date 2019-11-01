@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Project;
+use App\Mis\Employee;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::all();
-        return response()->json($project);
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mis\Project  $project
+     * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Employee $employee)
     {
         //
     }
@@ -53,33 +52,33 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mis\Project  $project
+     * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(Employee $employee)
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     * 
+     *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mis\Project  $project
+     * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Employee $employee)
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     *pro
-     * @param  \App\Mis\Project  $project
+     *
+     * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(Employee $employee)
     {
         //
     }

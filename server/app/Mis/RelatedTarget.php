@@ -10,4 +10,9 @@ class RelatedTarget extends Model
     {
         return $this->belongsTo(RelatedGoals::class,"RelatedGoalsId","Id");
     }
+
+    public function plan()
+    {
+        return $this->hasMany(Plan::class,"relatedGoals_id","Id");
+    }
 }

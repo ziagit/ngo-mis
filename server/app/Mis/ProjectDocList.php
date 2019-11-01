@@ -4,11 +4,10 @@ namespace App\Mis;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BudjetType extends Model
+class ProjectDocList extends Model
 {
     public function project()
     {
-        return $this->belongsToMany(Project::class,"budgettype_id","id");
-        
+        return $this->belongsTo(Project::class, "project_id","id");
     }
 }
