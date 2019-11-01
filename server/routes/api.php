@@ -33,4 +33,6 @@ Route::resource("projectDocLists","ProjectDocListController");
 Route::resource("markmonitors","MarkmonitorController");
 Route::resource("banks","BankController");
 Route::resource("inactivies","InactivityController");
+Route::resource('provinces','ProvinceController');
+Route::resource("projects","ProjectController");
 

@@ -24,13 +24,15 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 //material modules
 import {
-  MatButtonModule,
+  MatPaginatorModule,
   MatTableModule,
+  MatButtonModule,
   MatDialogModule,
   MatFormFieldModule,
   MatSelectModule,
   MatInputModule,
-  MatTabsModule
+  MatTabsModule,
+  MatCardModule
 } from '@angular/material';
 
 
@@ -40,6 +42,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,
@@ -77,6 +83,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    ReactiveFormsModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,

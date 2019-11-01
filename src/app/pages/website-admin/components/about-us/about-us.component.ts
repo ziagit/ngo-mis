@@ -8,6 +8,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 })
 export class AboutUsComponent implements OnInit {
 
+
   orgForm: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.createForm();
