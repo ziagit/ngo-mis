@@ -17,7 +17,7 @@ class CreateDistrictsTable extends Migration
             $table->bigIncrements('id');
             $table->string('DistrictName');
             $table->string('DistrictCode');
-            $table->int('ProvinceId');
+            $table->integer('ProvinceId');
             $table->timestamps();
         });
     }

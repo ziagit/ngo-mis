@@ -13,6 +13,10 @@ import { EmployeeTypesComponent } from './components/types/employee-types/employ
 import { EquipmentTypesComponent } from './components/types/equipment-types/equipment-types.component';
 import { OrganizationTypesComponent } from './components/types/organization-types/organization-types.component';
 import { SharedModule } from '../../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
@@ -26,12 +30,13 @@ import { SharedModule } from '../../shared/shared.module';
     DelegationTypesComponent,
     EmployeeTypesComponent,
     EquipmentTypesComponent,
-    OrganizationTypesComponent
+    OrganizationTypesComponent,
   ],
   imports: [
     CommonModule,
     routing,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ]
 })
 export class SettingsModule { }

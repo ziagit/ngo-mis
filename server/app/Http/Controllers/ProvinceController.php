@@ -14,7 +14,8 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        //
+        $prov = Province::all();
+        return response()->json($prov);
     }
 
     /**
@@ -24,7 +25,7 @@ class ProvinceController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +36,8 @@ class ProvinceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $prove = new Province();
+        $data=$prove->addProvince($request->all());
     }
 
     /**
@@ -80,6 +82,7 @@ class ProvinceController extends Controller
      */
     public function destroy(Province $province)
     {
-        //
+        
+
     }
 }

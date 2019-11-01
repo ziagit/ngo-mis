@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import { DataService } from '../services/data.service';
+
+
+
+
+ 
 
 @Component({
   selector: 'app-provinces',
@@ -7,7 +15,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProvincesComponent implements OnInit {
 
-  constructor() { }
+  
+
+  constructor( private dataService: DataService) {
+    dataService.getProvince().subscribe(res=>{
+      console.log("my data: ", res)
+    })
+   }
 
   ngOnInit() {
   }
