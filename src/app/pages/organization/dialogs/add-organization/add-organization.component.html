@@ -1,19 +1,54 @@
+<h4>Add Organization Forms</h4>
+
 <div class="example-container">
-  <form [formGroup]="orgForm" (ngSubmit)="callingFunction(orgForm)">
-    <mat-form-field>
-      <input matInput placeholder="Input" formControlName="name">
-    </mat-form-field>
+  
+  <form [formGroup]="orgForm"  (ngSubmit)="Add(orgForm)">
 
     <mat-form-field>
-      <textarea matInput placeholder="Textarea" formControlName="details"></textarea>
+      <input matInput placeholder="نام دری آرگانیزشن" formControlName="orgNameDari" >
     </mat-form-field>
 
-    <mat-form-field>
-      <mat-select placeholder="Select" formControlName="gender">
-        <mat-option value="option">Option</mat-option>
-      </mat-select>
+    <mat-form-field>    
+      <input matInput placeholder="orgAbrivation" formControlName="orgAbrivation">
     </mat-form-field>
-    <button mat-button type="submit">Submit</button>
+
+    <mat-form-field>    
+      <input matInput placeholder="نام انگلیسی آرگانیزشن" formControlName="orgNameEng">
+    </mat-form-field>
+    <mat-form-field>    
+      <input matInput placeholder="نمبر راجستر" formControlName="regNo">
+    </mat-form-field>
+
+    <mat-form-field>    
+      <input matInput placeholder="تاریخ راجستر" formControlName="regDate">
+    </mat-form-field>
+
+    <mat-form-field>    
+      <input matInput placeholder="آدرس آرگانیزشن" formControlName="orgAddress">
+    </mat-form-field>
+
+    <mat-form-field>    
+      <input matInput placeholder="sector_id" formControlName="sector_id">
+    </mat-form-field>
+
+    <mat-form-field>    
+      <input matInput placeholder="انتخاب نوعیت ارگانیزشن" formControlName="orgs_types_id">
+    </mat-form-field>
+
+    <mat-form-field>    
+      <input matInput placeholder="آهداف" formControlName="goles">
+    </mat-form-field>
+
+    <mat-form-field>    
+      <input matInput placeholder="خانه" formControlName="house">
+    </mat-form-field>
+
+   
+   
+    
+    
+    
+    <button mat-button  type="submit"  >Submit</button>
   </form>
 </div>
 
