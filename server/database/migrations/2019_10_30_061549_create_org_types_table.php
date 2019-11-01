@@ -15,7 +15,7 @@ class CreateOrgTypesTable extends Migration
     {
         Schema::create('org_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('OrgType');
+            $table->string('orgType');
             $table->timestamps();
         });
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Province;
+use App\Mis\Project;
 use Illuminate\Http\Request;
 
-class ProvinceController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,9 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        $prov = Province::all();
-        return response()->json($prov);
+        $projects = Project::all();
+        
+        return response()->json($projects);
     }
 
     /**
@@ -25,7 +26,7 @@ class ProvinceController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -36,17 +37,16 @@ class ProvinceController extends Controller
      */
     public function store(Request $request)
     {
-        $prove = new Province();
-        $data=$prove->addProvince($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mis\Province  $province
+     * @param  \App\Mis\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Province $province)
+    public function show(Project $project)
     {
         //
     }
@@ -54,35 +54,34 @@ class ProvinceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mis\Province  $province
+     * @param  \App\Mis\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Province $province)
+    public function edit(Project $project)
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     *
+     * 
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mis\Province  $province
+     * @param  \App\Mis\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Province $province)
+    public function update(Request $request, Project $project)
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Mis\Province  $province
+     *pro
+     * @param  \App\Mis\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Province $province)
+    public function destroy(Project $project)
     {
-        
-
+        //
     }
 }
