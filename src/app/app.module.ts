@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TranslateStore } from '@ngx-translate/core';
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -21,6 +22,7 @@ import { TranslateStore } from '@ngx-translate/core';
   ],
   declarations: [
     AppComponent,
+    
   ],
   bootstrap: [AppComponent]
 })
