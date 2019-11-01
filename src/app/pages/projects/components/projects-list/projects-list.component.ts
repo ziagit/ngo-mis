@@ -4,49 +4,53 @@ import { AddProjectComponent } from '../dialogs/add-project/add-project.componen
 import {MatTableDataSource} from '@angular/material/table';
 
 import {MatPaginator} from '@angular/material/paginator';
+import { ProjectService } from '../../services/project.service';
+import { Project } from '../../Project';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-  
-];
+
 
 
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
-  styleUrls: ['./projects-list.component.scss']
+  styleUrls: ['./projects-list.component.scss'],
+  
 })
 export class ProjectsListComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  ELEMENT_DATA: Project[]=[
+      {
+        id:23,
+        projectCode:"string",
+        projectName:"string",
+        projectPrice:"string",
+        budjet_id:"string",
+        govDirectorate:"string",
+        province_id:"string",
+        district_id:"string",
+        projectStartDate:"string",
+        projectEndDate:"string",
+        projectStatus:"string",
+        sector_id:"string",
+        organization_id:"string"},
+  ];
+  res;
+  displayedColumns: string[] = ['id', 'projectCode', 'projectName', 'projectPrice',"budjet_id","govDirectorate",
+  "province_id","district_id","projectStartDate","projectEndDate",'projectStatus','sector_id','organization_id'];
+  dataSource;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   
   animal:any;
-  constructor(private dialog: MatDialog){
-    
+  constructor(private dialog: MatDialog,private service:ProjectService){
+    this.getProjects();
   }
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit(){
     this.dataSource.paginator = this.paginator;
+    
   }
 
   
@@ -59,6 +63,12 @@ export class ProjectsListComponent implements OnInit {
       console.log('The dialog was closed');
       this.animal = result;
     });
+  }
+  getProjects(){
+    this.service.getProjectdata().subscribe((data)=>{
+    this.dataSource =  new MatTableDataSource(data);
+  });
+    
   }
 
 }
