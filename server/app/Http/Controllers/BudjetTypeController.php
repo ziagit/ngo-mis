@@ -14,7 +14,8 @@ class BudjetTypeController extends Controller
      */
     public function index()
     {
-        //
+        $budjet = BudjetType::all();
+        return response()->json($budjet);
     }
 
     /**

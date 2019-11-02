@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BudjetTypeService } from './budjet-types.service';
+
 
 @Component({
   selector: 'app-budjet-types',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudjetTypesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: BudjetTypeService) {
+    this.service.getBudjetTypes().subscribe(res=>{
+      console.log("data from database: ", res)
+    })
+   }
 
   ngOnInit() {
+    
   }
 
+
+
+  
+  
 }
