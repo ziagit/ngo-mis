@@ -37,7 +37,23 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $project = new Project;
+        $project->projectCode = $request->projectCode;
+        $project->projectName = $request->projectName;
+        $project->projectPrice = $request->projectPrice;
+        $project->budjet_id   = $request->budjet_id;
+        $project->govDirectorate=$request->govDirectorate;
+        $project->province_id  = $request->province_id;
+        $project->district_id  = $request->district_id;
+        $project->projectStartDate = $request->projectStartDate;
+        $project->projectEndDate = $request->projectEndDate;
+        $project->projectStatus = $request->projectStatus;
+        $project->sector_id     = $request->sector_id;
+        $project->organization_id = $request->organization_id;
+        if($project->save()){
+            return response()->json("success");
+        }
+
     }
 
     /**
