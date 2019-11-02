@@ -17,5 +17,13 @@ export class BankAccountsService {
     return this.http.get<IBankAccount[]>('http://localhost:8000/api/bankaccounts');
   }
 
+  deleteAccountData(id)
+  {
+    return this.http.delete<IBankAccount[]>('http://localhost:8000/api/bankaccounts/'+id);
+  }
+  editAccountData(id){
+    return this.http.get<IBankAccount[]>('http://localhost:8000/api/bankaccounts/'+id+"/edit");
+  }
+
 
 }

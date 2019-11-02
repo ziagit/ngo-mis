@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { ProjectService } from '../../../services/project.service';
 import { RefreshService } from '../../../services/refresh.service';
 
@@ -10,10 +10,21 @@ import { RefreshService } from '../../../services/refresh.service';
   styleUrls: ['./add-project.component.scss']
 })
 export class AddProjectComponent implements OnInit {
-
+  budjet:any
+  province:any
+  district:any
+  sector:any
+  organization:any
   orgForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,private service:ProjectService,private refresh:RefreshService) {
+  constructor(private formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any, private dialog: MatDialog,private service:ProjectService,private refresh:RefreshService) {
     this.createForm();
+    this.service.selectTables().subscribe((result)=>{
+      this.budjet= result[0];
+      this.province=result[1];
+      this.district=result[2];
+      this.sector=result[3];
+      this.organization=result[4];
+    });
    }
 
   ngOnInit() {

@@ -22,5 +22,17 @@ export class ProjectService {
   getProjectdata():Observable<Project[]>{
     return this.http.get<Project[]>(this.server+"projects");
   }
+  updateProjectdata(data,id):Observable<Project>{
+    return this.http.patch<Project>(this.server+"projects/"+id,data);
+  }
+  // for delete project
+  deleteProjectdata(id):Observable<Project>{
+    return this.http.delete<Project>(this.server+"projects/"+id);
+  }
+  // for select relation tables
+  selectTables():Observable<Project>{
+    return this.http.get<Project>(this.server+"listrelationproject");
+  }
+
 
 }

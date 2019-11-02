@@ -12,6 +12,7 @@ import { HttpClient } from '@angular/common/http';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
 
 
+
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
 }
@@ -32,6 +33,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   declarations: [
     AppComponent,
+  
     
   ],
   bootstrap: [AppComponent]

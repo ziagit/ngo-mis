@@ -56,9 +56,10 @@ export class ProjectsListComponent implements OnInit {
 
   });  
   }
-  deleteProject(id){
+  deleteProject(data){
     const dialogRef = this.dialog.open(DeleteProjectComponent, {
       width: '400px',
+      data:data
     });
   }
   editProject(data){
