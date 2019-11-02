@@ -16,6 +16,9 @@ export class ProjectService {
     this.headers.append("Component-Type","application/json");
     this.headers.append("X-Requested-With","XMLHttpRequest");
   }
+  addProject(data):Observable<Project>{
+    return this.http.post<Project>(this.server+"projects",data);
+  }
   getProjectdata():Observable<Project[]>{
     return this.http.get<Project[]>(this.server+"projects");
   }

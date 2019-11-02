@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
-import { ProjectService } from '../../../services/project.service';
 import { RefreshService } from '../../../services/refresh.service';
+import { ProjectService } from '../../../services/project.service';
 
 @Component({
-  selector: 'app-add-project',
-  templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.scss']
+  selector: 'app-edit-project',
+  templateUrl: './edit-project.component.html',
+  styleUrls: ['./edit-project.component.scss']
 })
-export class AddProjectComponent implements OnInit {
+export class EditProjectComponent implements OnInit {
 
   orgForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private dialog: MatDialog,private service:ProjectService,private refresh:RefreshService) {
@@ -17,6 +17,7 @@ export class AddProjectComponent implements OnInit {
    }
 
   ngOnInit() {
+    
   }
   createForm() {
     this.orgForm = this.formBuilder.group({
@@ -34,17 +35,7 @@ export class AddProjectComponent implements OnInit {
         organization_id: ['', Validators.required],
     });
   }
-  addProjectFunction(data){
-    if(this.orgForm.valid){
-    this.service.addProject(data.value).subscribe((result)=>{
-      this.refresh.setRefresh("refresh");
-      
+  closeDialog(){
     this.dialog.closeAll();
-    });
   }
-  }
-  
-  
-
-
 }
