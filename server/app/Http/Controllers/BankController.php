@@ -14,7 +14,8 @@ class BankController extends Controller
      */
     public function index()
     {
-        //
+        $bank_account= Bank::all();
+        return response()->json( $bank_account);
     }
 
     /**
@@ -35,7 +36,16 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bank_account = new Bank();
+
+         $bank_account->organization_id = $request->organization_id;
+         $bank_account->project_id = $request->project_id;
+         $bank_account->keyspersonnel_id= $request->keyspersonnel_id;
+         $bank_account->name= $request->name;
+         $bank_account->location= $request->location;
+         $bank_account->currency= $request->currency;
+         $bank_account->save();
+         return response()->json("data saved successfully.");
     }
 
     /**
