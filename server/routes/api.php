@@ -16,7 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
 Route::resource("projects","ProjectController");
+
 
 Route::resource("organizations","OrganizationController");
 Route::resource("Orgassociations","OrgassociationController");
@@ -36,6 +39,8 @@ Route::resource("inactivies","InactivityController");
 Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
 
+
+Route::resource('budjet-types','BudjetTypeController');
+
 Route::resource('bankaccounts', "BankController");
-// Route for select tables which have relation with projects
-Route::get("listrelationproject","ProjectController@listrelationproject");
+Route::get("listrelationproject","ProjectController@listrelationp");

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AssessmentTypeService } from './assessment-type.service';
 
 @Component({
   selector: 'app-assessment-types',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssessmentTypesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: AssessmentTypeService) {
+    this.service.getAssessments().subscribe(res=>{
+      console.log("My data from database: ", res);
+    })
+   }
 
   ngOnInit() {
   }
