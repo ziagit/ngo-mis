@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatTableDataSource } from '@angular/material';
 import { AddOrganizationComponent } from '../../dialogs/add-organization/add-organization.component';
+import { OrgListService } from './org-list.service';
+import { IOrganization } from './Organization';
 
 
 
@@ -30,21 +32,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class OrgListComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource: IOrganization[];
   animal:any;
-  constructor(private dialog: MatDialog){}
+  constructor(private dialog: MatDialog, private orgService: OrgListService){}
 
   ngOnInit(){}
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddOrganizationComponent, {
-      width: '400px',
+      width: '600px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
     });
+  }
+
+  getOrg(){
+    this.orgService.getOrg().subscribe(res=>{
+      this.dataSource = new MatTableDataSource(res);
+    })
   }
 
 }
