@@ -6,6 +6,12 @@ import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { routing } from './projects.routing';
 import { ProjectsComponent } from './projects.component';
 import { EmployeesComponent } from './components/employees/employees.component';
+import { AddProjectComponent } from './components/dialogs/add-project/add-project.component';
+import { SharedModule } from '../../shared/shared.module';
+import { ProjectService } from './services/project.service';
+import { RefreshService } from './services/refresh.service';
+import { EditProjectComponent } from './components/dialogs/edit-project/edit-project.component';
+import { DeleteProjectComponent } from './components/dialogs/delete-project/delete-project.component';
 
 @NgModule({
   declarations: [
@@ -13,11 +19,21 @@ import { EmployeesComponent } from './components/employees/employees.component';
     ProjectsListComponent,
      EquipmentsComponent, 
      VehiclesComponent, 
-     EmployeesComponent
+     EmployeesComponent, 
+     AddProjectComponent,
+     EditProjectComponent,
+     DeleteProjectComponent
     ],
   imports: [
     CommonModule,
-    routing
-  ]
+    routing,
+    SharedModule
+  ],
+  providers:[
+    ProjectService,
+    RefreshService
+  ],
+  entryComponents:[AddProjectComponent,EditProjectComponent,DeleteProjectComponent]
+  
 })
 export class ProjectsModule { }

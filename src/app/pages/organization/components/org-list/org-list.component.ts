@@ -51,7 +51,7 @@ export class OrgListComponent implements OnInit {
 
   getOrg(){
     this.orgService.getOrg().subscribe(res=>{
-      this.dataSource = new MatTableDataSource(res);
+      console.log('data', res)
     })
   }
 

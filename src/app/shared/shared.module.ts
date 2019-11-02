@@ -18,19 +18,33 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 
-import {TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 //material modules
 import {
-  MatButtonModule,
+  MatPaginatorModule,
   MatTableModule,
+  MatButtonModule,
   MatDialogModule,
   MatFormFieldModule,
   MatSelectModule,
   MatInputModule,
-  MatTabsModule
+  MatTabsModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatRadioModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatStepperModule,
+  MatBadgeModule,
+  MatChipsModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatTooltipModule,
+  MatSortModule,
 } from '@angular/material';
 
 
@@ -40,6 +54,22 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatCheckboxModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatStepperModule,
+    MatBadgeModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatSortModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,
@@ -77,6 +107,22 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatCheckboxModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatStepperModule,
+    MatBadgeModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatSortModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatPaginatorModule,
+    MatCardModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,
