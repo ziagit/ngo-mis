@@ -6,6 +6,7 @@ import { AddAccountComponent } from './dialogs/add-account/add-account.component
 import  { HttpClient  } from '@angular/common/http';
 import { BankAccountsService } from './bank-accounts.service';
 import { IBankAccount } from "./BankAccount";
+import { BankEditComponent } from './bank-edit/bank-edit.component';
 
 
 const ELEMENT_DATA: IBankAccount[] = [
@@ -32,9 +33,7 @@ export class BankAccountsComponent implements OnInit {
    }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngOnInit(){
-    this.dataSource.paginator = this.paginator;
-  }
+  ngOnInit(){}
  
   addAccount(): void {
     const dialogRef = this.dialog.open(AddAccountComponent, {
@@ -49,6 +48,21 @@ export class BankAccountsComponent implements OnInit {
 getAccount(){
   this.service.getBankAccounts().subscribe(res=>{
     this.dataSource = new MatTableDataSource(res);
+    this.dataSource.paginator = this.paginator;
+  });
+}
+
+deleteAccount(id)
+{
+  this.service.deleteAccountData(id).subscribe(res=>{
+    console.log("deleted succefuly:"+res);
+  });
+}
+editAccount(data): void
+{
+  const dialogRef = this.dialog.open(BankEditComponent, {
+    width: '800px',
+    data: data
   });
 }
 }

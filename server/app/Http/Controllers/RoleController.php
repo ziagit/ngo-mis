@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Bank;
+use App\Role;
 use Illuminate\Http\Request;
 
-class BankController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class BankController extends Controller
      */
     public function index()
     {
-        $bank_account= Bank::all();
-        return response()->json( $bank_account);
+        //
     }
 
     /**
@@ -36,25 +35,16 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        $bank_account = new Bank();
-
-         $bank_account->organization_id = $request->organization_id;
-         $bank_account->project_id = $request->project_id;
-         $bank_account->keyspersonnel_id= $request->keyspersonnel_id;
-         $bank_account->name= $request->name;
-         $bank_account->location= $request->location;
-         $bank_account->currency= $request->currency;
-         $bank_account->save();
-         return response()->json("data saved successfully.");
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mis\Bank  $bank
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Bank $bank)
+    public function show(Role $role)
     {
         //
     }
@@ -62,25 +52,22 @@ class BankController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mis\Bank  $bank
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) 
+    public function edit(Role $role)
     {
-       
-       $bank=Bank::find($id);
-       return response()->json($bank);
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mis\Bank  $bank
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bank $bank)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -88,15 +75,11 @@ class BankController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mis\Bank  $bank
+     * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy(Role $role)
     {
-      $findId=Bank::find($id);
-      $deleteAccont= $findId->delete();
-      return response()->json($deleteAccont);
-
-        
+        //
     }
 }
