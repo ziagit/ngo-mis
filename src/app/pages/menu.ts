@@ -6,12 +6,12 @@ export let MENU_ITEM = [
     },
     {
         path: 'organization',
-        title: 'موسسه',
+        title: 'موسسات',
         icon: 'home',
         children: [
             {
                 path: 'org-list',
-                title: 'لست موسسه'
+                title: 'لست موسسات'
             },
             {
                 path: 'activities',
@@ -116,7 +116,41 @@ export let MENU_ITEM = [
     {
         path: 'website',
         title: 'ویب سایت',
-        icon: 'internet-explorer'
+        icon: 'internet-explorer',
+        children:[
+            {
+                path: 'home',
+                title: 'خانه'
+            },
+            {
+                path: 'about-us',
+                title: 'درباره ما'
+            },
+            {
+                path: 'org-registeration',
+                title: 'ثبت موسسه'
+            },
+            {
+                path: 'org-list',
+                title: 'لست موسسه'
+            },
+            {
+                path: 'news',
+                title: 'رسانه ها'
+            },
+            {
+                path: 'org-laws',
+                title: 'قانون موسسات'
+            },
+            {
+                path: 'jobs',
+                title: 'کاریابی'
+            },
+            {
+                path: 'contact-us',
+                title: 'تماس'
+            }
+        ]
     }
 
 ];

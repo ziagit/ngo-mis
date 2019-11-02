@@ -10,7 +10,6 @@ import { EditProjectComponent } from '../dialogs/edit-project/edit-project.compo
 import { NG_PROJECT_AS_ATTR_NAME } from '@angular/core/src/render3/interfaces/projection';
 import { DeleteProjectComponent } from '../dialogs/delete-project/delete-project.component';
 
-
 @Component({
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
@@ -71,6 +70,7 @@ export class ProjectsListComponent implements OnInit {
       console.log('The dialog was closed');
       this.animal = result;
     });
+  });
   }
 
 }
