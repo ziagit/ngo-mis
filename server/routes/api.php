@@ -37,3 +37,5 @@ Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
 
 Route::resource('bankaccounts', "BankController");
+// Route for select tables which have relation with projects
+Route::get("listrelationproject","ProjectController@listrelationproject");
