@@ -19,9 +19,14 @@ import { OrganizationTypesComponent } from './components/types/organization-type
 import { MonitorsComponent } from './components/loopups/monitors/monitors.component';
 import { RelatedGoalsComponent } from './components/loopups/related-goals/related-goals.component';
 import { RelatedTargetsComponent } from './components/loopups/related-targets/related-targets.component';
+import { AddUserComponent } from './components/users-management/dialogs/add-user/add-user.component';
+import { LoginComponent } from './components/users-management/login/login.component';
+import { RegisterComponent } from './components/users-management/register/register.component';
 
 @NgModule({
   declarations: [
+    LoginComponent,
+    RegisterComponent,
     SettingsComponent,
     UsersManagementComponent,
     ProvincesComponent,
@@ -38,11 +43,16 @@ import { RelatedTargetsComponent } from './components/loopups/related-targets/re
     MonitorsComponent,
     RelatedGoalsComponent,
     RelatedTargetsComponent,
+    AddUserComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     settingsRouting
   ],
+  providers: [],
+  entryComponents:[
+    AddUserComponent
+  ]
 })
 export class SettingsModule { }

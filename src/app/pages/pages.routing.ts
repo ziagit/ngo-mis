@@ -1,17 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages.component';
-import { LoginComponent } from './security/login/login.component';
-import { RegisterComponent } from './security/register/register.component';
 
 export const childRoutes: Routes = [
-    {
-        path: 'login',
-        component: LoginComponent,
-    },
-    {
-        path: 'register',
-        component: RegisterComponent,
-    },
     {
         path: 'pages',
         component: PagesComponent,

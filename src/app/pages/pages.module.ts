@@ -8,8 +8,6 @@ import { SharedModule } from '../shared/shared.module';
 /* components */
 import { PagesComponent } from './pages.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { LoginComponent } from './security/login/login.component';
-import { RegisterComponent } from './security/register/register.component';
 
 
 @NgModule({
@@ -23,8 +21,6 @@ import { RegisterComponent } from './security/register/register.component';
     ],
     declarations: [
         PagesComponent,
-        LoginComponent,
-        RegisterComponent,
     ],
     providers:[]
 })
