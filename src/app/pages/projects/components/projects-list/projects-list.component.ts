@@ -61,16 +61,19 @@ export class ProjectsListComponent implements OnInit {
       width: '400px',
     });
   }
-  editProject(id){
+  editProject(data){
+
     const dialogRef = this.dialog.open(EditProjectComponent, {
       width: '800px',
+      data: data
+
     });
+
     
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
     });
-  });
   }
 
 }
