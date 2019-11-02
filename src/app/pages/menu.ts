@@ -1,170 +1,156 @@
 export let MENU_ITEM = [
     {
         path: 'index',
-        title: 'Dashboard',
+        title: 'داشبورد',
         icon: 'dashboard'
     },
     {
         path: 'organization',
-        title: 'Organizations',
+        title: 'موسسات',
         icon: 'home',
         children: [
             {
                 path: 'org-list',
-                title: 'Org list'
+                title: 'لست موسسات'
             },
             {
                 path: 'activities',
-                title: 'Activities'
+                title: 'فعالیت ها'
             },
             {
                 path: 'delegations',
-                title: 'Delegations'
+                title: 'هيت ها'
             }
         ]
     },
     {
         path: 'projects',
-        title: 'Projects',
+        title: 'پروژه ها',
         icon: 'pie-chart',
         children: [
             {
                 path: 'project-list',
-                title: 'Project list'
+                title: 'لست پروژه ها'
             },
             {
                 path: 'employees',
-                title: 'Employees'
+                title: 'کارمندان'
             },
             {
                 path: 'equipments',
-                title: 'Equipments'
+                title: 'وسایل'
             },
             {
                 path: 'vehicles',
-                title: 'Vehicles'
+                title: 'وسایل نقلیه'
             }
         ]
     },
     {
         path: 'banck-accounts',
-        title: 'Bnak accounts',
+        title: 'حساب بانکی',
         icon: 'tags'
     },
     {
         path: 'plan',
-        title: 'Plan',
-        icon: 'user'
+        title: 'پلان',
+        icon: 'list-alt'
+    },
+    {
+        path: 'self-assessments',
+        title: 'خود ارزیابی',
+        icon: 'check',
+        children: [
+            {
+                path: 'internal-self-assessment',
+                title: 'خود ارزیابی داخلی',
+            },
+            {
+                path: 'external-self-assessment',
+                title: 'خود ارزیابی خارجی',
+            }
+        ]
     },
     {
         path: 'reports',
-        title: 'Reports',
+        title: 'راپورها',
         icon: 'file-text-o',
         children: [
             {
                 path: 'project-info',
-                title: 'Project Information'
+                title: 'معلومات عمومی پروژه'
             },
             {
                 path: 'employees',
-                title: 'Employees'
+                title: 'کارمندان'
             },
             {
                 path: 'equipments',
-                title: 'Equipments'
+                title: 'وسایل'
             },
             {
                 path: 'six-months-report',
-                title: 'Six months report'
+                title: 'راپور شش ماهه'
             },
-        ]
-    },
-    {
-        path: 'self-assessments',
-        title: 'Self assessments',
-        icon: 'check',
-        children: [
-            {
-                path: 'internal-assessments',
-                title: 'Internal assessments',
-                children:[
-                    {
-                        path: 'constitution',
-                        title: 'Constitution'
-                    },
-                    {
-                        path: 'in-mng-plan',
-                        title: 'Internal management and plan'
-                    },
-                    {
-                        path: 'finance-procurement',
-                        title: 'Finance and procurement'
-                    },
-                    {
-                        path: 'hr',
-                        title: 'HR'
-                    },
-                    {
-                        path: 'executory',
-                        title: 'Executory'
-                    }
-                ]
-            },
-            {
-                path: 'external-assessments',
-                title: 'External assessments',
-                children:[
-                    {
-                        path: 'constitution',
-                        title: 'Constitution'
-                    },
-                    {
-                        path: 'in-mng-plan',
-                        title: 'Internal management and plan'
-                    },
-                    {
-                        path: 'finance-procurement',
-                        title: 'Finance and procurement'
-                    },
-                    {
-                        path: 'hr',
-                        title: 'HR'
-                    },
-                    {
-                        path: 'executory',
-                        title: 'Executory'
-                    }
-                ]
-            }
         ]
     },
     {
         path: 'settings',
-        title: 'Settings',
+        title: 'تنظیمات',
         icon: 'cog',
         children:[
             {
-                path: 'provinces',
-                title: 'Provinces'
-            },
-            {
-                path: 'districts',
-                title: 'Districts'
-            },
-            {
-                path: 'sectors',
-                title: 'Sectores'
+                path: 'lookups',
+                title: 'معلومات ثابت'
             },
             {
                 path: 'types',
-                title: 'Types'
-            }
+                title: 'انواع معلومات ثابت'
+            },
+            {
+                path: 'users-management',
+                title: 'حساب کاربر'
+            },
         ]
     },
     {
         path: 'website',
-        title: 'Website',
-        icon: 'pencil'
+        title: 'ویب سایت',
+        icon: 'internet-explorer',
+        children:[
+            {
+                path: 'home',
+                title: 'خانه'
+            },
+            {
+                path: 'about-us',
+                title: 'درباره ما'
+            },
+            {
+                path: 'org-registeration',
+                title: 'ثبت موسسه'
+            },
+            {
+                path: 'org-list',
+                title: 'لست موسسه'
+            },
+            {
+                path: 'news',
+                title: 'رسانه ها'
+            },
+            {
+                path: 'org-laws',
+                title: 'قانون موسسات'
+            },
+            {
+                path: 'jobs',
+                title: 'کاریابی'
+            },
+            {
+                path: 'contact-us',
+                title: 'تماس'
+            }
+        ]
     }
 
 ];
