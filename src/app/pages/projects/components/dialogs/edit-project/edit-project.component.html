@@ -1,8 +1,8 @@
 <div class="example-container">
-    <form [formGroup]="orgForm" (ngSubmit)="addProjectFunction(orgForm)">
+    <form [formGroup]="orgForm" (ngSubmit)="updateProject(orgForm)">
       
       <mat-form-field>
-        <input matInput placeholder="کود پروژه :"  formControlName="projectCode">
+        <input matInput placeholder="کود پروژه :"  formControlName="projectCode" >
       </mat-form-field>
       <mat-form-field>
           <input matInput placeholder="نام پروژه" formControlName="projectName">

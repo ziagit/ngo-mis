@@ -43,4 +43,4 @@ Route::resource("projects","ProjectController");
 Route::resource('budjet-types','BudjetTypeController');
 
 Route::resource('bankaccounts', "BankController");
-
+Route::get("listrelationproject","ProjectController@listrelationp");
