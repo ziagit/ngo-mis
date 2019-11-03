@@ -6,7 +6,6 @@ import { BankRouting } from './bank-accounts.routing';
 import { AddAccountComponent } from './dialogs/add-account/add-account.component';
 import { BankEditComponent } from './bank-edit/bank-edit.component';
 
-
 @NgModule({
   declarations: [
     BankAccountsComponent,
