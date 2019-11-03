@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {IOrganization} from './Organization';
 import { Observable } from 'rxjs';
 
@@ -13,7 +13,8 @@ export class OrgListService {
   constructor(private http: HttpClient) { }
 
   getOrg():Observable<IOrganization[]>{
-    return this.http.get<IOrganization[]>(this.url+'getorganization');
+    return this.http.get<IOrganization[]>(this.url+'organizations');
   }
 
+  
 }

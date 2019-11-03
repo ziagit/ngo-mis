@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Organization;
+use App\Mis\Organization;
 use Illuminate\Http\Request;
 
 class OrganizationController extends Controller
@@ -14,7 +14,9 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        //
+        $data = Organization::all();
+        return response()->json($data);
+        
     }
 
     /**

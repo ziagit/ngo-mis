@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mis\Project;
 use Illuminate\Http\Request;
+use App\Mis\BudjetType,App\Mis\Province,App\Mis\District,App\Mis\Sector,App\Mis\Organization;
 
 class ProjectController extends Controller
 {
@@ -14,8 +15,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::all();
-        return response()->json($project);
+        $projects = Project::all();
+        return response()->json($projects);
     }
 
     /**
@@ -84,9 +85,24 @@ class ProjectController extends Controller
      * @param  \App\Mis\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, $id)
     {
-        //
+        $project = Project::find($id);
+        $project->projectCode = $request->projectCode;
+        $project->projectName = $request->projectName;
+        $project->projectPrice = $request->projectPrice;
+        $project->budjet_id   = $request->budjet_id;
+        $project->govDirectorate=$request->govDirectorate;
+        $project->province_id  = $request->province_id;
+        $project->district_id  = $request->district_id;
+        $project->projectStartDate = $request->projectStartDate;
+        $project->projectEndDate = $request->projectEndDate;
+        $project->projectStatus = $request->projectStatus;
+        $project->sector_id     = $request->sector_id;
+        $project->organization_id = $request->organization_id;
+        if($project->save()){
+            return response()->json("success");
+        }
     }
 
     /**
@@ -95,8 +111,21 @@ class ProjectController extends Controller
      * @param  \App\Mis\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy($id)
     {
-        dd($project);
+        $project = Project::find($id);
+        if($project->delete()){
+            return response()->json("success");
+        }
+    }
+    public function listrelationproject(){
+        $budjets = BudjetType::all();
+        $provinces = Province::all();
+        $districts = District::all();
+        $sectors = Sector::all();
+        $organizations = Organization::all();
+        $arr = [$budjets,$provinces,$districts,$sectors,$organizations];
+        return response()->json($arr);
+
     }
 }
