@@ -31,10 +31,13 @@ export class AddAccountComponent implements OnInit {
     });
   }
   addAccount() {
-    console.log(this.accountForm.value);
     this.service.addBankAccounts(this.accountForm.value).subscribe(res => {
-      console.log('from database: ', res)
-    })
+      this.service.setRefresh("refresh");
+      this.dialo.closeAll();
+      console.log("zia: ", res);
+
+    });
+    
   }
 
 

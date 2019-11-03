@@ -33,7 +33,11 @@ export class BankAccountsComponent implements OnInit {
    }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngOnInit(){}
+  ngOnInit(){
+    this.service.getRefresh().subscribe(result=>{
+      this.getAccount();
+    });
+  }
  
   addAccount(): void {
     const dialogRef = this.dialog.open(AddAccountComponent, {
@@ -55,6 +59,7 @@ getAccount(){
 deleteAccount(id)
 {
   this.service.deleteAccountData(id).subscribe(res=>{
+    this.service.setRefresh("refresh");
     console.log("deleted succefuly:"+res);
   });
 }

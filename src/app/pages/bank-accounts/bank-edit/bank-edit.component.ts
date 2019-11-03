@@ -20,7 +20,7 @@ export class BankEditComponent implements OnInit {
 
   createForm() {
     this.accountForm = this.formBuilder.group({
-      organization_id: [this.data.value, [Validators.required]],
+      organization_id: [this.data.organization_id, [Validators.required]],
       project_id: [this.data.project_id, [Validators.required]],
       keyspersonnel_id: ['', Validators.required],
       name: [this.data.name, [Validators.required]],
