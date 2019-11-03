@@ -1,4 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import { MatDialog } from '@angular/material';
+import { AddAccountComponent } from './dialogs/add-account/add-account.component';
+import  { HttpClient  } from '@angular/common/http';
+import { BankAccountsService } from './bank-accounts.service';
+import { IBankAccount } from "./BankAccount";
+import { BankEditComponent } from './bank-edit/bank-edit.component';
+
+
+const ELEMENT_DATA: IBankAccount[] = [
+  {position: 4 ,organization_id:1,project_id:7,keyspersonnel_id:6, name: 'Hydrogen', location: 'کابل',currency: 'افغانی' ,option:'y',},
+  {position: 2 ,organization_id:2 ,project_id:8,keyspersonnel_id:5, name: 'Helium', location: 'مزار', currency: 'دالر' ,option:'y'},
+
+ 
+  
+];
 
 @Component({
   selector: 'app-bank-accounts',
@@ -6,10 +23,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bank-accounts.component.scss']
 })
 export class BankAccountsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  displayedColumns: string[] = ['position' ,'organization_id','project_id','keyspersonnel_id', 'name', 'location', 'currency','option'];
+  dataSource;
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+  constructor(private dialog: MatDialog, private service:BankAccountsService) {
+    this.getAccount();
+   }
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  ngOnInit(){}
+ 
+  addAccount(): void {
+    const dialogRef = this.dialog.open(AddAccountComponent, {
+      width: '800px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  
+getAccount(){
+  this.service.getBankAccounts().subscribe(res=>{
+    this.dataSource = new MatTableDataSource(res);
+    this.dataSource.paginator = this.paginator;
+  });
+}
+
+deleteAccount(id)
+{
+  this.service.deleteAccountData(id).subscribe(res=>{
+    console.log("deleted succefuly:"+res);
+  });
+}
+editAccount(data): void
+{
+  const dialogRef = this.dialog.open(BankEditComponent, {
+    width: '800px',
+    data: data
+  });
+}
 }

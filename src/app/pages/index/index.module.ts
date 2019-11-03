@@ -9,9 +9,7 @@ import {TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
-export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
-}
+
 
 @NgModule({
     imports: [

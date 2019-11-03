@@ -21,6 +21,7 @@ import { websiteRouting } from './website.routing';
     AboutUsComponent, 
     FooterComponent
     ],
+
   imports: [
     CommonModule,
     websiteRouting
