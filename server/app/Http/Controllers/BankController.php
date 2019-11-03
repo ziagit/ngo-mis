@@ -36,8 +36,7 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        return response()->json('fixed.');
-/*         $bank_account = new Bank();
+        $bank_account = new Bank();
 
          $bank_account->organization_id = $request->organization_id;
          $bank_account->project_id = $request->project_id;
@@ -46,7 +45,7 @@ class BankController extends Controller
          $bank_account->location= $request->location;
          $bank_account->currency= $request->currency;
          $bank_account->save();
-         return response()->json("data saved successfully."); */
+         return response()->json("data saved successfully.");
     }
 
     /**
@@ -70,6 +69,7 @@ class BankController extends Controller
     {
        
        $bank=Bank::find($id);
+   
        return response()->json($bank);
 
     }

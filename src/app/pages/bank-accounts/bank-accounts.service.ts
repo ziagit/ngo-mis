@@ -24,11 +24,11 @@ export class BankAccountsService {
     return this.http.get<IBankAccount[]>('http://localhost:8000/api/bankaccounts');
   }
 
-  deleteAccountData(id)
+  deleteAccount(id)
   {
     return this.http.delete<IBankAccount[]>('http://localhost:8000/api/bankaccounts/'+id);
   }
-  editAccountData(id){
+  editAccountData(id):Observable<IBankAccount[]>{
     return this.http.get<IBankAccount[]>('http://localhost:8000/api/bankaccounts/'+id+"/edit");
   }
 
