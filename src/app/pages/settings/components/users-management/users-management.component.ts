@@ -12,16 +12,9 @@ export interface PeriodicElement {
   role: string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {id: 1, username: 'Hydrogen', email: 1.0079, password: 'H'},
-  {id: 2, username: 'Helium', email: 4.0026, password: 'He'},
-  {id: 3, username: 'Lithium', email: 6.941, password: 'Li'},
-  {id: 4, username: 'Beryllium', email: 9.0122, password: 'Be'},
-  {id: 5, username: 'Boron', email: 10.811, password: 'B'},
-  {id: 6, username: 'Carbon', email: 12.0107, password: 'C'},
-  {id: 7, username: 'Nitrogen', email: 14.0067, password: 'N'},
-  {id: 8, username: 'Oxygen', email: 15.9994, password: 'O'},
-  {id: 9, username: 'Fluorine', email: 18.9984, password: 'F'},
-  {id: 10, username: 'Neon', email: 20.1797, password: 'Ne'},
+  {id: 1, username: 'Hydrogen', email: 'zia.csco@gmail.com', password: 'H', role: 'admin'},
+  {id: 2, username: 'Helium', email: 'zia.csco@gmail.com', password: 'He', role: 'guest'},
+
 ];
 @Component({
   selector: 'app-users-management',
