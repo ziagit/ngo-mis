@@ -33,9 +33,11 @@ Route::resource("banks","BankController");
 Route::resource("inactivies","InactivityController");
 Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
+Route::resource('bankaccounts', "BankController");
 
 
 Route::resource('budjet-types','BudjetTypeController');
 
-Route::resource('bankaccounts', "BankController");
 Route::get("listrelationproject","ProjectController@listrelationproject");
+
+Route::get("get-bank-lookups", "BankController@getBankLookups");

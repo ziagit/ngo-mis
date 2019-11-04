@@ -26,6 +26,7 @@ const ELEMENT_DATA: IBankAccount[] = [
 export class BankAccountsComponent implements OnInit {
   displayedColumns: string[] = ['position' ,'organization_id','project_id','keyspersonnel_id', 'name', 'location', 'currency','option'];
   dataSource;
+ 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -36,7 +37,9 @@ export class BankAccountsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   ngOnInit(){
     this.service.getRefresh().subscribe(result=>{
-      this.getAccount();
+    this.getAccount();
+     
+    
     });
   }
  
@@ -52,17 +55,20 @@ export class BankAccountsComponent implements OnInit {
   
 getAccount(){
   this.service.getBankAccounts().subscribe(res=>{
+    
     this.dataSource = new MatTableDataSource(res);
+     console.log("check for optiosn: ",res);
     this.dataSource.paginator = this.paginator;
+
   });
 }
 
 
-editAccount(data): void
+editAccount(editData): void
 {
   const dialogRef = this.dialog.open(BankEditComponent, {
     width: '800px',
-    data: data
+    data: editData
   });
 }
 deleteAccount(id){
