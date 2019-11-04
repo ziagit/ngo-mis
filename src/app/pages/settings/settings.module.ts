@@ -19,6 +19,13 @@ import { OrganizationTypesComponent } from './components/types/organization-type
 import { MonitorsComponent } from './components/loopups/monitors/monitors.component';
 import { RelatedGoalsComponent } from './components/loopups/related-goals/related-goals.component';
 import { RelatedTargetsComponent } from './components/loopups/related-targets/related-targets.component';
+import { AddTypesComponent } from './components/types/dialogs/add-types/add-types.component';
+import { AddOrganizationTypeComponent } from './components/types/organization-types/dialogType/add-organization-type/add-organization-type.component';
+import { AddEquiptTypeComponent } from './components/types/equipment-types/equiptTypeDialog/add-equipt-type/add-equipt-type.component';
+import { BTypeDialogComponent } from './components/types/budjet-types/budjetTypeDialog/b-type-dialog/b-type-dialog.component';
+import { DelTypeDialogComponent } from './components/types/delegation-types/delegationTypeDialog/del-type-dialog/del-type-dialog.component';
+import { DiologEmpTypeComponent } from './components/types/employee-types/empTypeDialog/diolog-emp-type/diolog-emp-type.component';
+import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetTypeDialog/edit-budjet-type/edit-budjet-type.component';
 
 @NgModule({
   declarations: [
@@ -38,11 +45,35 @@ import { RelatedTargetsComponent } from './components/loopups/related-targets/re
     MonitorsComponent,
     RelatedGoalsComponent,
     RelatedTargetsComponent,
+    AddTypesComponent,
+    AddOrganizationTypeComponent,
+   
+    AddEquiptTypeComponent,
+   
+    BTypeDialogComponent,
+   
+    DelTypeDialogComponent,
+   
+    DiologEmpTypeComponent,
+   
+    EditBudjetTypeComponent,
+   
+    
   ],
   imports: [
     CommonModule,
     SharedModule,
     settingsRouting
   ],
+  entryComponents:[
+    AddOrganizationTypeComponent,
+    AddEquiptTypeComponent,
+    AddOrganizationTypeComponent,
+    BTypeDialogComponent,
+    DelTypeDialogComponent,
+    DiologEmpTypeComponent,
+    EditBudjetTypeComponent,
+    
+  ]
 })
 export class SettingsModule { }
