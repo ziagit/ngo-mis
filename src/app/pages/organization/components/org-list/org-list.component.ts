@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatTableDataSource } from '@angular/material';
 import { AddOrganizationComponent } from '../../dialogs/add-organization/add-organization.component';
+import {MatPaginator} from '@angular/material/paginator';
+import { OrgListService } from './org-list.service';
+import { IOrganization } from './Organization';
+import { Router } from '@angular/router';
+import { StepperComponent } from '../stepper/stepper.component';
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+ 
 }
+
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'ali', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -21,23 +24,37 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
+
 @Component({
   selector: 'app-org-list',
   templateUrl: './org-list.component.html',
   styleUrls: ['./org-list.component.scss']
 })
 export class OrgListComponent implements OnInit {
+      dataSource;
+    displayedColumns: string[] = ['id','nameDa', 'nameEn', 'abrivation', 'registerNo','registerDate','contactNo','email',
+  'organizationtype_id','donner_id','sector_id','goals','currentCashAmount','currency','house','street','district_id','province_id'];
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   animal:any;
-  constructor(private dialog: MatDialog){}
 
-  ngOnInit(){}
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  constructor(private dialog: MatDialog, private orgService: OrgListService, private router: Router){
+    this.getOrg();
+  }
+
+  ngOnInit(){
+    
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(AddOrganizationComponent, {
-      width: '200px',
+      width: '600px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -45,5 +62,22 @@ export class OrgListComponent implements OnInit {
       this.animal = result;
     });
   }
+
+  getOrg(){
+    this.orgService.getOrg().subscribe(res=>{
+     this.dataSource =  new MatTableDataSource(res);
+     this.dataSource.paginator = this.paginator; 
+    });
+  }
+  openStepper(){
+    const dialogRef=this.dialog.open(StepperComponent,{
+      width: '900px',
+    });
+    dialogRef.afterClosed().subscribe(res=>{
+      console.log("clodes dialog")
+    })
+  }
+
+ 
 
 }
