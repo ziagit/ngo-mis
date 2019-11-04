@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { RefreshService } from '../../../../services/refresh.service';
-import { EmployeesService } from '../../../../services/employees.service';
+import { EmployeesService } from '../../services/employees.service';
 
 @Component({
   selector: 'app-add-employee',

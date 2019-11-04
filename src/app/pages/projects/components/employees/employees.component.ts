@@ -9,7 +9,16 @@ import { RefreshService } from '../../services/refresh.service';
   styleUrls: ['./employees.component.scss']
 })
 export class EmployeesComponent implements OnInit {
+  displayedColumns: string[] = ['id', 'name', 'fatherName', 'TIN',"job","education",
+  "gender","salary","country"];
+  dataSource;
+
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   animal:any;
+
   constructor(private refresh:RefreshService,private dialog: MatDialog) { }
 
   ngOnInit() {

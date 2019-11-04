@@ -15,7 +15,7 @@ import { DeleteProjectComponent } from './components/dialogs/delete-project/dele
 import { AddEmployeeComponent } from './components/employees/dialog/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './components/employees/dialog/edit-employee/edit-employee.component';
 import { DeleteEmployeeComponent } from './components/employees/delete-employee/delete-employee.component';
-import { EmployeesService } from './services/employees.service';
+import { EmployeesService } from './components/employees/services/employees.service';
 
 @NgModule({
   declarations: [
