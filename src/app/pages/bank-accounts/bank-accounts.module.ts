@@ -5,13 +5,14 @@ import { SharedModule } from '../../shared/shared.module';
 import { BankRouting } from './bank-accounts.routing';
 import { AddAccountComponent } from './dialogs/add-account/add-account.component';
 import { BankEditComponent } from './bank-edit/bank-edit.component';
-
+import { DeleteAccountComponent } from './dialogs/delete-account/delete-account.component';
 
 @NgModule({
   declarations: [
     BankAccountsComponent,
     AddAccountComponent,
-    BankEditComponent
+    BankEditComponent,
+    DeleteAccountComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +22,8 @@ import { BankEditComponent } from './bank-edit/bank-edit.component';
   ],
   entryComponents:[
     AddAccountComponent,
-    BankEditComponent
+    BankEditComponent,
+    DeleteAccountComponent
   ]
 })
 export class BankAccountsModule { }

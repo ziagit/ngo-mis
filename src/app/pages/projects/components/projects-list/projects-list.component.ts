@@ -9,6 +9,7 @@ import { RefreshService } from '../../services/refresh.service';
 import { EditProjectComponent } from '../dialogs/edit-project/edit-project.component';
 import { NG_PROJECT_AS_ATTR_NAME } from '@angular/core/src/render3/interfaces/projection';
 import { DeleteProjectComponent } from '../dialogs/delete-project/delete-project.component';
+import { MainContainerComponent } from '../main-container/main-container.component';
 
 @Component({
   selector: 'app-projects-list',
@@ -74,6 +75,15 @@ export class ProjectsListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
+    });
+  }
+  openStepper(){
+
+    const dialogRef = this.dialog.open(MainContainerComponent, {
+      width: '1000px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed',result);
     });
   }
 

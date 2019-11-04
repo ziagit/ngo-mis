@@ -1,0 +1,16 @@
+<div class="example-container">
+  <form [formGroup]="userForm" (ngSubmit)="addUser(orgForm)">
+    <mat-form-field>
+      <input matInput placeholder="{{'user.username' | translate}}" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{'user.email' | translate }}" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{'user.password ' | translate}}" formControlName="password">
+    </mat-form-field>
+    <button mat-button type="submit">Submit</button>
+  </form>
+</div>

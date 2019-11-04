@@ -16,6 +16,7 @@ import { AddEmployeeComponent } from './components/employees/dialog/add-employee
 import { EditEmployeeComponent } from './components/employees/dialog/edit-employee/edit-employee.component';
 import { DeleteEmployeeComponent } from './components/employees/delete-employee/delete-employee.component';
 import { EmployeesService } from './components/employees/services/employees.service';
+import { MainContainerComponent } from './components/main-container/main-container.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { EmployeesService } from './components/employees/services/employees.serv
      DeleteEmployeeComponent,
      EditEmployeeComponent,
      AddEmployeeComponent,
+     MainContainerComponent
     ],
   imports: [
     CommonModule,
@@ -51,7 +53,8 @@ import { EmployeesService } from './components/employees/services/employees.serv
     EmployeesComponent,
     EditEmployeeComponent,
     DeleteEmployeeComponent,
-    AddEmployeeComponent]
-  
+    AddEmployeeComponent,
+    MainContainerComponent
+  ]
 })
 export class ProjectsModule { }

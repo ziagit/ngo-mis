@@ -14,6 +14,7 @@ import { ActivitiesComponent } from './components/activities/activities.componen
 import { InActivitiesComponent } from './components/in-activities/in-activities.component';
 import { DelegationsComponent } from './components/delegations/delegations.component';
 import { TabActivitiesComponent } from './components/tab-activities/tab-activities.component';
+import { StepperComponent } from './components/stepper/stepper.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TabActivitiesComponent } from './components/tab-activities/tab-activiti
     InActivitiesComponent,
     DelegationsComponent,
     TabActivitiesComponent,
+    StepperComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -36,6 +38,9 @@ import { TabActivitiesComponent } from './components/tab-activities/tab-activiti
     orgRouting,
     SharedModule
   ],
-  entryComponents:[AddOrganizationComponent]
+  entryComponents:[
+    AddOrganizationComponent,
+    StepperComponent
+  ]
 })
 export class OrganizationModule { }

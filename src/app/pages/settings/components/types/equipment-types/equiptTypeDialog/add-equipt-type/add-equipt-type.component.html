@@ -1,0 +1,16 @@
+<div class="example-container">
+    <form [formGroup]="orgForm" (ngSubmit)="addEquiptType(equiptTypeForm)">
+      
+      <div class="form-group">
+          <mat-form-field>
+              <input matInput placeholder="نام تجهیزات را وارد کنید." formControlName="equiptType">
+            </mat-form-field> 
+      </div>
+
+     <div class="form-group">
+        <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+     </div>
+    </form>
+</div>
+  
+  

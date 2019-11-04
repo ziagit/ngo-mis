@@ -17,17 +17,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::resource("projects","ProjectController");
-
-
 Route::resource("organizations","OrganizationController");
 Route::resource("Orgassociations","OrgassociationController");
 Route::resource("equipments","EqiupmentController");
 Route::resource("vehicles","VehicleController");
 Route::resource("employees","EmployeeController");
 Route::resource("plans","PlanController");
-Route::resource("projects","projectController");
 Route::resource("delegations","DelegationController");
 Route::resource("keyspersonnels","KeyspersonnelController");
 Route::resource("orgevaluations","OrgevaluationController");
@@ -40,8 +35,14 @@ Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
 
 
-Route::resource('budjet-types','BudjetTypeController');
 
 Route::resource('bankaccounts', "BankController");
+Route::resource('orgtypes', 'OrgTypeController');
+Route::resource('equiptypes', 'EquipTypeController');
+Route::resource('delegationTypes', 'DelegationTypeController');
+Route::resource('employeeTypes', 'EmployeeTypeController');
+Route::resource('budjetTypes', 'BudjetTypeController');
+
 Route::get("listrelationproject","ProjectController@listrelationproject");
 Route::get("employeerelation","EmployeeController@employeerelation");
+

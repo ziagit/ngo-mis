@@ -24,6 +24,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 //material modules
 import {
+  MatExpansionModule,
   MatPaginatorModule,
   MatTableModule,
   MatButtonModule,
@@ -54,6 +55,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,
     MatMenuModule,
@@ -107,6 +109,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,
     MatMenuModule,
