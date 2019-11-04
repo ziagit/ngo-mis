@@ -69,6 +69,7 @@ class BankController extends Controller
     {
        
        $bank=Bank::find($id);
+   
        return response()->json($bank);
 
     }

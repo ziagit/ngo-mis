@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { equipment } from './equipment';
+import { EquipmentService } from './services/equipment.service';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import { AddEquiptTypeComponent } from './equiptTypeDialog/add-equipt-type/add-equipt-type.component';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-equipment-types',
@@ -6,10 +13,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./equipment-types.component.scss']
 })
 export class EquipmentTypesComponent implements OnInit {
+  // datatable--------------------------->
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  displayedColumns: string[] = ['id', 'equipType','delete'];
+  dataSource ;
 
-  constructor() { }
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  constructor(private dialog: MatDialog, private equiService: EquipmentService) { }
 
   ngOnInit() {
+    this.getEquiptType();
+    
   }
+  getEquiptType()
+  {
+    this.equiService.getEquipment().subscribe((data)=>{
+      this.dataSource=new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+
+  deleteEquiptType(id){
+    this.equiService.deleteEptType(id).subscribe(res=>{
+      this.getEquiptType();
+      console.log('successfully deleted'+ res);
+    });
+  }
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddEquiptTypeComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+  
 
 }
