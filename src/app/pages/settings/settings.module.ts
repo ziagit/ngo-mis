@@ -28,6 +28,8 @@ import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetT
 import { AddUserComponent } from './components/users-management/dialogs/add-user/add-user.component';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from './components/users-management/register/register.component';
+import { EditDelTypeDiologComponent } from './components/types/delegation-types/delegationTypeDialog/edit-del-type-diolog/edit-del-type-diolog.component';
+import { EditEmpTypeComponent } from './components/types/employee-types/empTypeDialog/edit-emp-type/edit-emp-type.component';
 
 
 @NgModule({
@@ -64,6 +66,12 @@ import { RegisterComponent } from './components/users-management/register/regist
    
     
     AddUserComponent,
+   
+    
+    EditDelTypeDiologComponent,
+   
+    
+    EditEmpTypeComponent,
   ],
   imports: [
     CommonModule,
@@ -77,10 +85,19 @@ import { RegisterComponent } from './components/users-management/register/regist
     BTypeDialogComponent,
     DelTypeDialogComponent,
     DiologEmpTypeComponent,
+    AddUserComponent,
     EditBudjetTypeComponent,
-    AddUserComponent
+    EditDelTypeDiologComponent,
+    EditEmpTypeComponent,
+    
+    
   ],
-  providers: [],
+  providers: [
+   
+  ],
 
 })
-export class SettingsModule { }
+export class SettingsModule {
+ 
+
+ }
