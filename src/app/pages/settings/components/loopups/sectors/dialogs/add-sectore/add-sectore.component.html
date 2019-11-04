@@ -1,0 +1,16 @@
+<div class="example-container">
+    <form [formGroup]="orgForm" (ngSubmit)="insertData(orgForm)">
+  
+      <mat-form-field>
+        <input matInput placeholder="Input" formControlName="sectorName">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Input" formControlName="proirity">
+      </mat-form-field>
+  
+      <button mat-button type="submit" class="btn btn-success">Save</button>
+    </form>
+  </div>
+  
+  

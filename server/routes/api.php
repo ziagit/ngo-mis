@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Mis\Province;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,9 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-<<<<<<< HEAD
-=======
 
-Route::resource('provinces','ProvinceController');
->>>>>>> b1cd62400ff96d14cf8bced6ae5786178750d3ae
+Route::resource('provinces', 'ProvinceController');
+Route::resource('districts','DistrictController');
+Route::resource('sectors','SectorController');
+Route::resource('relatedgoals','RelatedGoalsController');
+Route::resource('relatedtargets','RelatedTargetController');
+
+
 Route::resource("projects","ProjectController");

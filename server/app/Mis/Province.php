@@ -12,14 +12,5 @@ class Province extends Model
         return $this->hasMany(District::class,"ProvinceId","Id");
     }
 
-
-    public function showProvince(){
-        
-    }
-    public function addProvince(){
-        DB::table('provinces')->insert($data);
-    }
-    public function deleteProvince($id){
-        DB::table('provinces')->where('id',$id)->delete();
-    }
+    protected $filable = ['provinceName','provinceCode'];
 }

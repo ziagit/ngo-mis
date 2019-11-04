@@ -1,0 +1,17 @@
+<div class="example-container">
+  <div>Edit Province Dialog</div>
+    <form [formGroup]="orgForm" (ngSubmit)="edittData()">
+  
+      <mat-form-field>
+        <input matInput placeholder="Input" formControlName="provinceName">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Input" formControlName="provinceCode">
+      </mat-form-field>
+  
+      <button mat-button type="submit" class="btn btn-primary">update</button>
+    </form>
+  </div>
+  
+  
