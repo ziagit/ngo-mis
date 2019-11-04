@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import { RefDelTypeService } from './refreshDelegationType/ref-del-type.service';
 import { DelTypeDialogComponent } from './delegationTypeDialog/del-type-dialog/del-type-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { EditDelTypeDiologComponent } from './delegationTypeDialog/edit-del-type-diolog/edit-del-type-diolog.component';
 
 
 
@@ -65,6 +66,18 @@ export class DelegationTypesComponent implements OnInit {
       this.animal = result;
     });
   }
+
+  editDlgType(){
+    const dialogRef = this.dialog.open(EditDelTypeDiologComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+  
   
 
 }

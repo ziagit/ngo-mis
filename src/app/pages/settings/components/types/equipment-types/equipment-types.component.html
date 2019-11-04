@@ -1,10 +1,9 @@
-<div class="container">
-  
-  <div class="row" align='end'>
+
+  <div  align='end'>
     <button mat-raised-button color="primary" style="padding-top: 4px;" (click)="openDialog()" >Add</button>
   </div>
 
-  <div class="row">
+ 
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
@@ -36,5 +35,4 @@
     </table>
     <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
     
-  </div>
-</div>
+  

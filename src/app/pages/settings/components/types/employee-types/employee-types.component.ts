@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { DiologEmpTypeComponent } from './empTypeDialog/diolog-emp-type/diolog-emp-type.component';
 import { RefreshEmpTypeService } from './empTypeRefresh/refresh-emp-type.service';
+import { EditEmpTypeComponent } from './empTypeDialog/edit-emp-type/edit-emp-type.component';
 
 
 
@@ -53,6 +54,17 @@ export class EmployeeTypesComponent implements OnInit {
   //dialog functions
   openDialog(){
     const dialogRef = this.dialog.open(DiologEmpTypeComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
+
+  editEmployeeType(){
+    const dialogRef = this.dialog.open(EditEmpTypeComponent, {
       width: '400px',
     });
 
