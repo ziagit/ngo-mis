@@ -18,4 +18,7 @@ export class EmployeesService {
   getrealationtable(){
     return this.http.get(this.server+"employeerelation");
   }
+  getEmployeedata(){
+    return this.http.get(this.server+"employees");
+  }
 }

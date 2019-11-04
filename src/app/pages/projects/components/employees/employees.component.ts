@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatTableDataSource } from '@angular/material';
 import { AddEmployeeComponent } from './dialog/add-employee/add-employee.component';
 import { RefreshService } from '../../services/refresh.service';
+import { EmployeesService } from './services/employees.service';
 
 @Component({
   selector: 'app-employees',
@@ -19,7 +20,7 @@ export class EmployeesComponent implements OnInit {
   }
   animal:any;
 
-  constructor(private refresh:RefreshService,private dialog: MatDialog) { }
+  constructor(private refresh:RefreshService,private dialog: MatDialog,private service:EmployeesService) { }
 
   ngOnInit() {
   }
@@ -33,6 +34,12 @@ export class EmployeesComponent implements OnInit {
       console.log('The dialog was closed');
       this.animal = result;
     });
+  }
+  getEmployee(){
+    this.service.getEmployeedata().subscribe((result)=>{
+    this.dataSource =  new MatTableDataSource(result);
+    this.dataSource.paginator = this.paginator; 
+    })
   }
 
 }
