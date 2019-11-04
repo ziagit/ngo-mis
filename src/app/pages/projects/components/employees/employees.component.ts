@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatTableDataSource } from '@angular/material';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatTableDataSource, MatPaginator } from '@angular/material';
 import { AddEmployeeComponent } from './dialog/add-employee/add-employee.component';
 import { RefreshService } from '../../services/refresh.service';
 import { EmployeesService } from './services/employees.service';
@@ -11,7 +11,7 @@ import { EmployeesService } from './services/employees.service';
 })
 export class EmployeesComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'fatherName', 'TIN',"job","education",
-  "gender","salary","country"];
+  "gender","salary","country","option"];
   dataSource;
 
 
@@ -20,9 +20,15 @@ export class EmployeesComponent implements OnInit {
   }
   animal:any;
 
-  constructor(private refresh:RefreshService,private dialog: MatDialog,private service:EmployeesService) { }
+  constructor(private refresh:RefreshService,private dialog: MatDialog,private service:EmployeesService) { 
+    this.getEmployee();
+  }
 
-  ngOnInit() {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  ngOnInit(){
+    this.refresh.getRefresh().subscribe((refresh)=>{
+      this.getEmployee();
+    });
   }
   
   openDialog(): void {
@@ -37,9 +43,9 @@ export class EmployeesComponent implements OnInit {
   }
   getEmployee(){
     this.service.getEmployeedata().subscribe((result)=>{
-    this.dataSource =  new MatTableDataSource(result);
-    this.dataSource.paginator = this.paginator; 
-    })
+        this.dataSource =  new MatTableDataSource(result);
+        this.dataSource.paginator = this.paginator; 
+    });
   }
 
 }
