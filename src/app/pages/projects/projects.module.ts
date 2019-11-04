@@ -12,6 +12,7 @@ import { ProjectService } from './services/project.service';
 import { RefreshService } from './services/refresh.service';
 import { EditProjectComponent } from './components/dialogs/edit-project/edit-project.component';
 import { DeleteProjectComponent } from './components/dialogs/delete-project/delete-project.component';
+import { MainContainerComponent } from './components/main-container/main-container.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DeleteProjectComponent } from './components/dialogs/delete-project/dele
      EmployeesComponent, 
      AddProjectComponent,
      EditProjectComponent,
-     DeleteProjectComponent
+     DeleteProjectComponent,
+     MainContainerComponent
     ],
   imports: [
     CommonModule,
@@ -33,7 +35,12 @@ import { DeleteProjectComponent } from './components/dialogs/delete-project/dele
     ProjectService,
     RefreshService
   ],
-  entryComponents:[AddProjectComponent,EditProjectComponent,DeleteProjectComponent]
+  entryComponents:[
+    AddProjectComponent,
+    EditProjectComponent,
+    DeleteProjectComponent,
+    MainContainerComponent
+  ]
   
 })
 export class ProjectsModule { }
