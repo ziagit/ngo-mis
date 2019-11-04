@@ -12,6 +12,10 @@ import { ProjectService } from './services/project.service';
 import { RefreshService } from './services/refresh.service';
 import { EditProjectComponent } from './components/dialogs/edit-project/edit-project.component';
 import { DeleteProjectComponent } from './components/dialogs/delete-project/delete-project.component';
+import { AddEmployeeComponent } from './components/employees/dialog/add-employee/add-employee.component';
+import { EditEmployeeComponent } from './components/employees/dialog/edit-employee/edit-employee.component';
+import { DeleteEmployeeComponent } from './components/employees/delete-employee/delete-employee.component';
+import { EmployeesService } from './services/employees.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,13 @@ import { DeleteProjectComponent } from './components/dialogs/delete-project/dele
      EmployeesComponent, 
      AddProjectComponent,
      EditProjectComponent,
-     DeleteProjectComponent
+     DeleteProjectComponent,
+     AddEmployeeComponent,
+     EditEmployeeComponent,
+     EmployeesComponent,
+     DeleteEmployeeComponent,
+     EditEmployeeComponent,
+     AddEmployeeComponent,
     ],
   imports: [
     CommonModule,
@@ -31,9 +41,17 @@ import { DeleteProjectComponent } from './components/dialogs/delete-project/dele
   ],
   providers:[
     ProjectService,
-    RefreshService
+    RefreshService,
+    EmployeesService
   ],
-  entryComponents:[AddProjectComponent,EditProjectComponent,DeleteProjectComponent]
+  entryComponents:[
+    AddProjectComponent,
+    EditProjectComponent,
+    DeleteProjectComponent,
+    EmployeesComponent,
+    EditEmployeeComponent,
+    DeleteEmployeeComponent,
+    AddEmployeeComponent]
   
 })
 export class ProjectsModule { }
