@@ -65,9 +65,13 @@ class BankController extends Controller
      * @param  \App\Mis\Bank  $bank
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bank $bank)
+    public function edit($id) 
     {
-        //
+       
+       $bank=Bank::find($id);
+   
+       return response()->json($bank);
+
     }
 
     /**
@@ -88,8 +92,12 @@ class BankController extends Controller
      * @param  \App\Mis\Bank  $bank
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bank $bank)
+    public function destroy( $id)
     {
-        //
+      $findId=Bank::find($id);
+      $deleteAccont= $findId->delete();
+      return response()->json($deleteAccont);
+
+        
     }
 }

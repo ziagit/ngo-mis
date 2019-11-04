@@ -1,3 +1,4 @@
+import { WebsiteComponent } from './website/website.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PagesComponent } from './pages/pages.component';
 
@@ -10,6 +11,10 @@ const appRoutes: Routes = [
 
   { 
     path: 'website', loadChildren: './website/website.module#WebsiteModule' 
+  },
+  {
+    path: 'webpage',
+    loadChildren: './website/website.module#WebsiteModule'
   },
   {
     path: '**',

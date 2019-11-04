@@ -26,9 +26,15 @@ import { BTypeDialogComponent } from './components/types/budjet-types/budjetType
 import { DelTypeDialogComponent } from './components/types/delegation-types/delegationTypeDialog/del-type-dialog/del-type-dialog.component';
 import { DiologEmpTypeComponent } from './components/types/employee-types/empTypeDialog/diolog-emp-type/diolog-emp-type.component';
 import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetTypeDialog/edit-budjet-type/edit-budjet-type.component';
+import { AddUserComponent } from './components/users-management/dialogs/add-user/add-user.component';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from './components/users-management/register/register.component';
+
 
 @NgModule({
   declarations: [
+    LoginComponent,
+    RegisterComponent,
     SettingsComponent,
     UsersManagementComponent,
     ProvincesComponent,
@@ -59,6 +65,7 @@ import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetT
     EditBudjetTypeComponent,
    
     
+    AddUserComponent,
   ],
   imports: [
     CommonModule,
@@ -73,7 +80,9 @@ import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetT
     DelTypeDialogComponent,
     DiologEmpTypeComponent,
     EditBudjetTypeComponent,
-    
-  ]
+    AddUserComponent
+  ],
+  providers: [],
+
 })
 export class SettingsModule { }
