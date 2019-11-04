@@ -14,12 +14,12 @@ export let MENU_ITEM = [
                 title: 'لست موسسات'
             },
             {
-                path: 'activities',
-                title: 'فعالیت ها'
-            },
-            {
                 path: 'delegations',
                 title: 'هيت ها'
+            },
+            {
+                path: 'activities',
+                title: 'عدم فعالیت موسسه'
             }
         ]
     },
@@ -52,24 +52,10 @@ export let MENU_ITEM = [
         icon: 'tags'
     },
     {
-        path: 'plan',
-        title: 'پلان',
-        icon: 'list-alt'
-    },
-    {
-        path: 'self-assessments',
-        title: 'خود ارزیابی',
+        path: 'assessments',
+        title: ' ارزیابی موسسه',
         icon: 'check',
-        children: [
-            {
-                path: 'internal-self-assessment',
-                title: 'خود ارزیابی داخلی',
-            },
-            {
-                path: 'external-self-assessment',
-                title: 'خود ارزیابی خارجی',
-            }
-        ]
+ 
     },
     {
         path: 'reports',
@@ -120,7 +106,7 @@ export let MENU_ITEM = [
         children:[
             {
                 path: 'home',
-                title: 'خانه'
+                title: 'صفحه اصلی'
             },
             {
                 path: 'about-us',
