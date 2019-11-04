@@ -43,7 +43,7 @@ export class EmployeesComponent implements OnInit {
   }
   getEmployee(){
     this.service.getEmployeedata().subscribe((result)=>{
-        this.dataSource =  new MatTableDataSource(result);
+        this.dataSource =  new MatTableDataSource();
         this.dataSource.paginator = this.paginator; 
     });
   }
