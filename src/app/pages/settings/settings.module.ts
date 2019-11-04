@@ -10,7 +10,6 @@ import { DistrictsComponent } from './components/loopups/districts/districts.com
 import { LookupsComponent } from './components/loopups/lookups.component';
 import { TypesComponent } from './components/types/types.component';
 import { BudjetTypesComponent } from './components/types/budjet-types/budjet-types.component';
-import { AssessmentTypesComponent } from './components/types/assessment-types/assessment-types.component';
 import { DelegationTypesComponent } from './components/types/delegation-types/delegation-types.component';
 import { EmployeeTypesComponent } from './components/types/employee-types/employee-types.component';
 import { EquipmentTypesComponent } from './components/types/equipment-types/equipment-types.component';
@@ -45,7 +44,6 @@ import { EditEmpTypeComponent } from './components/types/employee-types/empTypeD
     LookupsComponent,
     TypesComponent,
     BudjetTypesComponent,
-    AssessmentTypesComponent,
     DelegationTypesComponent,
     EmployeeTypesComponent,
     EquipmentTypesComponent,

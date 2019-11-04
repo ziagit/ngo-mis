@@ -14,7 +14,8 @@ const projecRoutes: Routes = [
             { path: 'project-list', component: ProjectsListComponent },
             { path: 'employees', component: EmployeesComponent},
             { path: 'equipments', component: EquipmentsComponent },
-            { path: 'vehicles', component: VehiclesComponent }
+            { path: 'vehicles', component: VehiclesComponent },
+            
 
         ]
     }

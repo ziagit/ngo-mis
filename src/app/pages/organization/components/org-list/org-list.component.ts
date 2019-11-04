@@ -4,6 +4,8 @@ import { AddOrganizationComponent } from '../../dialogs/add-organization/add-org
 import {MatPaginator} from '@angular/material/paginator';
 import { OrgListService } from './org-list.service';
 import { IOrganization } from './Organization';
+import { Router } from '@angular/router';
+import { StepperComponent } from '../stepper/stepper.component';
 
 
 
@@ -30,7 +32,7 @@ export class OrgListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private dialog: MatDialog, private orgService: OrgListService){
+  constructor(private dialog: MatDialog, private orgService: OrgListService, private router: Router){
     this.getOrg();
   }
 
@@ -51,13 +53,17 @@ export class OrgListComponent implements OnInit {
 
   getOrg(){
     this.orgService.getOrg().subscribe(res=>{
-       console.log('data', res);
-
      this.dataSource =  new MatTableDataSource(res);
      this.dataSource.paginator = this.paginator; 
-
     });
-
+  }
+  openStepper(){
+    const dialogRef=this.dialog.open(StepperComponent,{
+      width: '900px',
+    });
+    dialogRef.afterClosed().subscribe(res=>{
+      console.log("clodes dialog")
+    })
   }
 
  
