@@ -57,7 +57,6 @@ import { ShowEmployeeComponent } from './components/employees/dialog/show-employ
     DeleteEmployeeComponent,
     AddEmployeeComponent,
     MainContainerComponent,
-    ShowEmployeeComponent
   ]
 })
 export class ProjectsModule { }

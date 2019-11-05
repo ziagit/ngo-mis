@@ -21,6 +21,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {DpDatePickerModule} from 'ng2-jalali-date-picker'
 //material modules
 import {
   MatGridListModule,
