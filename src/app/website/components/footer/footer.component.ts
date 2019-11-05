@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { LangServiceService } from './../lang-service.service';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-
-  constructor() { }
+  @Input() myVar: string;
+  constructor(private langService: LangServiceService) {
+      console.log("inside footer", this.myVar)
+   }
 
   ngOnInit() {
   }
