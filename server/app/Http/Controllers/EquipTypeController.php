@@ -37,9 +37,9 @@ class EquipTypeController extends Controller
     public function store(Request $request)
     {
         $equiptType = new EquipType();
-        $equipType->equipType= $request->equipType;
-        $equipType->save();
-        return response()->json('successfully inseted');
+        $equiptType->equipType = $request->input('equipType');
+        $eqptDeleted = $equiptType->save();
+        return response()->json('successfully inserted');
     }
 
     /**
@@ -71,9 +71,12 @@ class EquipTypeController extends Controller
      * @param  \App\Mis\EquipType  $equipType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EquipType $equipType)
+    public function update(Request $request, $equipType)
     {
-        //
+        $editEqType = EquipType::find($equipType);
+        $editEqType->equipType = $request->input('equipType');
+        $editEqType->save();
+        return response()->json('successfully updated');
     }
 
     /**

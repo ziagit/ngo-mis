@@ -71,9 +71,12 @@ class DelegationTypeController extends Controller
      * @param  \App\Mis\DelegationType  $delegationType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DelegationType $delegationType)
+    public function update(Request $request, $delegationType)
     {
-        //
+        $updateDElType = DelegationType::find($delegationType);
+        $updateDElType->delegationType = $request->delegationType;
+        $updateDElType->save();
+        return response()->json('successfully updated');
     }
 
     /**
@@ -86,6 +89,6 @@ class DelegationTypeController extends Controller
     {
        $deletDlgType = DelegationType::find($delegationType);
        $deletedDLgType = $deletDlgType->delete();
-       return response()->json('successfully deleted'+ $deletedDLgType);
+       return response()->json('successfully deleted' . $deletedDLgType);
     }
 }

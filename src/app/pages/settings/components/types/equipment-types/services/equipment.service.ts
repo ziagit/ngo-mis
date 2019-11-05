@@ -19,7 +19,13 @@ export class EquipmentService {
   }
 
   addEquiptType(data){
-    return this.http.post<equipment[]>('http://127.0.0.1:8000/api/equiptypes',data)
+    return this.http.post<equipment[]>('http://127.0.0.1:8000/api/equiptypes/',data);
+  }
+
+  updateEquiptType(data, id)
+  {
+    console.log(data,id);
+    return this.http.put('http://127.0.0.1:8000/api/equiptypes/'+id,data);
   }
 
 }

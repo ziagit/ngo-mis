@@ -25,7 +25,10 @@
       <!-- Weight Column -->
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef> Delete </th>
-        <td mat-cell *matCellDef="let element" class="btn btn-default btn-md"><i class="fa fa-trash" (click)='deleteEquiptType(element.id)'></i></td>
+        <td mat-cell *matCellDef="let element">
+          <span class="btn btn-danger" (click)='deleteEquiptType(element.id)'><i class="fa fa-trash" ></i></span>
+          <span class="btn btn-success" (click)= 'editEquipType(element)'><i class="fa fa-edit" ></i></span>
+        </td>
       </ng-container>
     
       
