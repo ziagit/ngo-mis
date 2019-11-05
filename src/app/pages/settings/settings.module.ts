@@ -30,6 +30,8 @@ import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from './components/users-management/register/register.component';
 import { EditDelTypeDiologComponent } from './components/types/delegation-types/delegationTypeDialog/edit-del-type-diolog/edit-del-type-diolog.component';
 import { EditEmpTypeComponent } from './components/types/employee-types/empTypeDialog/edit-emp-type/edit-emp-type.component';
+import { EditEquiptTypeComponent } from './components/types/equipment-types/edit-equipt-type/edit-equipt-type.component';
+import { EditOrgTypeDiologComponent } from './components/types/organization-types/dialogType/edit-org-type-diolog/edit-org-type-diolog.component';
 
 
 @NgModule({
@@ -72,6 +74,12 @@ import { EditEmpTypeComponent } from './components/types/employee-types/empTypeD
    
     
     EditEmpTypeComponent,
+   
+    
+    EditEquiptTypeComponent,
+   
+    
+    EditOrgTypeDiologComponent,
   ],
   imports: [
     CommonModule,
@@ -89,6 +97,8 @@ import { EditEmpTypeComponent } from './components/types/employee-types/empTypeD
     EditBudjetTypeComponent,
     EditDelTypeDiologComponent,
     EditEmpTypeComponent,
+    EditOrgTypeDiologComponent,
+    EditEquiptTypeComponent,
     
     
   ],

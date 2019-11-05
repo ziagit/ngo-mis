@@ -71,9 +71,13 @@ class EmployeeTypeController extends Controller
      * @param  \App\Mis\EmployeeType  $employeeType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EmployeeType $employeeType)
+    public function update(Request $request, $employeeType)
     {
-        //
+        $updateempType = EmployeeType::find($employeeType);
+        $updateempType->employeeType = $request->input('employeeType');
+        $updateempType->save();
+        return response()->json('successfully updated');
+
     }
 
     /**

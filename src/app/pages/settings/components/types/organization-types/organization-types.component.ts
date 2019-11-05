@@ -5,6 +5,7 @@ import { OrganizationService } from './service/organizationType.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddOrganizationTypeComponent } from './dialogType/add-organization-type/add-organization-type.component';
 import { RefreshTypeService } from '../services/refresh-type.service';
+import { EditOrgTypeDiologComponent } from './dialogType/edit-org-type-diolog/edit-org-type-diolog.component';
 
 
 
@@ -37,14 +38,12 @@ export class OrganizationTypesComponent implements OnInit {
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+
   ngOnInit() {
     this.getOrgType();
 
   
   }
-
-
- 
 
   getOrgType()
   {
@@ -72,6 +71,17 @@ export class OrganizationTypesComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
+    });
+  }
+
+  editOrganizationType(data): void {
+    const dialogRef = this.dialog.open(EditOrgTypeDiologComponent, {
+      width: '400px',
+      data: data,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 }

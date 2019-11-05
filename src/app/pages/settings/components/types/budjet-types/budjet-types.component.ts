@@ -65,11 +65,12 @@ export class BudjetTypesComponent implements OnInit {
   }
 
      // dialog functions for edit--------------------------->
-     editDialog(editData) {
+     editDialogBudjet(data) {
       const dialogRef = this.dialog.open(EditBudjetTypeComponent, {
         width: '400px',
-        data: editData,
-      });
+        data: data, 
+      }
+      );
   
       dialogRef.afterClosed().subscribe(result => {
         console.log('The dialog was closed');
