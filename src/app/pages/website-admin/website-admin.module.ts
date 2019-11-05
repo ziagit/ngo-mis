@@ -20,6 +20,7 @@ import { VideosComponent } from './components/news/videos/videos.component';
 import { GalleriesComponent } from './components/news/galleries/galleries.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddressComponent } from './components/contact-us/address/address.component';
+import { AboutAddComponent } from './components/about-us/component/about-add/about-add.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,10 @@ import { AddressComponent } from './components/contact-us/address/address.compon
     NewsComponent,
     HomeComponent,
     AddressComponent,
+    AboutAddComponent,
+  ],
+  entryComponents:[
+    AboutAddComponent
   ],
   imports: [
     CommonModule,
