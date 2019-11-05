@@ -7,6 +7,7 @@ import  { HttpClient  } from '@angular/common/http';
 import { BankAccountsService } from './bank-accounts.service';
 import { IBankAccount } from "./BankAccount";
 import { BankEditComponent } from './bank-edit/bank-edit.component';
+import { DeleteAccountComponent } from './dialogs/delete-account/delete-account.component';
 
 
 const ELEMENT_DATA: IBankAccount[] = [
@@ -33,7 +34,11 @@ export class BankAccountsComponent implements OnInit {
    }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngOnInit(){}
+  ngOnInit(){
+    this.service.getRefresh().subscribe(result=>{
+      this.getAccount();
+    });
+  }
  
   addAccount(): void {
     const dialogRef = this.dialog.open(AddAccountComponent, {
@@ -52,17 +57,22 @@ getAccount(){
   });
 }
 
-deleteAccount(id)
-{
-  this.service.deleteAccountData(id).subscribe(res=>{
-    console.log("deleted succefuly:"+res);
-  });
-}
+
 editAccount(data): void
 {
   const dialogRef = this.dialog.open(BankEditComponent, {
     width: '800px',
     data: data
   });
+}
+deleteAccount(id){
+  const dialogRef = this.dialog.open(DeleteAccountComponent, {
+    width: '400px',
+    data:id
+  });
+ 
+ 
+
+  
 }
 }

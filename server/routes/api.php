@@ -35,7 +35,14 @@ Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
 
 
-Route::resource('budjet-types','BudjetTypeController');
 
 Route::resource('bankaccounts', "BankController");
+Route::resource('orgtypes', 'OrgTypeController');
+Route::resource('equiptypes', 'EquipTypeController');
+Route::resource('delegationTypes', 'DelegationTypeController');
+Route::resource('employeeTypes', 'EmployeeTypeController');
+Route::resource('budjetTypes', 'BudjetTypeController');
+
 Route::get("listrelationproject","ProjectController@listrelationproject");
+Route::get("employeerelation","EmployeeController@employeerelation");
+

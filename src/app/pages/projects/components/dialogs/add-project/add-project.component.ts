@@ -49,7 +49,6 @@ export class AddProjectComponent implements OnInit {
     if(this.orgForm.valid){
     this.service.addProject(data.value).subscribe((result)=>{
       this.refresh.setRefresh("refresh");
-      
     this.dialog.closeAll();
     });
   }
