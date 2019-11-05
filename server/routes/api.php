@@ -19,10 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource("projects","ProjectController");
-
-
 Route::resource("organizations","OrganizationController");
-Route::resource("Orgassociations","OrgassociationController");
+Route::resource("orgassociations","OrgassociationController");
 Route::resource("equipments","EqiupmentController");
 Route::resource("vehicles","VehicleController");
 Route::resource("employees","EmployeeController");
@@ -38,9 +36,6 @@ Route::resource("banks","BankController");
 Route::resource("inactivies","InactivityController");
 Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
-
-
 Route::resource('budjet-types','BudjetTypeController');
-
 Route::resource('bankaccounts', "BankController");
 Route::get("listrelationproject","ProjectController@listrelationp");
