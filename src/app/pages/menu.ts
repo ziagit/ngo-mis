@@ -38,7 +38,7 @@ export let MENU_ITEM = [
             },
             {
                 path: 'equipments',
-                title: 'وسایل'
+                title: 'تجهیزات'
             },
             {
                 path: 'vehicles',
@@ -72,7 +72,7 @@ export let MENU_ITEM = [
             },
             {
                 path: 'equipments',
-                title: 'وسایل'
+                title: 'تجهیزات'
             },
             {
                 path: 'six-months-report',
