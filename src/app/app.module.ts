@@ -31,6 +31,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   declarations: [
     AppComponent,
+ 
   ],
   providers:[
     TranslateStore,
