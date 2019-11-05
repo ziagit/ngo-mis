@@ -44,4 +44,5 @@ Route::resource('employeeTypes', 'EmployeeTypeController');
 Route::resource('budjetTypes', 'BudjetTypeController');
 
 Route::get("listrelationproject","ProjectController@listrelationproject");
+Route::get("getorganizationList","organizations@getorganizationList");
 
