@@ -14,8 +14,8 @@ class BudjetTypeController extends Controller
      */
     public function index()
     {
-        $budjet = BudjetType::all();
-        return response()->json($budjet);
+        $budjetType = BudjetType::all();
+        return response()->json($budjetType);
     }
 
     /**
@@ -36,7 +36,11 @@ class BudjetTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $budjetType = new BudjetType();
+        $budjetType->type = $request->input('type');
+         $budjetType->save();
+         return response()->json('successfully inserted');
     }
 
     /**
@@ -58,7 +62,8 @@ class BudjetTypeController extends Controller
      */
     public function edit(BudjetType $budjetType)
     {
-        //
+        $editBudjet = BudjetType::find($budjetType);
+        return response()->json($editBudjet);
     }
 
     /**
@@ -68,9 +73,13 @@ class BudjetTypeController extends Controller
      * @param  \App\Mis\BudjetType  $budjetType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BudjetType $budjetType)
+    public function update(Request $request, $budjetType)
     {
-        //
+        $BudjetType = BudjetType::find($budjetType);
+        $BudjetType->type = $request->input('type');
+        $BudjetType->save();
+        return response()->json('successfully updated');
+
     }
 
     /**
@@ -79,8 +88,10 @@ class BudjetTypeController extends Controller
      * @param  \App\Mis\BudjetType  $budjetType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BudjetType $budjetType)
+    public function destroy($budjetType)
     {
-        //
+        $deleteBudjetType = BudjetType::find($budjetType);
+        $deletedBjType = $deleteBudjetType->delete();
+        return response()->json($deletedBjType);
     }
 }

@@ -1,3 +1,4 @@
+import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,9 +22,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import {TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
-
 //material modules
 import {
+  MatGridListModule,
+  MatExpansionModule,
   MatPaginatorModule,
   MatTableModule,
   MatButtonModule,
@@ -45,8 +47,9 @@ import {
   MatSnackBarModule,
   MatTooltipModule,
   MatSortModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material';
-
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
@@ -54,6 +57,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatGridListModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,
     MatMenuModule,
@@ -107,6 +114,11 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatGridListModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    DpDatePickerModule,
+    MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,
     MatMenuModule,

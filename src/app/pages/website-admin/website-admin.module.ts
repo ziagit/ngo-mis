@@ -23,6 +23,7 @@ import { AddressComponent } from './components/contact-us/address/address.compon
 import { AddNewsTypesComponent } from './components/news/news-types/dialogs/add-news-types/add-news-types.component';
 import { EditNewsTypesComponent } from './components/news/news-types/dialogs/edit-news-types/edit-news-types.component';
 import { DeleteNewsTypesComponent } from './components/news/news-types/dialogs/delete-news-types/delete-news-types.component';
+import { AboutAddComponent } from './components/about-us/component/about-add/about-add.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,10 @@ import { DeleteNewsTypesComponent } from './components/news/news-types/dialogs/d
     AddNewsTypesComponent,
     EditNewsTypesComponent,
     DeleteNewsTypesComponent,
+    AboutAddComponent,
+  ],
+  entryComponents:[
+    AboutAddComponent
   ],
   imports: [
     CommonModule,

@@ -14,7 +14,8 @@ class OrgTypeController extends Controller
      */
     public function index()
     {
-        //
+        $organization = OrgType::all();
+        return response()->json($organization);
     }
 
     /**
@@ -35,7 +36,10 @@ class OrgTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addOrgtype = new OrgType();
+        $addOrgtype->orgType = $request->input('orgType');
+        $addOrgtype->save();
+        return response()->json('successfull inserted');
     }
 
     /**
@@ -67,9 +71,12 @@ class OrgTypeController extends Controller
      * @param  \App\Mis\OrgType  $orgType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OrgType $orgType)
+    public function update(Request $request, $orgType)
     {
-        //
+        $orgType = OrgType::find($orgType);
+        $orgType->orgType = $request->input('orgType');
+        $orgType->save();
+        return response()->json('successfully updated');
     }
 
     /**
@@ -78,8 +85,11 @@ class OrgTypeController extends Controller
      * @param  \App\Mis\OrgType  $orgType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OrgType $orgType)
+    public function destroy($orgType)
     {
-        //
+        $orgType = Orgtype::find($orgType);
+        $result = $orgType->delete();
+        return response()->json('successfully deleted', + $result);
+
     }
 }

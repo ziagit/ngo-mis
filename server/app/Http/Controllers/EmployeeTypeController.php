@@ -14,7 +14,8 @@ class EmployeeTypeController extends Controller
      */
     public function index()
     {
-        //
+        $employeeType = EmployeeType::all();
+        return response()->json($employeeType);
     }
 
     /**
@@ -35,7 +36,10 @@ class EmployeeTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addEmpType = new EmployeeType();
+        $addEmpType->employeeType = $request->input('employeeType');
+        $addEmpType->save();
+        return response()->json('successfully inserted');
     }
 
     /**
@@ -67,9 +71,13 @@ class EmployeeTypeController extends Controller
      * @param  \App\Mis\EmployeeType  $employeeType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EmployeeType $employeeType)
+    public function update(Request $request, $employeeType)
     {
-        //
+        $updateempType = EmployeeType::find($employeeType);
+        $updateempType->employeeType = $request->input('employeeType');
+        $updateempType->save();
+        return response()->json('successfully updated');
+
     }
 
     /**
@@ -78,8 +86,10 @@ class EmployeeTypeController extends Controller
      * @param  \App\Mis\EmployeeType  $employeeType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EmployeeType $employeeType)
+    public function destroy($employeeType)
     {
-        //
+        $empType = EmployeeType::find($employeeType);
+        $deletedEmp = $empType->delete();
+        return response()->json($deletedEmp);
     }
 }

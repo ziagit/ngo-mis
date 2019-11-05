@@ -14,7 +14,8 @@ class DelegationTypeController extends Controller
      */
     public function index()
     {
-        //
+        $delegationType = DelegationType::all();
+        return response()->json($delegationType);
     }
 
     /**
@@ -35,7 +36,10 @@ class DelegationTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addDelegation = new DelegationType();
+        $addDelegation->delegationType = $request->input('delegationType');
+        $addDelegation->save();
+        return response()->json('inserted successfully');
     }
 
     /**
@@ -67,9 +71,12 @@ class DelegationTypeController extends Controller
      * @param  \App\Mis\DelegationType  $delegationType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DelegationType $delegationType)
+    public function update(Request $request, $delegationType)
     {
-        //
+        $updateDElType = DelegationType::find($delegationType);
+        $updateDElType->delegationType = $request->delegationType;
+        $updateDElType->save();
+        return response()->json('successfully updated');
     }
 
     /**
@@ -78,8 +85,10 @@ class DelegationTypeController extends Controller
      * @param  \App\Mis\DelegationType  $delegationType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DelegationType $delegationType)
+    public function destroy($delegationType)
     {
-        //
+       $deletDlgType = DelegationType::find($delegationType);
+       $deletedDLgType = $deletDlgType->delete();
+       return response()->json('successfully deleted' . $deletedDLgType);
     }
 }

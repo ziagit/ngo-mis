@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mis\Employee;
 use Illuminate\Http\Request;
+use App\Mis\Province,App\Mis\EmployeeType,App\Mis\Organization;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employees = Employee::all("id","name","fatherName","TIN","education","gender","salary","country");
+        return response()->json($employees);
     }
 
     /**
@@ -35,7 +37,9 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Employee::create($input);
+        return response()->json("successfully inserted");
     }
 
     /**
@@ -81,5 +85,13 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
+    }
+    // Funtion for show table thats have ralation with employee
+    public function employeerelation(){
+        $province = Province::all();
+        $employeetype = Employee::all();
+        $organization = Organization::all();
+        $arr = [$province,$employeetype,$organization];
+        return response()->json($arr);
     }
 }
