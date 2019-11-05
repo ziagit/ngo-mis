@@ -37,7 +37,9 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Employee::create($input);
+        return response()->json("successfully inserted");
     }
 
     /**

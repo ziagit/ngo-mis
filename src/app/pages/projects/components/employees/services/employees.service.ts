@@ -21,4 +21,7 @@ export class EmployeesService {
   getEmployeedata(){
     return this.http.get(this.server+"employees");
   }
+  addEmployeedata(data){
+    return this.http.post(this.server+"employees",data);
+  }
 }
