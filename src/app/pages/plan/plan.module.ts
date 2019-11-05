@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlanComponent } from './plan.component';
 import { routing } from './plan.routing';
 import { PlanService } from './plan.service';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { PlanService } from './plan.service';
   ],
   imports: [
     CommonModule,
-    routing
+    routing,
+    SharedModule
   ],
   providers:[
     PlanService
