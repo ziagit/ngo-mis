@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { ActivatedRoute } from '@angular/router';
+import { EmployeesService } from '../../services/employees.service';
 
 @Component({
   selector: 'app-show-employee',
@@ -7,8 +8,12 @@ import { MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./show-employee.component.scss']
 })
 export class ShowEmployeeComponent implements OnInit {
+  showresult:any
+  constructor(private route: ActivatedRoute,private emservice:EmployeesService) { 
+    emservice.showAllemployeeData(route.snapshot.paramMap.get("id")).subscribe((result)=>{
+      this.showresult= result;
+    })
 
-  constructor() { 
   }
 
   ngOnInit() {
