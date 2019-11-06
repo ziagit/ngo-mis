@@ -14,7 +14,9 @@ import { ActivitiesComponent } from './components/activities/activities.componen
 import { InActivitiesComponent } from './components/in-activities/in-activities.component';
 import { DelegationsComponent } from './components/delegations/delegations.component';
 import { TabActivitiesComponent } from './components/tab-activities/tab-activities.component';
-import { StepperComponent } from './components/stepper/stepper.component';
+import { AddDelegationsComponent } from './dialogs/add-delegations/add-delegations.component';
+import { DeleteOrganizationComponent } from './dialogs/delete-organization/delete-organization.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { StepperComponent } from './components/stepper/stepper.component';
     InActivitiesComponent,
     DelegationsComponent,
     TabActivitiesComponent,
-    StepperComponent,
+    AddDelegationsComponent,
+    DeleteOrganizationComponent
+    
   ],
   imports: [
     ReactiveFormsModule,
@@ -40,7 +44,7 @@ import { StepperComponent } from './components/stepper/stepper.component';
   ],
   entryComponents:[
     AddOrganizationComponent,
-    StepperComponent
+    DeleteOrganizationComponent
   ]
 })
 export class OrganizationModule { }

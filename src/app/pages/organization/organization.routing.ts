@@ -3,7 +3,6 @@ import { OrganizationComponent } from './organization.component';
 import { OrgListComponent } from './components/org-list/org-list.component';
 import { DelegationsComponent } from './components/delegations/delegations.component';
 import { TabActivitiesComponent } from './components/tab-activities/tab-activities.component';
-import { StepperComponent } from './components/stepper/stepper.component';
 
 const orgRoutes: Routes = [
     {
@@ -14,7 +13,6 @@ const orgRoutes: Routes = [
             {path: 'org-list', component: OrgListComponent},
             {path: 'activities', component: TabActivitiesComponent},
             {path: 'delegations', component: DelegationsComponent},
-            {path: 'stepper', component: StepperComponent}
         ]
     }
 ];
