@@ -39,3 +39,22 @@ Route::resource("projects","ProjectController");
 Route::resource('budjet-types','BudjetTypeController');
 Route::resource('bankaccounts', "BankController");
 Route::get("listrelationproject","ProjectController@listrelationp");
+
+
+/*
+ Website route
+ */
+
+Route::resource('aboutuses', "AboutusesController");
+Route::resource('news', "NewsController");
+Route::resource('slideshows', "SlideshowsController");
+Route::resource('galleries', "GalleriesController");
+Route::resource('videos', "VideosController");
+Route::resource('organizationlaws', "organizationlawsController");
+Route::resource('jobs', "JobsController");
+Route::resource('contact_us', "Contact_usController");
+Route::resource('phones', "PhonesController");
+Route::resource('guidesfor_org_regs', "Guidesfor_org_regsController");
+Route::resource('reasonforregs', "ReasonforregsController");
+Route::resource('bio_graphies', "Bio_graphiesController");
+Route::resource('newstypes', "NewstypesController");
