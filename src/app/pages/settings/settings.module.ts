@@ -26,7 +26,6 @@ import { DelTypeDialogComponent } from './components/types/delegation-types/dele
 import { DiologEmpTypeComponent } from './components/types/employee-types/empTypeDialog/diolog-emp-type/diolog-emp-type.component';
 import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetTypeDialog/edit-budjet-type/edit-budjet-type.component';
 import { AddUserComponent } from './components/users-management/dialogs/add-user/add-user.component';
-import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from './components/users-management/register/register.component';
 import { EditDelTypeDiologComponent } from './components/types/delegation-types/delegationTypeDialog/edit-del-type-diolog/edit-del-type-diolog.component';
 import { EditEmpTypeComponent } from './components/types/employee-types/empTypeDialog/edit-emp-type/edit-emp-type.component';
@@ -36,7 +35,6 @@ import { EditOrgTypeDiologComponent } from './components/types/organization-type
 
 @NgModule({
   declarations: [
-    LoginComponent,
     RegisterComponent,
     SettingsComponent,
     UsersManagementComponent,
@@ -55,30 +53,15 @@ import { EditOrgTypeDiologComponent } from './components/types/organization-type
     RelatedTargetsComponent,
     AddTypesComponent,
     AddOrganizationTypeComponent,
-   
     AddEquiptTypeComponent,
-   
     BTypeDialogComponent,
-   
     DelTypeDialogComponent,
-   
     DiologEmpTypeComponent,
-   
     EditBudjetTypeComponent,
-   
-    
-    AddUserComponent,
-   
-    
+    AddUserComponent, 
     EditDelTypeDiologComponent,
-   
-    
     EditEmpTypeComponent,
-   
-    
     EditEquiptTypeComponent,
-   
-    
     EditOrgTypeDiologComponent,
   ],
   imports: [
@@ -86,6 +69,7 @@ import { EditOrgTypeDiologComponent } from './components/types/organization-type
     SharedModule,
     settingsRouting
   ],
+
   entryComponents:[
     AddOrganizationTypeComponent,
     AddEquiptTypeComponent,
