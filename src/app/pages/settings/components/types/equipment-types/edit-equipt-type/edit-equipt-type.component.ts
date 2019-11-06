@@ -36,7 +36,7 @@ export class EditEquiptTypeComponent implements OnInit {
 
   editEquiptType(){
     this.editEqpType.updateEquiptType(this.orgForm.value,this.data.id).subscribe(res=>{
-      this.refresh.setReshresh('refresh');
+      this.refresh.setReshresh("refresh");
       this.dialog.closeAll();
 
     })

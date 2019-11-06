@@ -1,24 +1,21 @@
 <div class="example-container">
 
-  <form [formGroup]="accountForm" (ngSubmit)="editAccount()">
+  <form [formGroup]="accountForm" (ngSubmit)="updateAccount(myData.id)">
     <mat-form-field>
       <mat-select  formControlName="organization_id">
-        <mat-option  value="option">Option</mat-option>
-        <mat-option value="88" ></mat-option>
+        <mat-option  value="{{org.id}}" *ngFor = "let org of organization_id ">{{org.nameDa}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
       <mat-select  formControlName="project_id">
-        <mat-option value="option">Option</mat-option>
-        <mat-option value="88"></mat-option>
+        <mat-option value="{{pro.id}}" *ngFor = "let pro of project_id ">{{pro.projectName}}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field>
       <mat-select  formControlName="keyspersonnel_id">
-        <mat-option value="option">Option</mat-option>
-        <mat-option value="88">88</mat-option>
+        <mat-option value="{{keysper.id}}" *ngFor = "let keysper of keyspersonnel_id ">{{keysper.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -32,9 +29,8 @@
 
     <mat-form-field>
       <mat-select  formControlName="currency">
-        <mat-option value="option">Option</mat-option>
+        <mat-option value="{{myData.currency}}">{{myData.currency}}</mat-option>
         <mat-option value="افغانی">افغانی</mat-option>
-        <mat-option value="دالر">دالر</mat-option>
       </mat-select>
     </mat-form-field>
 
