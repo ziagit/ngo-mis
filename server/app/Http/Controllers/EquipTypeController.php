@@ -14,7 +14,8 @@ class EquipTypeController extends Controller
      */
     public function index()
     {
-        //
+        $equiptype = EquipType::all();
+        return response()->json($equiptype);
     }
 
     /**
@@ -35,7 +36,10 @@ class EquipTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $equiptType = new EquipType();
+        $equipType->equipType= $request->equipType;
+        $equipType->save();
+        return response()->json('successfully inseted');
     }
 
     /**
@@ -78,8 +82,11 @@ class EquipTypeController extends Controller
      * @param  \App\Mis\EquipType  $equipType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EquipType $equipType)
+    public function destroy($equipType)
     {
-        //
+       $deleteEquipType = EquipType::find($equipType);
+        $deletedEquipType = $deleteEquipType->delete();
+        return response()->json($deletedEquipType);
+       
     }
 }

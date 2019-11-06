@@ -41,7 +41,7 @@ class MonitorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Monitor  $monitor
+
      * @return \Illuminate\Http\Response
      */
     public function show(Monitor $monitor)
@@ -52,7 +52,6 @@ class MonitorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
     public function edit(Monitor $monitor)
@@ -64,7 +63,6 @@ class MonitorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Monitor $monitor)
@@ -75,7 +73,6 @@ class MonitorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Monitor  $monitor
      * @return \Illuminate\Http\Response
      */
     public function destroy(Monitor $monitor)

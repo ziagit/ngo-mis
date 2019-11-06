@@ -18,12 +18,13 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 
-import {TranslateLoader, TranslateModule, TranslateStore } from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 //material modules
 import {
+  MatExpansionModule,
   MatPaginatorModule,
   MatTableModule,
   MatButtonModule,
@@ -32,7 +33,19 @@ import {
   MatSelectModule,
   MatInputModule,
   MatTabsModule,
-  MatCardModule
+  MatCardModule,
+  MatCheckboxModule,
+  MatRadioModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatStepperModule,
+  MatBadgeModule,
+  MatChipsModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatTooltipModule,
+  MatSortModule,
 } from '@angular/material';
 
 
@@ -42,6 +55,19 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatStepperModule,
+    MatBadgeModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatSortModule,
     ReactiveFormsModule,
     FormsModule,
     MatPaginatorModule,
@@ -83,6 +109,19 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatStepperModule,
+    MatBadgeModule,
+    MatChipsModule,
+    MatIconModule,
+    MatProgressSpinnerModule,
+    MatSnackBarModule,
+    MatTooltipModule,
+    MatSortModule,
     ReactiveFormsModule,
     FormsModule,
     MatPaginatorModule,

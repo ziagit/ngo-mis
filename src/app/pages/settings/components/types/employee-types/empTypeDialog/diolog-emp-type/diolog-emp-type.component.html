@@ -1,0 +1,14 @@
+
+        <form [formGroup]="orgForm" (ngSubmit)="insertEmpType(orgForm)">
+          
+          <div class="form-group">
+              <mat-form-field>
+                  <input matInput placeholder="نام کارمند را وارد کنید!!!. :" formControlName="employeeType">
+                </mat-form-field> 
+          </div>
+
+         <div class="form-group">
+            <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+         </div>
+        </form>
+      

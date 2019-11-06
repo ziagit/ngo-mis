@@ -10,7 +10,6 @@ import { DistrictsComponent } from './components/loopups/districts/districts.com
 import { LookupsComponent } from './components/loopups/lookups.component';
 import { TypesComponent } from './components/types/types.component';
 import { BudjetTypesComponent } from './components/types/budjet-types/budjet-types.component';
-import { AssessmentTypesComponent } from './components/types/assessment-types/assessment-types.component';
 import { DelegationTypesComponent } from './components/types/delegation-types/delegation-types.component';
 import { EmployeeTypesComponent } from './components/types/employee-types/employee-types.component';
 import { EquipmentTypesComponent } from './components/types/equipment-types/equipment-types.component';
@@ -30,10 +29,25 @@ import { EditSectoreComponent } from './components/loopups/sectors/dialogs/edit-
 import { EditRelatedGoalComponent } from './components/loopups/related-goals/dialogs/edit-related-goal/edit-related-goal.component';
 import { EditRelatedTargetComponent } from './components/loopups/related-targets/dialoags/edit-related-target/edit-related-target.component';
 
+import { AddTypesComponent } from './components/types/dialogs/add-types/add-types.component';
+import { AddOrganizationTypeComponent } from './components/types/organization-types/dialogType/add-organization-type/add-organization-type.component';
+import { AddEquiptTypeComponent } from './components/types/equipment-types/equiptTypeDialog/add-equipt-type/add-equipt-type.component';
+import { BTypeDialogComponent } from './components/types/budjet-types/budjetTypeDialog/b-type-dialog/b-type-dialog.component';
+import { DelTypeDialogComponent } from './components/types/delegation-types/delegationTypeDialog/del-type-dialog/del-type-dialog.component';
+import { DiologEmpTypeComponent } from './components/types/employee-types/empTypeDialog/diolog-emp-type/diolog-emp-type.component';
+import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetTypeDialog/edit-budjet-type/edit-budjet-type.component';
+import { AddUserComponent } from './components/users-management/dialogs/add-user/add-user.component';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from './components/users-management/register/register.component';
+import { EditDelTypeDiologComponent } from './components/types/delegation-types/delegationTypeDialog/edit-del-type-diolog/edit-del-type-diolog.component';
+import { EditEmpTypeComponent } from './components/types/employee-types/empTypeDialog/edit-emp-type/edit-emp-type.component';
+
 
 
 @NgModule({
   declarations: [
+    LoginComponent,
+    RegisterComponent,
     SettingsComponent,
     UsersManagementComponent,
     ProvincesComponent,
@@ -42,7 +56,6 @@ import { EditRelatedTargetComponent } from './components/loopups/related-targets
     LookupsComponent,
     TypesComponent,
     BudjetTypesComponent,
-    AssessmentTypesComponent,
     DelegationTypesComponent,
     EmployeeTypesComponent,
     EquipmentTypesComponent,
@@ -60,6 +73,15 @@ import { EditRelatedTargetComponent } from './components/loopups/related-targets
     EditSectoreComponent,
     EditRelatedGoalComponent,
     EditRelatedTargetComponent,
+    AddTypesComponent,
+    AddOrganizationTypeComponent,
+    AddEquiptTypeComponent,
+    BTypeDialogComponent,
+    DelTypeDialogComponent,
+    DiologEmpTypeComponent,
+    EditBudjetTypeComponent,
+    AddUserComponent,
+    EditDelTypeDiologComponent,
   ],
   
   imports: [
@@ -83,4 +105,7 @@ import { EditRelatedTargetComponent } from './components/loopups/related-targets
   ]
 
 })
-export class SettingsModule { }
+export class SettingsModule {
+ 
+
+ }

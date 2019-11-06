@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string("projectName");
             $table->string("projectPrice");
             $table->unsignedBigInteger("budjet_id");
-            $table->unsignedBigInteger("govDirectorate");
+            $table->string("govDirectorate");
             $table->unsignedBigInteger("province_id");
             $table->unsignedBigInteger("district_id");
             $table->string("projectStartDate");

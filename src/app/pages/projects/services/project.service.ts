@@ -16,8 +16,23 @@ export class ProjectService {
     this.headers.append("Component-Type","application/json");
     this.headers.append("X-Requested-With","XMLHttpRequest");
   }
+  addProject(data):Observable<Project>{
+    return this.http.post<Project>(this.server+"projects",data);
+  }
   getProjectdata():Observable<Project[]>{
     return this.http.get<Project[]>(this.server+"projects");
   }
+  updateProjectdata(data,id):Observable<Project>{
+    return this.http.patch<Project>(this.server+"projects/"+id,data);
+  }
+  // for delete project
+  deleteProjectdata(id):Observable<Project>{
+    return this.http.delete<Project>(this.server+"projects/"+id);
+  }
+  // for select relation tables
+  selectTables():Observable<Project>{
+    return this.http.get<Project>(this.server+"listrelationproject");
+  }
+
 
 }
