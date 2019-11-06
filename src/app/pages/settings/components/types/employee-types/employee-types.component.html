@@ -24,8 +24,8 @@
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef> Delete </th>
     <td mat-cell *matCellDef="let element">
-      <span class="btn btn-danger"><i class="fa fa-trash" (click)="deleteEmp(element.id)"></i></span>
-      <span class="btn btn-success"><i class="fa fa-trash"><i class="fa fa-trash" (click)="deleteEmp(element.id)"></i></i></span>
+      <span class="btn btn-danger" (click)="deleteEmp(element.id)"><i class="fa fa-trash" ></i></span>
+      <span class="btn btn-success" (click)="editEmpType(element)"><i class="fa fa-edit" ></i></span>
     </td>
   </ng-container>
 

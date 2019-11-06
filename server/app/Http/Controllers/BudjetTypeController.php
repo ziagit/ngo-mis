@@ -73,9 +73,13 @@ class BudjetTypeController extends Controller
      * @param  \App\Mis\BudjetType  $budjetType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BudjetType $budjetType)
+    public function update(Request $request, $budjetType)
     {
-        //
+        $BudjetType = BudjetType::find($budjetType);
+        $BudjetType->type = $request->input('type');
+        $BudjetType->save();
+        return response()->json('successfully updated');
+
     }
 
     /**

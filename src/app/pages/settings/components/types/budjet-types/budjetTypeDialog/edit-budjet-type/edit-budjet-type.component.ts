@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { BudjetTypeService } from '../../services/budjet-type.service';
 import { RefreshBudjetTypeService } from '../../budjetTypeReresh/refresh-budjet-type.service';
+import { budjetType } from '../../budjetType';
 
 @Component({
   selector: 'app-edit-budjet-type',
@@ -10,30 +11,44 @@ import { RefreshBudjetTypeService } from '../../budjetTypeReresh/refresh-budjet-
   styleUrls: ['./edit-budjet-type.component.scss']
 })
 export class EditBudjetTypeComponent implements OnInit {
-  [x: string]: any;
+
+  Budjetmodel = new budjetType();
   orgForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder,private dialog: MatDialog, private editServices:BudjetTypeService, private refresh:RefreshBudjetTypeService) { 
-    this.createForm();
-    this.orgForm
+  constructor(@Inject(MAT_DIALOG_DATA) private data: any,
+          private formBuilder: FormBuilder,
+          private dialog: MatDialog, 
+          private editServices:BudjetTypeService, 
+          private refresh:RefreshBudjetTypeService) { 
+   
+    
   
   }
 
   ngOnInit() {
+    this.initForm();
   }
-
-  createForm()
+  initForm()
   {
     this.orgForm = this.formBuilder.group({
-     type: [this.data.type, Validators.required],
-  })
-}
+      type: [this.data.type, Validators.required]
 
-  closeDiolog()
-  {
-    this.dialog.closeAll();
+    })
+
   }
 
+  editBType()
+  {
+
+    this.editServices.editBudjetType(this.orgForm.value, this.data.id).subscribe(res=>{
+      this.refresh.setRefresh('refresh');
+      this.dialog.closeAll();
+    })
+  }
+
+  
+
+  
 
 
 

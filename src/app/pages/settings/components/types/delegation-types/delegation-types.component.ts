@@ -67,9 +67,10 @@ export class DelegationTypesComponent implements OnInit {
     });
   }
 
-  editDlgType(){
+  editDlgType(data){
     const dialogRef = this.dialog.open(EditDelTypeDiologComponent, {
       width: '400px',
+      data:data,
     });
 
     dialogRef.afterClosed().subscribe(result => {

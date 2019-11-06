@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EquipmentService } from '../../services/equipment.service';
+import { RefreshEquiptTypeService } from '../../services/refresh-equipt-type.service';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-add-equipt-type',
@@ -10,7 +12,8 @@ import { EquipmentService } from '../../services/equipment.service';
 export class AddEquiptTypeComponent implements OnInit {
   [x: string]: any;
 
-  constructor(private formBuilder: FormBuilder, private equiptType: EquipmentService) { 
+  constructor(private diolog:MatDialog, private formBuilder: FormBuilder, private EqptType: EquipmentService, private refresh:RefreshEquiptTypeService) { 
+    
     this.createForm();
   }
 
@@ -18,20 +21,23 @@ export class AddEquiptTypeComponent implements OnInit {
   }
 
   
-  createForm() {
-    this.equiptTypeForm = this.formBuilder.group({
-      equiptType: ['', Validators.required],
-    });
-  }
   
   addEquiptType(data){
-    if(this.equiptTypeForm.valid){
-     this.equiptType.addEquiptType(data.value).subscribe((result)=>{
-      console.log(result);
+    if(this.orgForm.valid){
+     this.EqptType.addEquiptType(data.value).subscribe((result)=>{
+       this.refresh.setReshresh('refresh');
+       this.diolog.closeAll();
+      
      });
   }
   }
-
+  createForm() {
+    this.orgForm = this.formBuilder.group({
+      equipType: ['', Validators.required],
+    });
+  }
+  
+ 
 
 
 }

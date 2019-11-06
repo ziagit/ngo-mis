@@ -23,4 +23,11 @@ export class EmployeeTypeService {
   {
     return this.http.post<employeeType>('http://127.0.0.1:8000/api/employeeTypes/',data);
   }
+  
+  updateEmpType(data,id)
+  {
+    
+    return this.http.put('http://127.0.0.1:8000/api/employeeTypes/'+id,data);
+  }
+
 }

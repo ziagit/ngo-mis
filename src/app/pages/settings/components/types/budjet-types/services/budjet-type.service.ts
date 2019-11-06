@@ -25,8 +25,9 @@ url:string = "http://127.0.0.1:8000/api/";
      return this.http.post<budjetType>(this.url+'budjetTypes',data);
    }
 
-   editBudjetType(id):Observable<budjetType[]>{
-     return this.http.get<budjetType[]>('http://127.0.0.1/api/budjetTypes'+id+"/edit");
+   editBudjetType(data,id){
+    
+     return this.http.put('http://127.0.0.1:8000/api/budjetTypes/'+id,data);
    }
   
 }
