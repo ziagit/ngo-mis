@@ -49,3 +49,4 @@ Route::get("getorganizationList","organizations@getorganizationList");
 Route::get("employeerelation","EmployeeController@employeerelation");
 
 
+
