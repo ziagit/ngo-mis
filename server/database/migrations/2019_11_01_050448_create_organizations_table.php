@@ -23,8 +23,6 @@ class CreateOrganizationsTable extends Migration
             $table->string("contactNo");
             $table->string("email");
             $table->unsignedBigInteger("organizationtype_id");
-            $table->unsignedBigInteger("donner_id");
-            $table->unsignedBigInteger("sector_id");
             $table->text("goals");
             $table->integer("currentCashAmount");
             $table->string("currency");

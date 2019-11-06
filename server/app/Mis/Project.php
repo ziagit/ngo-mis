@@ -44,9 +44,9 @@ class Project extends Model
       return $this->belongsTo(Sector::class,"sector_id","id");
      }
 
-     public function budjetType(){
+     public function budjetTypes(){
 
-      return $this->belongsTo(BudjetType::class,"budjettype_id","id");
+      return $this->belongsToMany(BudjetType::class);
      }
 
      public function inactivity(){
