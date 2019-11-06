@@ -1,5 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { BudjetTypeService } from './budjet-types.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+import { BudjetTypeService } from './services/budjet-type.service';
+import {MatPaginator} from '@angular/material/paginator';
+import { BTypeDialogComponent } from './budjetTypeDialog/b-type-dialog/b-type-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { RefreshBudjetTypeService } from './budjetTypeReresh/refresh-budjet-type.service';
+import { EditBudjetTypeComponent } from './budjetTypeDialog/edit-budjet-type/edit-budjet-type.component';
+
 
 
 @Component({
@@ -8,19 +15,67 @@ import { BudjetTypeService } from './budjet-types.service';
   styleUrls: ['./budjet-types.component.scss']
 })
 export class BudjetTypesComponent implements OnInit {
+  [x: string]: any;
 
-  constructor(private service: BudjetTypeService) {
-    this.service.getBudjetTypes().subscribe(res=>{
-      console.log("data from database: ", res)
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  displayedColumns: string[] = ['id', 'type', 'delete'];
+  dataSource ;
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  constructor(private dialog: MatDialog, private budjetTypeService: BudjetTypeService, private refresh:RefreshBudjetTypeService) {
+    this.refresh.getRefresh().subscribe((result)=>{
+      this.getBudjetType();
+    });
+
+   }
+
+   ngOnInit() {
+    this.getBudjetType();
+    
+  }
+   getBudjetType()
+   {
+    this.budjetTypeService.getBudjetType().subscribe((data)=>{
+      this.dataSource= new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     })
    }
 
-  ngOnInit() {
-    
+   deleteBudjetType(id){
+     this.budjetTypeService.deleteBudjetType(id).subscribe(res=>{
+       this.getBudjetType();
+       alert('are you sure you want to delete it!!');
+       console.log('successfully deleted', res);
+     })
+   }
+
+    // dialog functions
+  openDialogBudjet(): void {
+    const dialogRef = this.dialog.open(BTypeDialogComponent, {
+      width: '400px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 
-
-
+     // dialog functions for edit--------------------------->
+     editDialogBudjet(data) {
+      const dialogRef = this.dialog.open(EditBudjetTypeComponent, {
+        width: '400px',
+        data: data, 
+      }
+      );
   
-  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+        this.animal = result;
+      });
+    }
+ 
 }

@@ -16,17 +16,17 @@
    <!-- organization Column -->
    <ng-container matColumnDef="organization_id">
       <th mat-header-cell *matHeaderCellDef> موسسه </th>
-      <td mat-cell *matCellDef="let element"> {{element.organization_id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.organization.nameDa}} </td>
     </ng-container>
      <!-- project_id Column -->
   <ng-container matColumnDef="project_id">
       <th mat-header-cell *matHeaderCellDef>پروژه </th>
-      <td mat-cell *matCellDef="let element"> {{element.project_id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.project.projectName}} </td>
     </ng-container>
          <!-- keyspersonnel_id Column -->
   <ng-container matColumnDef="keyspersonnel_id">
       <th mat-header-cell *matHeaderCellDef>افراد کلیدی</th>
-      <td mat-cell *matCellDef="let element"> {{element.keyspersonnel_id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.keyspersonnel.name}} </td>
     </ng-container>
 
   <!-- Name Column -->

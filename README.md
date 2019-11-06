@@ -4,7 +4,7 @@
 
 Default | Dark | Light
 ---|---|---
-![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/default.png) |![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/dark.png) | ![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/light.png)
+![](https://raw.githubusercontent.com/bknds/ng-pi-admin/master/default.png) 
 
 
 
@@ -17,7 +17,7 @@ Angular 7+, Angular CLI, TypeScript, Scss, Bootstrap 3
 
 ## Getting started
 ```
-git clone https://github.com/bknds/ng-pi-admin.git
+git clone https://github.com/ziagit/ngo-mis.git
 
 npm install
 

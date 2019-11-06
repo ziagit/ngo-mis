@@ -17,15 +17,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+<<<<<<< HEAD
 
 Route::resource("projects","ProjectController");
+=======
+>>>>>>> 61cef0e5c8c5767b24a338e071573031a456f9b6
 Route::resource("organizations","OrganizationController");
 Route::resource("orgassociations","OrgassociationController");
 Route::resource("equipments","EqiupmentController");
 Route::resource("vehicles","VehicleController");
 Route::resource("employees","EmployeeController");
 Route::resource("plans","PlanController");
-Route::resource("projects","projectController");
 Route::resource("delegations","DelegationController");
 Route::resource("keyspersonnels","KeyspersonnelController");
 Route::resource("orgevaluations","OrgevaluationController");
@@ -36,6 +38,7 @@ Route::resource("banks","BankController");
 Route::resource("inactivies","InactivityController");
 Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
+<<<<<<< HEAD
 Route::resource('budjet-types','BudjetTypeController');
 Route::resource('bankaccounts', "BankController");
 Route::get("listrelationproject","ProjectController@listrelationp");
@@ -58,3 +61,23 @@ Route::resource('guidesfor_org_regs', "Guidesfor_org_regsController");
 Route::resource('reasonforregs', "ReasonforregsController");
 Route::resource('bio_graphies', "Bio_graphiesController");
 Route::resource('newstypes', "NewstypesController");
+=======
+Route::resource('bankaccounts', "BankController");
+
+Route::get("listrelationproject","ProjectController@listrelationproject");
+
+Route::get("get-bank-lookups", "BankController@getBankLookups");
+Route::resource('bankaccounts', "BankController");
+Route::resource('orgtypes', 'OrgTypeController');
+Route::resource('equiptypes', 'EquipTypeController');
+Route::resource('delegationTypes', 'DelegationTypeController');
+Route::resource('employeeTypes', 'EmployeeTypeController');
+Route::resource('budjetTypes', 'BudjetTypeController');
+
+Route::get("listrelationproject","ProjectController@listrelationproject");
+Route::get("getorganizationList","organizations@getorganizationList");
+
+Route::get("employeerelation","EmployeeController@employeerelation");
+
+
+>>>>>>> 61cef0e5c8c5767b24a338e071573031a456f9b6

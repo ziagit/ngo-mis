@@ -7,6 +7,7 @@ import  { HttpClient  } from '@angular/common/http';
 import { BankAccountsService } from './bank-accounts.service';
 import { IBankAccount } from "./BankAccount";
 import { BankEditComponent } from './bank-edit/bank-edit.component';
+import { DeleteAccountComponent } from './dialogs/delete-account/delete-account.component';
 
 
 const ELEMENT_DATA: IBankAccount[] = [
@@ -25,6 +26,7 @@ const ELEMENT_DATA: IBankAccount[] = [
 export class BankAccountsComponent implements OnInit {
   displayedColumns: string[] = ['position' ,'organization_id','project_id','keyspersonnel_id', 'name', 'location', 'currency','option'];
   dataSource;
+ 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -33,7 +35,13 @@ export class BankAccountsComponent implements OnInit {
    }
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  ngOnInit(){}
+  ngOnInit(){
+    this.service.getRefresh().subscribe(result=>{
+    this.getAccount();
+     
+    
+    });
+  }
  
   addAccount(): void {
     const dialogRef = this.dialog.open(AddAccountComponent, {
@@ -47,22 +55,30 @@ export class BankAccountsComponent implements OnInit {
   
 getAccount(){
   this.service.getBankAccounts().subscribe(res=>{
+    
     this.dataSource = new MatTableDataSource(res);
+     console.log("check for optiosn: ",res);
     this.dataSource.paginator = this.paginator;
+
   });
 }
 
-deleteAccount(id)
-{
-  this.service.deleteAccountData(id).subscribe(res=>{
-    console.log("deleted succefuly:"+res);
-  });
-}
-editAccount(data): void
+
+editAccount(editData): void
 {
   const dialogRef = this.dialog.open(BankEditComponent, {
     width: '800px',
-    data: data
+    data: editData
   });
+}
+deleteAccount(id){
+  const dialogRef = this.dialog.open(DeleteAccountComponent, {
+    width: '400px',
+    data:id
+  });
+ 
+ 
+
+  
 }
 }

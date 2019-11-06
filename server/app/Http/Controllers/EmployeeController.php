@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mis\Employee;
 use Illuminate\Http\Request;
+use App\Mis\Province,App\Mis\EmployeeType,App\Mis\Organization;
 
 class EmployeeController extends Controller
 {
@@ -14,7 +15,8 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        //
+        $employees = Employee::all("id","name","fatherName","TIN","job","education","gender","salary","country");
+        return response()->json($employees);
     }
 
     /**
@@ -35,7 +37,26 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $employee = new Employee;
+        $employee->name=$request->name; 
+        $employee->fatherName=$request->fatherName; 
+        $employee->TIN=$request->TIN;
+        $employee->job=$request->job; 
+        $employee->education=$request->education;
+        $employee->contractEndDate=$request->contractEndDate;
+        $employee->contractStartDate=$request->contractStartDate;
+        $employee->country=$request->country;
+        $employee->specialty = $request->specialty;
+        $employee->employeeType_id=$request->employeeType_id;
+        $employee->gender=$request->gender;
+        $employee->identity=$request->identity;
+        $employee->organization_id=$request->organization_id;
+        $employee->photo = $request->photo;
+        $employee->province_id = $request->province_id;
+        $employee->remarks =$request->remarks;
+        $employee->salary = $request->salary;
+        $employee->save();
+        return response()->json("Successfully inserted");
     }
 
     /**
@@ -44,9 +65,11 @@ class EmployeeController extends Controller
      * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Employee $employee)
+    public function show($id)
     {
-        //
+        $employee = Employee::find($id)->with('organization')->with("province")->first();
+        
+        return response()->json($employee);
     }
 
     /**
@@ -55,9 +78,10 @@ class EmployeeController extends Controller
      * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function edit(Employee $employee)
+    public function edit($id)
     {
-        //
+        $employee = Employee::find($id);
+        return response()->json($employee);
     }
 
     /**
@@ -67,9 +91,28 @@ class EmployeeController extends Controller
      * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Employee $employee)
+    public function update(Request $request,$id)
     {
-        //
+        $employee = Employee::find($id);
+        $employee->name=$request->name; 
+        $employee->fatherName=$request->fatherName; 
+        $employee->TIN=$request->TIN;
+        $employee->job=$request->job; 
+        $employee->education=$request->education;
+        $employee->contractEndDate=$request->contractEndDate;
+        $employee->contractStartDate=$request->contractStartDate;
+        $employee->country=$request->country;
+        $employee->specialty = $request->specialty;
+        $employee->employeeType_id=$request->employeeType_id;
+        $employee->gender=$request->gender;
+        $employee->identity=$request->identity;
+        $employee->organization_id=$request->organization_id;
+        $employee->photo = $request->photo;
+        $employee->province_id = $request->province_id;
+        $employee->remarks =$request->remarks;
+        $employee->salary = $request->salary;
+        $employee->save();
+        return response()->json("Successfully update");
     }
 
     /**
@@ -78,8 +121,18 @@ class EmployeeController extends Controller
      * @param  \App\Mis\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employee $employee)
+    public function destroy($id)
     {
-        //
+        $employee = Employee::find($id);
+        $employee->delete();
+        return response()->json("successfully deleted");
+    }
+    // Funtion for show table thats have ralation with employee
+    public function employeerelation(){
+        $province = Province::all();
+        $employeetype = EmployeeType::all();
+        $organization = Organization::all();
+        $arr = [$province,$employeetype,$organization];
+        return response()->json($arr);
     }
 }

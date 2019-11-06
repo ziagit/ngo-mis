@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Mis\Bank;
 use Illuminate\Http\Request;
+use App\Mis\Project;
+use App\Mis\Organization;
+use App\Mis\Keyspersonnel;
 
 class BankController extends Controller
 {
@@ -14,7 +17,7 @@ class BankController extends Controller
      */
     public function index()
     {
-        $bank_account= Bank::all();
+        $bank_account= Bank::with("organization","project","keyspersonnel")->get();
         return response()->json( $bank_account);
     }
 
@@ -68,7 +71,8 @@ class BankController extends Controller
     public function edit($id) 
     {
        
-       $bank=Bank::find($id);
+       $bank=Bank::with("organization","project","keyspersonnel")->find($id)->all();
+   
        return response()->json($bank);
 
     }
@@ -80,9 +84,19 @@ class BankController extends Controller
      * @param  \App\Mis\Bank  $bank
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bank $bank)
+    public function update(Request $request, $id)
     {
-        //
+      $info_account =  bank::find($id);
+      $info_account->organization_id = $request->organization_id;
+      $info_account->project_id = $request->project_id;
+      $info_account->keyspersonnel_id=$request->keyspersonnel_id;
+      $info_account->name= $request->name;
+      $info_account->location= $request->location;
+      $info_account->currency= $request->currency;
+      $info_account->save();
+      return response()->json("data update successfully.");
+
+     
     }
 
     /**
@@ -96,7 +110,14 @@ class BankController extends Controller
       $findId=Bank::find($id);
       $deleteAccont= $findId->delete();
       return response()->json($deleteAccont);
+    }
 
-        
+    public function getBankLookups(){
+        $projects = Project::all('id','projectName');
+        $organizations = Organization::all('id','nameDa');
+        $keyspersonels = Keyspersonnel::all('id','name');
+        $aray =[$projects,$organizations,$keyspersonels];
+
+        return response()->json($aray );
     }
 }

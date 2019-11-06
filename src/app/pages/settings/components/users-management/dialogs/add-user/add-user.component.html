@@ -1,0 +1,27 @@
+<div class="example-container">
+  <form [formGroup]="userForm" (ngSubmit)="addUser(orgForm)">
+    <mat-form-field>
+      <input matInput placeholder="{{'user.username' | translate}}" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{'user.email' | translate }}" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="{{'user.password ' | translate}}" formControlName="password">
+    </mat-form-field>
+    
+<!--     <button mat-button (click)="fileInput.click()">
+      <mat-icon>library_add</mat-icon>
+      <span>انتخاب فایل</span>
+      <input #fileInput type="file" value="1" (change)="onFileInput($event)" style="display:none;" />
+    </button> -->
+
+    <input type="file" (change)="onSelect($event)">
+
+
+<br>
+    <button mat-button type="submit">Submit</button>
+  </form>
+</div>

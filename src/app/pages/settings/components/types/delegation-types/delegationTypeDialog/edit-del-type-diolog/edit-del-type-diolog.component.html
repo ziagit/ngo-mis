@@ -1,0 +1,14 @@
+
+        <form [formGroup]="orgForm" (ngSubmit)="editDelegationType()">
+          
+            <div class="form-group">
+                <mat-form-field>
+                    <input matInput placeholder="نوعیت سازمان را وارد کنید. :" formControlName="delegationType">
+                  </mat-form-field> 
+            </div>
+  
+           <div class="form-group">
+              <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+           </div>
+          </form>
+        

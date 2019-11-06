@@ -1,0 +1,12 @@
+<form [formGroup]="orgForm" (ngSubmit)="addDelType(orgForm)">
+          
+    <div class="form-group">
+        <mat-form-field>
+            <input matInput placeholder="نام هیٌت را وارد کنید. :" formControlName="delegationType">
+          </mat-form-field> 
+    </div>
+
+   <div class="form-group">
+      <button  type="submit" mat-raised-button large color="primary" align="center" >زخیره</button>
+   </div>
+  </form>
