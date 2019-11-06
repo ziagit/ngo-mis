@@ -6,16 +6,11 @@
 <app-biography></app-biography>
 <app-about-us></app-about-us>
 -->
-
-
-			 
-
-<app-header></app-header>
+<app-header (selectedLang)="changeLang($event)"></app-header>
   <!-- The slideshow -->
 <app-slideshow></app-slideshow>
 
 			<!-- End banner Area -->
-
 
 			<!-- Start cat Area -->
 			<section class="cat-area section-gap" id="feature">
@@ -39,6 +34,8 @@
 								</p>
 							</div>															
 						</div>
+						<h1 *ngIf="condition">THis is test!.</h1>
+						<p>{{'body.dashboard' | translate}}</p>
 						<div class="col-lg-4">
 							<div class="single-cat">
 								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-bug"></span></span></a>
@@ -396,4 +393,4 @@
 			<!-- end blog Area -->	
 				
 			<!-- start footer Area -->		
-<app-footer></app-footer>
+<app-footer [myVar]="chosedLang"></app-footer>

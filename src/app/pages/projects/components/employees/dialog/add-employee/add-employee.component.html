@@ -1,14 +1,19 @@
 <div class="example-container">
   <label style="text-align: center">اضافه کردن کارمند</label>
   <form [formGroup]="orgForm" (ngSubmit)="addNewEmployee(orgForm)">
-    
+    <mat-form-field>
+      <mat-select placeholder="نوعیت کارمند :" (selectionChange)="employeeType($event.value)"  formControlName="employeeType_id">
+        <mat-option value='1' >داخلی</mat-option>
+        <mat-option  value="0" >خارجی</mat-option>
+      </mat-select>
+    </mat-form-field>
     <mat-form-field>
       <input matInput placeholder="اسم  :" formControlName="name">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field *ngIf="condition">
         <input matInput placeholder="اسم پدر :" formControlName="fatherName">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field *ngIf="condition">
         <input matInput placeholder="نمبر تشخصیه مالیه :" formControlName="TIN">
     </mat-form-field>
     <mat-form-field>
@@ -37,11 +42,14 @@
         <mat-option value="هندوستان">هندوستان</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field *ngIf="condition">
       <input matInput placeholder="نمبر هویت :" formControlName="identity">
     </mat-form-field>
+    <mat-form-field *ngIf="notcondition">
+      <input matInput placeholder="نمبر پاسپورت :" formControlName="identity">
+    </mat-form-field>
     <mat-form-field>
-      <mat-select placeholder="ولایت :"  formControlName="province">
+      <mat-select placeholder="ولایت :"  formControlName="province_id">
         <mat-option  *ngFor="let provinces of province" value="{{provinces.id}}">{{provinces.provinceName}}</mat-option>
       </mat-select>
     </mat-form-field>
@@ -54,13 +62,9 @@
     <mat-form-field>
       <input matInput placeholder=" عکس  :" formControlName="photo">
     </mat-form-field>
+    
     <mat-form-field>
-      <mat-select placeholder="نوعیت کارمند :"  formControlName="employeeType_id">
-        <mat-option *ngFor="let emp of employeetype" value="{{emp.id}}" >{{emp.employeeType}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="   ملاحظه :" formControlName="remark">
+      <input matInput placeholder="   ملاحظه :" formControlName="remarks">
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder=" سازمان :"  formControlName="organization_id">

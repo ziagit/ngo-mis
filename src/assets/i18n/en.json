@@ -1,6 +1,23 @@
 {
     "body":{
         "dashboard": " Dashboard",
-        "message": " Messages"
-    }  
+        "message": " Messages"     
+    },
+    "webpage":{
+        "home":"Home",
+        "about-us": "About Us",
+        "media": "Media",
+        "org-reg": "Organization Registration",
+        "organization-list": "Organization List",
+        "organization-rules": "Organization Rules",
+        "jobs": "Job",
+        "contact-us": "Contact Us",
+        "search": "Search",
+        "login" : "Login",
+        "ngo-database": "NGO Database",
+        "repulic-of-afghanistan": "Republic Of Afghanistan",
+        "ministry-of-econemic": "Ministry Of Econemic",
+        "ngo-presedential": "Department of Coordination of NGO Activities"
+    } 
+
 }

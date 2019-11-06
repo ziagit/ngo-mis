@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class BudjetType extends Model
 {
-    public function project()
+    public function projects()
     {
-        return $this->belongsToMany(Project::class,"budgettype_id","id");
+        return $this->belongsToMany(Project::class);
         
     }
 }

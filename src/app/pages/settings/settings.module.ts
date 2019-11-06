@@ -37,16 +37,16 @@ import { DelTypeDialogComponent } from './components/types/delegation-types/dele
 import { DiologEmpTypeComponent } from './components/types/employee-types/empTypeDialog/diolog-emp-type/diolog-emp-type.component';
 import { EditBudjetTypeComponent } from './components/types/budjet-types/budjetTypeDialog/edit-budjet-type/edit-budjet-type.component';
 import { AddUserComponent } from './components/users-management/dialogs/add-user/add-user.component';
-import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from './components/users-management/register/register.component';
 import { EditDelTypeDiologComponent } from './components/types/delegation-types/delegationTypeDialog/edit-del-type-diolog/edit-del-type-diolog.component';
 import { EditEmpTypeComponent } from './components/types/employee-types/empTypeDialog/edit-emp-type/edit-emp-type.component';
+import { EditEquiptTypeComponent } from './components/types/equipment-types/edit-equipt-type/edit-equipt-type.component';
+import { EditOrgTypeDiologComponent } from './components/types/organization-types/dialogType/edit-org-type-diolog/edit-org-type-diolog.component';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
     RegisterComponent,
     SettingsComponent,
     UsersManagementComponent,
@@ -80,8 +80,16 @@ import { EditEmpTypeComponent } from './components/types/employee-types/empTypeD
     DelTypeDialogComponent,
     DiologEmpTypeComponent,
     EditBudjetTypeComponent,
+
     AddUserComponent,
     EditDelTypeDiologComponent,
+
+    AddUserComponent, 
+    EditDelTypeDiologComponent,
+    EditEmpTypeComponent,
+    EditEquiptTypeComponent,
+    EditOrgTypeDiologComponent,
+
   ],
   
   imports: [
@@ -89,6 +97,7 @@ import { EditEmpTypeComponent } from './components/types/employee-types/empTypeD
     SharedModule,
     settingsRouting
   ],
+
   
   entryComponents:
    [
@@ -101,8 +110,27 @@ import { EditEmpTypeComponent } from './components/types/employee-types/empTypeD
     EditDistrictComponent,
     EditSectoreComponent,
     EditRelatedGoalComponent,
-    EditRelatedTargetComponent
-  ]
+    EditRelatedTargetComponent,
+  
+    AddOrganizationTypeComponent,
+    AddEquiptTypeComponent,
+    AddOrganizationTypeComponent,
+    BTypeDialogComponent,
+    DelTypeDialogComponent,
+    DiologEmpTypeComponent,
+    AddUserComponent,
+    EditBudjetTypeComponent,
+    EditDelTypeDiologComponent,
+    EditEmpTypeComponent,
+    EditOrgTypeDiologComponent,
+    EditEquiptTypeComponent,
+    
+    
+  ],
+  providers: [
+   
+  ],
+
 
 })
 export class SettingsModule {

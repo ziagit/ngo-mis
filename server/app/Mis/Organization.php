@@ -12,14 +12,14 @@ class Organization extends Model
         return $this->belongsTo(OrgType::class,"organizationtype_id","id");
     }
 
-    public function sector()
+    public function sectors()
     {
-        return $this->belongsToMany(Sector::class,"sector_id","id");
+        return $this->belongsToMany(Sector::class);
     }
 
-    public function donner()
+    public function donners()
     {
-        return $this->belongsToMany(Donner::class,"donner_id","id");
+        return $this->belongsToMany(Donner::class);
     }
 
     public function district()
