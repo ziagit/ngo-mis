@@ -2,12 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { MatDialog } from '@angular/material';
-import { AddAccountComponent } from './dialogs/add-account/add-account.component';
-import  { HttpClient  } from '@angular/common/http';
-import { BankAccountsService } from './bank-accounts.service';
-import { IBankAccount } from "./BankAccount";
-import { BankEditComponent } from './bank-edit/bank-edit.component';
-import { DeleteAccountComponent } from './dialogs/delete-account/delete-account.component';
 
 
 const ELEMENT_DATA: IBankAccount[] = [

@@ -10,6 +10,10 @@ export let MENU_ITEM = [
         icon: 'home',
         children: [
             {
+                path: 'org-list',
+                title: 'بست موسسات'
+            },
+            {
                 path: 'public-info',
                 title: 'معلومات عمومی'
             },

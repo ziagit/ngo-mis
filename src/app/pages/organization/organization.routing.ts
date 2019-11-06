@@ -5,13 +5,15 @@ import { TabActivitiesComponent } from './components/tab-activities/tab-activiti
 import { PublicInfoComponent } from './components/public-info/public-info.component';
 import { KeypersonsComponent } from './components/keypersons/keypersons.component';
 import { AddressComponent } from './components/address/address.component';
+import { OrgListComponent } from './components/org-list/org-list.component';
 
 const orgRoutes: Routes = [
     {
         path: '',
         component: OrganizationComponent,
         children: [
-            { path: '', redirectTo: 'public-info', pathMatch: 'full' },
+            { path: '', redirectTo: 'org-list', pathMatch: 'full' },
+            { path: 'org-list', component: OrgListComponent},
             { path: 'public-info', component: PublicInfoComponent },
             { path: 'keypersons', component: KeypersonsComponent },
             { path: 'address', component: AddressComponent },

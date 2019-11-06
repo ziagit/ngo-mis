@@ -13,7 +13,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
-        ReactiveFormsModule,
         FormsModule,
         CommonModule,
         LayoutModule,
@@ -22,7 +21,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ],
     declarations: [
         PagesComponent,
-      
     ],
     providers:[]
 })
