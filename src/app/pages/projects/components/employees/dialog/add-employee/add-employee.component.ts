@@ -13,14 +13,15 @@ export class AddEmployeeComponent implements OnInit {
   condition:boolean=true;
   notcondition:boolean=false;
   province:any
-  employeetype:any
+  employeetypes:any
   organization:any
+  
   orgForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private emservice:EmployeesService, private dialog: MatDialog,private refresh:RefreshService) {
     this.createForm();
     this.emservice.getrealationtable().subscribe((result)=>{
       this.province = result[0];
-      this.employeetype = result[1];
+      this.employeetypes = result[1];
       this.organization = result[2];
     });
     
@@ -37,15 +38,15 @@ export class AddEmployeeComponent implements OnInit {
         education: ['', Validators.required],
         specialty: ['', Validators.required],
         gender: ['', Validators.required],
-        salary: ['', Validators.required,Validators.email],
+        salary: ['', Validators.required],
         country: ['', Validators.required],
-        province: ['', Validators.required],
+        province_id: ['', Validators.required],
         contractStartDate: ['', Validators.required],
         contractEndDate: ['', Validators.required],
         employeeType_id: ['', Validators.required],
         organization_id: ['', Validators.required],
         identity:['',[Validators.required]],
-        remark:[''],
+        remarks:[''],
         photo:['']
     });
   }
@@ -56,14 +57,17 @@ export class AddEmployeeComponent implements OnInit {
         this.dialog.closeAll();
       })
     }
+    else{
+      alert("لطفن هوشیارمندانه عمل کنید !!")
+    }
+    
   }
   employeeType(data){
-    if(data=="خارجی"){
-      console.log(data);
+    if(data=="0"){
       this.condition = false;
       this.notcondition = true;
     }
-    else if(data=="داخلی"){
+    else if(data=="1"){
       this.notcondition = false;
       this.condition=true;
     }

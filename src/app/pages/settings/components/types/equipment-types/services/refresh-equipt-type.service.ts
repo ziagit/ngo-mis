@@ -12,7 +12,7 @@ export class RefreshEquiptTypeService {
 
   setReshresh(rf)
   {
-    this.subject.next('rf');
+    this.subject.next(rf);
   }
 
   getRefresh()

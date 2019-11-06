@@ -137,6 +137,11 @@ export let MENU_ITEM = [
                 path: 'jobs',
                 title: 'کاریابی'
             },
+
+            {
+                path: 'biography',
+                title: 'بیوگرافی',
+            },
             {
                 path: 'contact-us',
                 title: 'تماس'

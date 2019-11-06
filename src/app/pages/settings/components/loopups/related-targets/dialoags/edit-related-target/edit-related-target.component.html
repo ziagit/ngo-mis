@@ -1,0 +1,21 @@
+<div class="example-container">
+    <form [formGroup]="orgForm" (ngSubmit)="edittData()">
+
+      <mat-form-field>
+        <input matInput placeholder="Input" formControlName="relatedTargetdesc">
+      </mat-form-field>
+  
+  
+      <mat-form-field>
+        <mat-select placeholder="Select" formControlName="relatedGoals_id">
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-button type="submit" class="btn btn-primary">Save</button>
+      
+    </form>
+  </div>
+  
+  

@@ -14,7 +14,8 @@ class RelatedTargetController extends Controller
      */
     public function index()
     {
-        //
+        $relatedtarget = RelatedTarget::all();
+        return response()->json($relatedtarget);
     }
 
     /**
@@ -35,7 +36,11 @@ class RelatedTargetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $relatedtarget = new RelatedTarget();
+        $relatedtarget->relatedTargetdesc = $request->relatedTargetdesc;
+        $relatedtarget->relatedGoals_id = $request->relatedGoals_id;
+        $relatedtarget->save();
+        return response()->json($relatedtarget);
     }
 
     /**
@@ -67,9 +72,13 @@ class RelatedTargetController extends Controller
      * @param  \App\Mis\RelatedTarget  $relatedTarget
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RelatedTarget $relatedTarget)
+    public function update(Request $request,$relatedTarget)
     {
-        //
+        $relatedtarget = RelatedTarget::find($relatedTarget);
+        $relatedtarget->relatedTargetdesc = $request->relatedTargetdesc;
+        $relatedtarget->relatedGoals_id = $request->relatedGoals_id;
+        $relatedtarget->save();
+        return response()->json($relatedtarget);
     }
 
     /**
@@ -78,8 +87,10 @@ class RelatedTargetController extends Controller
      * @param  \App\Mis\RelatedTarget  $relatedTarget
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RelatedTarget $relatedTarget)
+    public function destroy($relatedTarget)
     {
-        //
+        $relatedtarget = RelatedTarget::find($relatedTarget);
+        $id = $relatedtarget->delete();
+        return response()->json($id);
     }
 }
