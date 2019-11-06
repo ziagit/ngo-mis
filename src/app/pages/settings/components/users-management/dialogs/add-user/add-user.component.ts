@@ -22,10 +22,14 @@ export class AddUserComponent implements OnInit {
         username: ['', Validators.required],
         email: ['', Validators.required],
         password: ['', Validators.required],
+        file: ['']
     });
   }
   addUser(data){
     console.log("Data: ", data.value);
   }
 
+  onFileInput(e){
+    console.log("File: ", e.target.value)
+  }
 }

@@ -12,6 +12,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { MatPaginatorModule, MatSortModule } from '@angular/material';
+import { LoadingComponent } from './shared/components/loading/loading.component';
+import { SharedModule } from './shared/shared.module';
+import { LoginComponent } from './pages/settings/components/users-management/login/login.component';
 
 
 
@@ -21,6 +24,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    SharedModule,
     MatPaginatorModule,
     MatSortModule,
     BrowserModule,
@@ -31,6 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   ],
   declarations: [
     AppComponent,
+    LoginComponent
   ],
   providers:[
     TranslateStore,

@@ -12,15 +12,20 @@
       <input matInput placeholder="{{'user.password ' | translate}}" formControlName="password">
     </mat-form-field>
     
-      <dp-date-picker 
+    <button mat-button (click)="fileInput.click()">
+      <mat-icon>library_add</mat-icon>
+      <span>انتخاب فایل</span>
+      <input #fileInput type="file" value="1" (change)="onFileInput($event)" style="display:none;" />
+    </button>
+
+
+      <dp-date-picker
       dir="rtl"
-      
       mode="day"
       placeholder="تاریخ"
       theme="dp-material">
       </dp-date-picker>
-
-      <br>
+<br>
     <button mat-button type="submit">Submit</button>
   </form>
 </div>

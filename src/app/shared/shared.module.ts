@@ -22,8 +22,12 @@ import {TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {DpDatePickerModule} from 'ng2-jalali-date-picker';
+//file upload
+
+
 //material modules
 import {
+  MatGridListModule,
   MatExpansionModule,
   MatPaginatorModule,
   MatTableModule,
@@ -56,6 +60,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 
 @NgModule({
   imports: [
+    MatGridListModule,
     MatNativeDateModule,
     MatDatepickerModule,
     DpDatePickerModule,
@@ -89,6 +94,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     FormsModule,
     ReactiveFormsModule,
     JsonpModule,
+
     TranslateModule.forChild({
       loader: {
           provide: TranslateLoader,
@@ -113,6 +119,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     ProfileComponent
   ],
   exports: [
+    MatGridListModule,
     MatNativeDateModule,
     MatDatepickerModule,
     DpDatePickerModule,
