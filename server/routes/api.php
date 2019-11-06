@@ -33,9 +33,11 @@ Route::resource("banks","BankController");
 Route::resource("inactivies","InactivityController");
 Route::resource('provinces','ProvinceController');
 Route::resource("projects","ProjectController");
+Route::resource('bankaccounts', "BankController");
 
+Route::get("listrelationproject","ProjectController@listrelationproject");
 
-
+Route::get("get-bank-lookups", "BankController@getBankLookups");
 Route::resource('bankaccounts', "BankController");
 Route::resource('orgtypes', 'OrgTypeController');
 Route::resource('equiptypes', 'EquipTypeController');
@@ -44,5 +46,8 @@ Route::resource('employeeTypes', 'EmployeeTypeController');
 Route::resource('budjetTypes', 'BudjetTypeController');
 
 Route::get("listrelationproject","ProjectController@listrelationproject");
+Route::get("getorganizationList","organizations@getorganizationList");
+
 Route::get("employeerelation","EmployeeController@employeerelation");
+
 

@@ -1,9 +1,9 @@
 <div class="example-container">
-    <form [formGroup]="orgForm" (ngSubmit)="addEquiptType(equiptTypeForm)">
+    <form [formGroup]="orgForm" (ngSubmit)="addEquiptType(orgForm)">
       
       <div class="form-group">
           <mat-form-field>
-              <input matInput placeholder="نام تجهیزات را وارد کنید." formControlName="equiptType">
+              <input matInput placeholder="نام تجهیزات را وارد کنید." formControlName="equipType">
             </mat-form-field> 
       </div>
 

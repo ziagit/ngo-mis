@@ -1,3 +1,4 @@
+import { DpDatePickerModule } from 'ng2-jalali-date-picker';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,8 +23,6 @@ import {TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {DpDatePickerModule} from 'ng2-jalali-date-picker';
-//file upload
-
 
 //material modules
 import {
@@ -63,7 +62,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatGridListModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    DpDatePickerModule,
     MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,

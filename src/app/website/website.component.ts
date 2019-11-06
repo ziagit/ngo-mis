@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./website.component.scss']
 })
 export class WebsiteComponent implements OnInit {
-
-  constructor() { }
-
+  chosedLang:string;
+  constructor(public translate: TranslateService) {
+    
+    this.translate.setDefaultLang('da'); 
+    
+   }
+changeLang(event:string){
+  
+  console.log("insdie parrent: ", event)
+  this.chosedLang = "hello.";
+}
   ngOnInit() {
   }
 

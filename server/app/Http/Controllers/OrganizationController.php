@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Organization;
+use App\Mis\Organization,App\Mis\Province,App\Mis\District,App\Mis\Orgassociation,App\Mis\Employee
+    ,App\Mis\OrgType,App\Mis\Sector,App\Mis\Donner,App\Mis\Project,App\Mis\Delegation,
+    App\Mis\Keyspersonnel,App\Orgevaluation,App\Mis\Bank;
+
 use Illuminate\Http\Request;
 
 class OrganizationController extends Controller
@@ -83,5 +86,25 @@ class OrganizationController extends Controller
     public function destroy(Organization $organization)
     {
         //
+    }
+
+    public function getorganizationList() {
+
+        $orgtype =OrgType::all();
+        $sector =Sector::all();
+        $province =Province::all();
+        $orgassciation =Orgassociation::all();
+        $donner =Donner::all();
+        $project =Project::all();
+        $delegation =Delegation::all();
+        $orgevaluation =Orgevaluation::all();
+        $keyspersonnel =Keyspersonnel::all();
+        $employee =Employee::all();
+        $bank =Bank::all();
+        
+        $array = [$orgtype,$sector,$province,$orgassciation,$donner,$project,
+                    $delegation,$orgevaluation,$keyspersonnel,$employee,$bank];
+                    
+        return response()->json($array);
     }
 }

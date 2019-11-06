@@ -1,3 +1,4 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WebsiteComponent } from './website.component';
@@ -24,7 +25,10 @@ import { websiteRouting } from './website.routing';
 
   imports: [
     CommonModule,
-    websiteRouting
+    websiteRouting,
+    TranslateModule
   ]
 })
-export class WebsiteModule { }
+export class WebsiteModule { 
+  public language;
+}

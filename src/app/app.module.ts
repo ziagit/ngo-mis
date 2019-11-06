@@ -18,9 +18,9 @@ import { LoginComponent } from './pages/settings/components/users-management/log
 
 
 
-export function HttpLoaderFactory(httpClient: HttpClient) {
+/*export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, "./assets/i18n/", ".json");
-}
+}*/
 
 @NgModule({
   imports: [
@@ -36,6 +36,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     LoginComponent
+
   ],
   providers:[
     TranslateStore,
