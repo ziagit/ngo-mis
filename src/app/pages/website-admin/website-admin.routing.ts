@@ -7,6 +7,7 @@ import { NewsComponent } from './components/news/news.component';
 import { OrganizationLawsComponent } from './components/organization-laws/organization-laws.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { OrgRegisterationComponent } from './components/org-registeration/org-registeration.component';
+import { BiographyComponent } from './components/biography/biography.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
             { path: 'org-laws', component: OrganizationLawsComponent },
             { path: 'jobs', component: JobsComponent },
             { path: 'contact-us', component: ContactUsComponent },
+            { path: 'biography', component: BiographyComponent},
         ]
     }
 ]

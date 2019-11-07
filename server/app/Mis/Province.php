@@ -11,6 +11,7 @@ class Province extends Model
     {
         return $this->hasMany(District::class,"ProvinceId","Id");
     }
+    protected $filable = ['provinceName','provinceCode'];
 
     public function organization()
     {

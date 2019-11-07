@@ -1,0 +1,15 @@
+<div class="example-container">
+  <form [formGroup]="orgForm" (ngSubmit)="insertData(orgForm)">
+
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="provinceName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="provinceCode">
+    </mat-form-field>
+
+    <button mat-button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>
+

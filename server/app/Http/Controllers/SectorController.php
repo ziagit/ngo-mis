@@ -14,7 +14,8 @@ class SectorController extends Controller
      */
     public function index()
     {
-        //
+        $sec = Sector::all();
+        return response()->json($sec);
     }
 
     /**
@@ -35,7 +36,11 @@ class SectorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sect = new Sector;
+        $sect->sectorName = $request->sectorName;
+        $sect->proirity = $request->proirity;
+        $sect->save();
+        return response()->json('my data inserted' . $sect);
     }
 
     /**
@@ -67,9 +72,14 @@ class SectorController extends Controller
      * @param  \App\Mis\Sector  $sector
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sector $sector)
+    public function update(Request $request,$sector)
     {
-        //
+        $sec = Sector::find($sector);
+        $sec->sectorName = $request->sectorName;
+        $sec->proirity = $request->proirity;
+        
+        $sec->save();
+        return response()->json("Updated successfully.");
     }
 
     /**
@@ -78,8 +88,10 @@ class SectorController extends Controller
      * @param  \App\Mis\Sector  $sector
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sector $sector)
+    public function destroy($sector)
     {
-        //
+        $myId = Sector::find($sector);
+        $deleteId = $myId->delete();
+        return response()->json($deleteId);
     }
 }

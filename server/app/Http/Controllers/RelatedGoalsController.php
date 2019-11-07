@@ -14,7 +14,8 @@ class RelatedGoalsController extends Controller
      */
     public function index()
     {
-        //
+        $related = RelatedGoals::all();
+        return response()->json($related);
     }
 
     /**
@@ -24,7 +25,7 @@ class RelatedGoalsController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +36,10 @@ class RelatedGoalsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $related = new RelatedGoals();
+        $related->relatedGoalsdesc = $request->relatedGoalsdesc;
+        $related->save();
+        return response()->json($related);
     }
 
     /**
@@ -67,9 +71,13 @@ class RelatedGoalsController extends Controller
      * @param  \App\Mis\RelatedGoals  $relatedGoals
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RelatedGoals $relatedGoals)
+    public function update(Request $request,$relatedGoals)
     {
-        //
+        $related = RelatedGoals::find($relatedGoals);
+        $related->relatedGoalsdesc = $request->relatedGoalsdesc;
+        
+        $related->save();
+        return response()->json("Updated successfully.");
     }
 
     /**
@@ -78,8 +86,10 @@ class RelatedGoalsController extends Controller
      * @param  \App\Mis\RelatedGoals  $relatedGoals
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RelatedGoals $relatedGoals)
+    public function destroy($relatedGoals)
     {
-        //
+        $redlated = RelatedGoals::find($relatedGoals);
+        $myid = $redlated->delete();
+        return response()->json($myid);
     }
 }

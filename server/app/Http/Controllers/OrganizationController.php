@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mis\Organization,App\Mis\Province,App\Mis\District,App\Mis\Orgassociation,App\Mis\Employee
     ,App\Mis\OrgType,App\Mis\Sector,App\Mis\Donner,App\Mis\Project,App\Mis\Delegation,
-    App\Mis\Keyspersonnel,App\Orgevaluation,App\Mis\Bank;
+    App\Mis\Keyspersonnel,App\Mis\Orgevaluation,App\Mis\Bank;
 
 use Illuminate\Http\Request;
 
@@ -40,7 +40,10 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $orgs = new Organization();
+        $store =$orgs::create($data);
+        return response()->json($store);
     }
 
     /**
@@ -88,10 +91,11 @@ class OrganizationController extends Controller
         //
     }
 
-    public function getorganizationList() {
+    public function organizationList() {
 
         $orgtype =OrgType::all();
-        $sector =Sector::all();
+        // $sector =Sector::all();
+        $district = District::all();
         $province =Province::all();
         $orgassciation =Orgassociation::all();
         $donner =Donner::all();
@@ -102,7 +106,7 @@ class OrganizationController extends Controller
         $employee =Employee::all();
         $bank =Bank::all();
         
-        $array = [$orgtype,$sector,$province,$orgassciation,$donner,$project,
+        $array = [$orgtype,$district,$province,$orgassciation,$donner,$project,
                     $delegation,$orgevaluation,$keyspersonnel,$employee,$bank];
                     
         return response()->json($array);

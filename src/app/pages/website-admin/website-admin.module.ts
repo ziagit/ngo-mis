@@ -3,7 +3,7 @@ import { routing } from './website-admin.routing';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WebsiteAdminComponent } from './website-admin.component';
-import { BiographyComponent } from './components/home/biography/biography.component';
+import { BiographyComponent } from './components/biography/biography.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SlideshowsComponent } from './components/home/slideshows/slideshows.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -24,6 +24,9 @@ import { AddNewsTypesComponent } from './components/news/news-types/dialogs/add-
 import { EditNewsTypesComponent } from './components/news/news-types/dialogs/edit-news-types/edit-news-types.component';
 import { DeleteNewsTypesComponent } from './components/news/news-types/dialogs/delete-news-types/delete-news-types.component';
 import { AboutAddComponent } from './components/about-us/component/about-add/about-add.component';
+import { AddBiographyComponent } from './components/biography/diologs/add-biography/add-biography.component';
+import { EditBiographyComponent } from './components/biography/diologs/edit-biography/edit-biography.component';
+import { DeleteBiographyComponent } from './components/biography/diologs/delete-biography/delete-biography.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { AboutAddComponent } from './components/about-us/component/about-add/abo
     EditNewsTypesComponent,
     DeleteNewsTypesComponent,
     AboutAddComponent,
+    AddBiographyComponent,
+    EditBiographyComponent,
+    DeleteBiographyComponent,
   ],
   entryComponents:[
     AboutAddComponent

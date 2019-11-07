@@ -5,6 +5,11 @@ export let MENU_ITEM = [
         icon: 'dashboard'
     },
     {
+        path: 'license',
+        title: 'ثبت جواز',
+        icon: 'file-text-o'
+    },
+    {
         path: 'organization',
         title: 'موسسات',
         icon: 'home',
@@ -14,13 +19,33 @@ export let MENU_ITEM = [
                 title: 'لست موسسات'
             },
             {
+                path: 'public-info',
+                title: 'معلومات عمومی'
+            },
+            {
+                path: 'keypersons',
+                title: 'افراد کلیدی'
+            },
+            {
+                path: 'address',
+                title: 'آدرس'
+            },
+            {
                 path: 'delegations',
                 title: 'هيت ها'
             },
             {
+                path: 'banck-accounts',
+                title: 'حساب بانکی',
+            },
+            {
+                path: 'assessments',
+                title: ' ارزیابی موسسه',
+            },
+            {
                 path: 'activities',
                 title: 'عدم فعالیت موسسه'
-            }
+            },
         ]
     },
     {
@@ -45,17 +70,6 @@ export let MENU_ITEM = [
                 title: 'وسایل نقلیه'
             }
         ]
-    },
-    {
-        path: 'banck-accounts',
-        title: 'حساب بانکی',
-        icon: 'tags'
-    },
-    {
-        path: 'assessments',
-        title: ' ارزیابی موسسه',
-        icon: 'check',
- 
     },
     {
         path: 'reports',
@@ -131,6 +145,11 @@ export let MENU_ITEM = [
             {
                 path: 'jobs',
                 title: 'کاریابی'
+            },
+
+            {
+                path: 'biography',
+                title: 'بیوگرافی',
             },
             {
                 path: 'contact-us',
