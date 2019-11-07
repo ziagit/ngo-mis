@@ -5,15 +5,10 @@ import { routing } from './pages.routing';
 import { LayoutModule } from '../shared/layout.module';
 import { SharedModule } from '../shared/shared.module';
 
-/* components */
 import { PagesComponent } from './pages.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-
 
 @NgModule({
     imports: [
-        FormsModule,
         CommonModule,
         LayoutModule,
         SharedModule,

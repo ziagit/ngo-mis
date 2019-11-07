@@ -5,6 +5,11 @@ export let MENU_ITEM = [
         icon: 'dashboard'
     },
     {
+        path: 'license',
+        title: 'ثبت جواز',
+        icon: 'file-text-o'
+    },
+    {
         path: 'organization',
         title: 'موسسات',
         icon: 'home',
