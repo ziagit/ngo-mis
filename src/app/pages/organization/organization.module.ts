@@ -24,10 +24,12 @@ import { BankAccountsComponent } from './components/bank-accounts/bank-accounts.
 import { AddAccountComponent } from './components/bank-accounts/dialogs/add-account/add-account.component';
 import { BankEditComponent } from './components/bank-accounts/dialogs/bank-edit/bank-edit.component';
 import { DeleteAccountComponent } from './components/bank-accounts/dialogs/delete-account/delete-account.component';
+import { OrgListComponent } from './components/org-list/org-list.component';
 
 
 @NgModule({
   declarations: [
+    OrgListComponent,
     BankAccountsComponent,
     OrganizationComponent,
     AddOrganizationComponent,
