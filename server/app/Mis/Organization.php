@@ -87,5 +87,15 @@ class Organization extends Model
         
         return $this->hasOne(Currency::class);
     }
+
+    public function internalAddress () {
+        
+        return $this->hasOne(InternalAddress::class,"organization_id","id");
+    }
+
+    public function externalAddress () {
+        
+        return $this->hasOne(ExternalAddress::class,"organization_id","id");
+    }
 }
 

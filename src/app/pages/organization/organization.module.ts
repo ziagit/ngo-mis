@@ -25,6 +25,8 @@ import { AddAccountComponent } from './components/bank-accounts/dialogs/add-acco
 import { BankEditComponent } from './components/bank-accounts/dialogs/bank-edit/bank-edit.component';
 import { DeleteAccountComponent } from './components/bank-accounts/dialogs/delete-account/delete-account.component';
 import { OrgListComponent } from './components/org-list/org-list.component';
+import { AddKeypersonsComponent } from './dialogs/add-keypersons/add-keypersons.component';
+import { AddOrganizationAddressComponent } from './dialogs/add-organization-address/add-organization-address.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { OrgListComponent } from './components/org-list/org-list.component';
     DeleteOrganizationComponent,
     AddAccountComponent,
     BankEditComponent,
-    DeleteAccountComponent
+    DeleteAccountComponent,
+    AddKeypersonsComponent,
+    AddOrganizationAddressComponent
     
   ],
   imports: [
@@ -63,7 +67,10 @@ import { OrgListComponent } from './components/org-list/org-list.component';
     DeleteOrganizationComponent,
     AddAccountComponent,
     BankEditComponent,
-    DeleteAccountComponent
+    DeleteAccountComponent,
+    AddKeypersonsComponent,
+    AddOrganizationAddressComponent
+
   ]
 })
 export class OrganizationModule { }

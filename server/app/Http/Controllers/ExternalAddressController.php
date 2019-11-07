@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Currency;
+use App\Mis\ExternalAddress;
 use Illuminate\Http\Request;
 
-class CurrencyController extends Controller
+class ExternalAddressController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class CurrencyController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mis\Currency  $currency
+     * @param  \App\Mis\ExternalAddress  $externalAddress
      * @return \Illuminate\Http\Response
      */
-    public function show(Currency $currency)
+    public function show(ExternalAddress $externalAddress)
     {
         //
     }
@@ -52,10 +52,10 @@ class CurrencyController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mis\Currency  $currency
+     * @param  \App\Mis\ExternalAddress  $externalAddress
      * @return \Illuminate\Http\Response
      */
-    public function edit(Currency $currency)
+    public function edit(ExternalAddress $externalAddress)
     {
         //
     }
@@ -64,10 +64,10 @@ class CurrencyController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mis\Currency  $currency
+     * @param  \App\Mis\ExternalAddress  $externalAddress
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Currency $currency)
+    public function update(Request $request, ExternalAddress $externalAddress)
     {
         //
     }
@@ -75,10 +75,10 @@ class CurrencyController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mis\Currency  $currency
+     * @param  \App\Mis\ExternalAddress  $externalAddress
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Currency $currency)
+    public function destroy(ExternalAddress $externalAddress)
     {
         //
     }

@@ -26,10 +26,6 @@ class CreateOrganizationsTable extends Migration
             $table->text("goals");
             $table->integer("currentCashAmount");
             $table->integer("currency_id");
-            $table->string("house");
-            $table->string("street");
-            $table->unsignedBigInteger("district_id");
-            $table->unsignedBigInteger("province_id");
             $table->timestamps();
 
         });

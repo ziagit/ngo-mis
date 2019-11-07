@@ -19,6 +19,7 @@ export interface PeriodicElement {
   styleUrls: ['./org-list.component.scss']
 })
 export class OrgListComponent implements OnInit {
+  
       dataSource;
     displayedColumns: string[] = ['id','nameDa', 'nameEn', 'abrivation', 'registerNo','registerDate','contactNo','email',
   'organizationtype_id','currentCashAmount','currency'];
