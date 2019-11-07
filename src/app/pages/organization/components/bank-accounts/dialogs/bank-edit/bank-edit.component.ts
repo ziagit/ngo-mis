@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material';
 import { MatDialog } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { BankAccountsService } from '../bank-accounts.service';
+import { BankAccountsService } from '../../bank-accounts.service';
 
 @Component({
   selector: 'app-bank-edit',
@@ -27,7 +27,6 @@ export class BankEditComponent implements OnInit {
       this.project_id = res[0];
      this.organization_id = res[1];
      this.keyspersonnel_id= res[2];
-     
     })
     this.createForm();
   }
@@ -44,7 +43,6 @@ export class BankEditComponent implements OnInit {
     });
   }
   updateAccount(id){
-   
       this.service.updateAccount(this.accountForm.value,id).subscribe(res=>{
       this.service.setRefresh("refresh");
       this.dialo.closeAll();

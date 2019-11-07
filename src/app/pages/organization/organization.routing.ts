@@ -1,18 +1,24 @@
 import { Routes, RouterModule } from '@angular/router';
 import { OrganizationComponent } from './organization.component';
-import { OrgListComponent } from './components/org-list/org-list.component';
 import { DelegationsComponent } from './components/delegations/delegations.component';
 import { TabActivitiesComponent } from './components/tab-activities/tab-activities.component';
+import { PublicInfoComponent } from './components/public-info/public-info.component';
+import { KeypersonsComponent } from './components/keypersons/keypersons.component';
+import { AddressComponent } from './components/address/address.component';
+import { OrgListComponent } from './components/org-list/org-list.component';
 
 const orgRoutes: Routes = [
     {
         path: '',
         component: OrganizationComponent,
-        children:[
-            {path: '', redirectTo: 'org-list', pathMatch: 'full'},
-            {path: 'org-list', component: OrgListComponent},
-            {path: 'activities', component: TabActivitiesComponent},
-            {path: 'delegations', component: DelegationsComponent},
+        children: [
+            { path: '', redirectTo: 'org-list', pathMatch: 'full' },
+            { path: 'org-list', component: OrgListComponent},
+            { path: 'public-info', component: PublicInfoComponent },
+            { path: 'keypersons', component: KeypersonsComponent },
+            { path: 'address', component: AddressComponent },
+            { path: 'activities', component: TabActivitiesComponent },
+            { path: 'delegations', component: DelegationsComponent },
         ]
     }
 ];
