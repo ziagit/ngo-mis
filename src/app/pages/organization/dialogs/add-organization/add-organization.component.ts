@@ -15,17 +15,17 @@ export class AddOrganizationComponent implements OnInit {
   orgForm: FormGroup;
   organizationtype_id:any;
   donner_id:any;
-  sector_id:any;
+  
   district_id:any;
   province_id:any;
   constructor(private formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any, private dialog: MatDialog,private addOs:OrgListService, private refesh:RefreshService) {
     this.createForm();
 
      this.addOs.selectOrgs().subscribe((result)=>{
-         console.log(result);
+        //  console.log(result);
        this.organizationtype_id = result[0];
        this.donner_id = result[5];
-       this.sector_id = result[1];
+     
        this.district_id = result[2];
        this.province_id = result[3];
      });
@@ -61,6 +61,7 @@ export class AddOrganizationComponent implements OnInit {
   }
   addOrg(data){
     this.addOs.addOrgs(data.value).subscribe((res) =>{
+      // console.log(data);
       
       this.dialog.closeAll();
     });

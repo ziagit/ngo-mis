@@ -46,14 +46,7 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
-        <mat-label>انتخاب سکتور</mat-label>
-        <mat-select formControlName="sector_id" >
-          <mat-option *ngFor="let sector of sector_id" [value]="sector.id">
-            {{sector.sectorName}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+   
     
     <mat-form-field>
       <input matInput placeholder="goals" formControlName="goals">

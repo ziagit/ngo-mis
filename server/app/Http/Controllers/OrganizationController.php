@@ -40,7 +40,7 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return response()->json("this is some text");
     }
 
     /**
@@ -91,7 +91,7 @@ class OrganizationController extends Controller
     public function organizationList() {
 
         $orgtype =OrgType::all();
-        $sector =Sector::all();
+        // $sector =Sector::all();
         $district = District::all();
         $province =Province::all();
         $orgassciation =Orgassociation::all();
@@ -103,7 +103,7 @@ class OrganizationController extends Controller
         $employee =Employee::all();
         $bank =Bank::all();
         
-        $array = [$orgtype,$sector,$district,$province,$orgassciation,$donner,$project,
+        $array = [$orgtype,$district,$province,$orgassciation,$donner,$project,
                     $delegation,$orgevaluation,$keyspersonnel,$employee,$bank];
                     
         return response()->json($array);

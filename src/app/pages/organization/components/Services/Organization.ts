@@ -9,7 +9,7 @@ export interface IOrganization {
     email:string;
     organizationtype_id:number;
     donner_id:number;
-    sector_id:number;
+    
     goals:string;
     currentCashAmount:number;
     currency:number;

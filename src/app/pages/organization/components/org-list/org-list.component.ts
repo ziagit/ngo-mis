@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatTableDataSource } from '@angular/material';
 import { AddOrganizationComponent } from '../../dialogs/add-organization/add-organization.component';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { OrgListService } from '../Services/org-list.service';
 
 import { RefreshService } from '../Services/refresh.service';
@@ -21,9 +21,7 @@ export interface PeriodicElement {
 export class OrgListComponent implements OnInit {
       dataSource;
     displayedColumns: string[] = ['id','nameDa', 'nameEn', 'abrivation', 'registerNo','registerDate','contactNo','email',
-  'organizationtype_id','donner_id','sector_id','currentCashAmount','currency','province_id',"more"];
-
-  
+  'organizationtype_id','donner_id','currentCashAmount','currency','province_id',"more"];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   animal:any;
@@ -39,6 +37,7 @@ export class OrgListComponent implements OnInit {
   ngOnInit(){
     this.refresh.getRefresh().subscribe((refresh)=>{
       this.getOrg();
+      console.log(this.getOrg());
     });
     
   }
@@ -49,14 +48,16 @@ export class OrgListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
+       console.log('The dialog was closed');
       this.animal = result;
+      
     });
   }
 
   getOrg(){
     this.orgService.getOrg().subscribe(res=>{
-       console.log('data', res);
+      //  console.log('data', res);
 
      this.dataSource =  new MatTableDataSource(res);
      this.dataSource.paginator = this.paginator; 
