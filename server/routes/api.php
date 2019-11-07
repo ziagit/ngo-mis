@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Mis\Province;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,7 +23,15 @@ Organization Route
 Route::resource("organizations","OrganizationController");
 Route::get("organizationList","OrganizationController@organizationList");
 
+Route::resource('provinces', 'ProvinceController');
+Route::resource('districts','DistrictController');
+Route::resource('sectors','SectorController');
+Route::resource('relatedgoals','RelatedGoalsController');
+Route::resource('relatedtargets','RelatedTargetController');
+
+
 Route::resource("projects","ProjectController");
+
 
 
 Route::resource("orgassociations","OrgassociationController");

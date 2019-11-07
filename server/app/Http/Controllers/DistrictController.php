@@ -14,7 +14,8 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        //
+        $dis = District::all();
+        return response()->json($dis);
     }
 
     /**
@@ -35,7 +36,12 @@ class DistrictController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dis = new District;
+        $dis->districtName = $request->districtName;
+        $dis->districtCode = $request->districtCode;
+        $dis->drovince_id = $request->drovince_id;
+        $dis->save();
+        return response()->json('my data inserted' . $dis);
     }
 
     /**
@@ -67,9 +73,15 @@ class DistrictController extends Controller
      * @param  \App\Mis\District  $district
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, District $district)
+    public function update(Request $request,$district)
     {
-        //
+        $dis = District::find($district);
+        $dis->districtName = $request->districtName;
+        $dis->districtCode = $request->districtCode;
+        $dis->drovince_id = $request->drovince_id;
+        
+        $dis->save();
+        return response()->json("Updated successfully.");
     }
 
     /**
@@ -78,8 +90,10 @@ class DistrictController extends Controller
      * @param  \App\Mis\District  $district
      * @return \Illuminate\Http\Response
      */
-    public function destroy(District $district)
+    public function destroy($district)
     {
-        //
+        $myId = District::find($district);
+        $deleteId = $myId->delete();
+        return response()->json($deleteId);
     }
 }

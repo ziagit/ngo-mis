@@ -1,3 +1,48 @@
-<p>
-  related-goals works!
-</p>
+
+  <div align="end">
+    <button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+  </div>
+  
+  
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="relatedGoalsdes">
+      <th mat-header-cell *matHeaderCellDef> relatedGoalsdes </th>
+      <td mat-cell *matCellDef="let element"> {{element.relatedGoalsdesc}} </td>
+    </ng-container>
+
+    <!-- edit Column -->
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> edit </th>
+        <td mat-cell *matCellDef="let element"> 
+          <i class="fa fa-edit btn btn-success btn-sm btn-circle" (click)="editDialog(element)"></i>
+        </td>
+      </ng-container>
+  
+    <!-- delete Column -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element"> 
+        <i class="fa fa-trash btn btn-danger btn-sm btn-circle" (click)="deleteRelatedGoal(element.id)"></i>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+  </table>
+  
+  <mat-paginator [pageSizeOptions]="[5, 10, 20,100]" showFirstLastButtons></mat-paginator>
+  </div>

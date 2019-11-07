@@ -36,8 +36,11 @@ class ProvinceController extends Controller
      */
     public function store(Request $request)
     {
-        $prove = new Province();
-        $data=$prove->addProvince($request->all());
+        $prove = new Province;
+        $prove->provinceName = $request->provinceName;
+        $prove->provinceCode = $request->provinceCode;
+        $prove->save();
+        return response()->json('my data inserted' . $prove);
     }
 
     /**
@@ -69,9 +72,13 @@ class ProvinceController extends Controller
      * @param  \App\Mis\Province  $province
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Province $province)
+    public function update(Request $request,$province)
     {
-        //
+        $foundedProvince = Province::find($province);
+        $foundedProvince->provinceName = $request->provinceName;
+        $foundedProvince->provinceCode = $request->provinceCode;
+        $foundedProvince->save();
+        return response()->json("Updated successfully.");
     }
 
     /**
@@ -80,9 +87,11 @@ class ProvinceController extends Controller
      * @param  \App\Mis\Province  $province
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Province $province)
+    
+    public function destroy($province)
     {
-        
-
+        $myId = Province::find($province);
+        $deleteId = $myId->delete();
+        return response()->json($deleteId);
     }
 }
