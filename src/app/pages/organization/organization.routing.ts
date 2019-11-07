@@ -6,6 +6,7 @@ import { PublicInfoComponent } from './components/public-info/public-info.compon
 import { KeypersonsComponent } from './components/keypersons/keypersons.component';
 import { AddressComponent } from './components/address/address.component';
 import { OrgListComponent } from './components/org-list/org-list.component';
+import { BankAccountsComponent } from './components/bank-accounts/bank-accounts.component';
 
 const orgRoutes: Routes = [
     {
@@ -17,6 +18,7 @@ const orgRoutes: Routes = [
             { path: 'public-info', component: PublicInfoComponent },
             { path: 'keypersons', component: KeypersonsComponent },
             { path: 'address', component: AddressComponent },
+            { path: 'banck-accounts', component: BankAccountsComponent},
             { path: 'activities', component: TabActivitiesComponent },
             { path: 'delegations', component: DelegationsComponent },
         ]
