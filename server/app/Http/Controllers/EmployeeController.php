@@ -37,6 +37,14 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        if($request->image!=""){
+            $file = $request->file("image");
+            $file_name = time().$file->getClientOriginalName();
+            $file->move("uploads/employee/",$file_name);
+        }
+        else{
+            $file_name="Nothing file";
+        }
         $employee = new Employee;
         $employee->name=$request->name; 
         $employee->fatherName=$request->fatherName; 
@@ -51,7 +59,7 @@ class EmployeeController extends Controller
         $employee->gender=$request->gender;
         $employee->identity=$request->identity;
         $employee->organization_id=$request->organization_id;
-        $employee->photo = $request->photo;
+        $employee->photo = $file_name;
         $employee->province_id = $request->province_id;
         $employee->remarks =$request->remarks;
         $employee->salary = $request->salary;
@@ -67,7 +75,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $employee = Employee::find($id)->with('organization')->with("province")->first();
+        $employee = Employee::with('organization')->with("province")->find($id);
         
         return response()->json($employee);
     }

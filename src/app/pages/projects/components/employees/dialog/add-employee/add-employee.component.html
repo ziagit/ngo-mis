@@ -59,9 +59,6 @@
     <mat-form-field>
       <input matInput placeholder="ختم قرار داد  :" formControlName="contractEndDate">
     </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder=" عکس  :" formControlName="photo">
-    </mat-form-field>
     
     <mat-form-field>
       <input matInput placeholder="   ملاحظه :" formControlName="remarks">
@@ -71,6 +68,8 @@
         <mat-option *ngFor="let org of organization" value="{{org.id}}" >{{org.nameDa}}{{org.nameEn}}</mat-option>
       </mat-select>
     </mat-form-field>  
+    
+    <input type="file" id="photo" formControlName="photo" (change)="selectFile($event)">
     <!-- <mat-form-field>
       <textarea matInput placeholder="Textarea" formControlName=""></textarea>
     </mat-form-field>
