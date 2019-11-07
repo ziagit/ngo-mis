@@ -16,7 +16,7 @@ export let MENU_ITEM = [
         children: [
             {
                 path: 'org-list',
-                title: 'بست موسسات'
+                title: 'لست موسسات'
             },
             {
                 path: 'public-info',
