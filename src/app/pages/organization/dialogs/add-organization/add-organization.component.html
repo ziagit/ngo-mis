@@ -1,5 +1,6 @@
 <div class="example-container">
   <form [formGroup]="orgForm" (ngSubmit)="onSubmitOrgnizationForm(orgForm)">
+    
     <mat-form-field>
       <input matInput placeholder="نام دری " formControlName="nameDa">
     </mat-form-field>
@@ -11,7 +12,16 @@
     <mat-form-field>
       <input matInput placeholder="اختصار نام " formControlName="abrivation">
     </mat-form-field>
-    
+
+    <mat-form-field>
+      <mat-label>انتخاب نوعیت موسسه </mat-label>
+    <mat-select placeholder="موسسه انتخاب"  formControlName="organizationtype_id">
+        
+      <mat-option *ngFor="let org of organizationtype_id" [value]="org.id" >{{org.orgType}}</mat-option> 
+      
+    </mat-select>
+  </mat-form-field>
+  
     <mat-form-field>
       <input matInput placeholder="نمبر راجستر" formControlName="registerNo">
     </mat-form-field>
@@ -25,70 +35,23 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder=" email" formControlName="email">
+      <input matInput placeholder=" ایمل آدرس" formControlName="email">
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>انتخاب نوعیت موسسه </mat-label>
-      <mat-select placeholder="موسسه انتخاب"  formControlName="organizationtype_id">
-          
-        <mat-option *ngFor="let org of organizationtype_id" [value]="org.id" >{{org.orgType}}</mat-option> 
-        
-      </mat-select>
-    </mat-form-field>
-
-    <!-- <mat-form-field>
-        <mat-label>انتخاب همایه کننده</mat-label>
-      <mat-select placeholder="موسسه انتخاب"  formControlName="donner_id">
-          
-        <mat-option *ngFor="let donner of donner_id" [value]="donner.id" >{{donner.name}}</mat-option> 
-        
-      </mat-select>
-    </mat-form-field> -->
-
-   
-    
-    <mat-form-field>
-      <input matInput placeholder="goals" formControlName="goals">
+      <input matInput placeholder="آهداف" formControlName="goals">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="currentCashAmount" formControlName="currentCashAmount">
+      <input matInput placeholder="بودیجه فعلی " formControlName="currentCashAmount">
     </mat-form-field>
 
    
     <mat-form-field>
-      <input matInput placeholder="currency " formControlName="currency">
+      <input matInput placeholder="واحد پول " formControlName="currency">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder=" آدرس خانه" formControlName="house">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder=" سرک" formControlName="street">
-    </mat-form-field>
-
-    <!-- <mat-form-field>
-        <mat-label>انتخاب ولسوالی</mat-label>
-        <mat-select formControlName="district_id" >
-          <mat-option *ngFor="let district of district_id" [value]="district.id">
-            {{district.districtName}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field> -->
-
-    <!-- <mat-form-field>
-        <mat-label>انتخاب ولایت</mat-label>
-        <mat-select formControlName="province_id" >
-          <mat-option *ngFor="let province of province_id" [value]="province.id">
-            {{province.provinceName}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field> -->
-
-    
-    
+  
 
     <button mat-button type="submit">Submit</button>
   </form>

@@ -18,7 +18,8 @@ export class AddOrganizationComponent implements OnInit {
   
   district_id:any;
   province_id:any;
-  constructor(private formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any, private dialog: MatDialog,private addOs:OrgListService, private refesh:RefreshService) {
+  constructor(private formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any, private dialog: MatDialog,
+  private addOs:OrgListService, private refesh:RefreshService) {
     this.createForm();
 
 
@@ -48,8 +49,6 @@ export class AddOrganizationComponent implements OnInit {
         goals: ['', Validators.required],
         currentCashAmount: ['', Validators.required],
         currency: ['', Validators.required],
-        house: ['', Validators.required],
-        street: ['', Validators.required],
         organizationtype_id:['', Validators.required],
       
         
