@@ -40,7 +40,10 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
-        // return response()->json("this is some text");
+        $data = $request->all();
+        $orgs = new Organization();
+        $store =$orgs::create($data);
+        return response()->json($store);
     }
 
     /**

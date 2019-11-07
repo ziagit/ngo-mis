@@ -23,11 +23,7 @@ export class OrgListService {
     
   }
 
-  addOrgs(data):Observable<IOrganization> {
-    
-     return this.http.post<IOrganization>(this.url+"organizations",data);
-   
-  }
+ 
 
  // for select relation tables
  selectOrgs():Observable<IOrganization>{
@@ -35,8 +31,11 @@ export class OrgListService {
   }
 
   deleteOrgs(id):Observable<IOrganization> {
-
     return this.http.delete<IOrganization>(this.url+"organizations/"+id);
+  }
+
+  createOrganization(data):Observable<IOrganization> {
+    return this.http.post<IOrganization>(this.url+"organizations",data);
   }
  
   

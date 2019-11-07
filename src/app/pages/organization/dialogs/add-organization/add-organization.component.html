@@ -1,11 +1,11 @@
 <div class="example-container">
-  <form [formGroup]="orgForm" (ngSubmit)="addOrg(orgForm)">
+  <form [formGroup]="orgForm" (ngSubmit)="onSubmitOrgnizationForm(orgForm)">
     <mat-form-field>
       <input matInput placeholder="نام دری " formControlName="nameDa">
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="نام انگلیسی" formControlName="nameEn">
+      <input matInput placeholder="نام انگلیسی" formControlName="nameEn" [(ngModel)] ="nameEn ">
     </mat-form-field>
     
     <mat-form-field>
@@ -21,7 +21,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="شماره تماس" formControlName="contactNO">
+      <input matInput placeholder="شماره تماس" formControlName="contactNo">
     </mat-form-field>
 
     <mat-form-field>
@@ -37,14 +37,14 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
+    <!-- <mat-form-field>
         <mat-label>انتخاب همایه کننده</mat-label>
       <mat-select placeholder="موسسه انتخاب"  formControlName="donner_id">
           
         <mat-option *ngFor="let donner of donner_id" [value]="donner.id" >{{donner.name}}</mat-option> 
         
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> -->
 
    
     
@@ -69,23 +69,23 @@
       <input matInput placeholder=" سرک" formControlName="street">
     </mat-form-field>
 
-    <mat-form-field>
+    <!-- <mat-form-field>
         <mat-label>انتخاب ولسوالی</mat-label>
         <mat-select formControlName="district_id" >
           <mat-option *ngFor="let district of district_id" [value]="district.id">
             {{district.districtName}}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
 
-    <mat-form-field>
+    <!-- <mat-form-field>
         <mat-label>انتخاب ولایت</mat-label>
         <mat-select formControlName="province_id" >
           <mat-option *ngFor="let province of province_id" [value]="province.id">
             {{province.provinceName}}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
 
     
     

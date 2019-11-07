@@ -7,6 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class Organization extends Model
 {
+    protected $fillable = [
+        'nameDa',
+        'nameEn',
+        'abrivation',
+        'registerNo',
+        'registerDate',
+        'contactNo',
+        'email',
+        'organizationtype_id',
+        'goals',
+        'currentCashAmount',
+        'currency',
+    ];
+    
+
      public function orgType()
     {
         return $this->belongsTo(OrgType::class,"organizationtype_id","id");

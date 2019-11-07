@@ -21,6 +21,9 @@ export class AddOrganizationComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any, private dialog: MatDialog,private addOs:OrgListService, private refesh:RefreshService) {
     this.createForm();
 
+
+   
+
      this.addOs.selectOrgs().subscribe((result)=>{
         //  console.log(result);
        this.organizationtype_id = result[0];
@@ -33,17 +36,14 @@ export class AddOrganizationComponent implements OnInit {
      
    }
 
-  ngOnInit() {
-  }
-
-  createForm() {
+   createForm() {
     this.orgForm = this.formBuilder.group({
         nameDa: ['', Validators.required],
         nameEn: ['', Validators.required],
         abrivation: ['', Validators.required],
         registerNo: ['', Validators.required],
         registerDate: ['', Validators.required],
-        contactNO: ['', Validators.required],
+        contactNo: ['', Validators.required],
         email: ['', Validators.required],
         goals: ['', Validators.required],
         currentCashAmount: ['', Validators.required],
@@ -51,24 +51,27 @@ export class AddOrganizationComponent implements OnInit {
         house: ['', Validators.required],
         street: ['', Validators.required],
         organizationtype_id:['', Validators.required],
-        donner_id:['', Validators.required],
-        sector_id:['', Validators.required],
-        district_id:['', Validators.required],
-        province_id:['', Validators.required],
-
+      
         
     });
   }
-  addOrg(data){
-    this.addOs.addOrgs(data.value).subscribe((res) =>{
-      // console.log(data);
-      
-      this.dialog.closeAll();
+
+  ngOnInit() {
+  }
+
+  onSubmitOrgnizationForm(data) {
+   
+    this.addOs.createOrganization(data.value).subscribe((res) =>{
+        console.log(data,"this is data Caming");
+        this.dialog.closeAll();
     });
     
-
-    
   }
+
+
+
+ 
+
 
  
 
