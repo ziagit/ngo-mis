@@ -25,7 +25,7 @@ class CreateOrganizationsTable extends Migration
             $table->unsignedBigInteger("organizationtype_id");
             $table->text("goals");
             $table->integer("currentCashAmount");
-            $table->string("currency");
+            $table->integer("currency_id");
             $table->string("house");
             $table->string("street");
             $table->unsignedBigInteger("district_id");

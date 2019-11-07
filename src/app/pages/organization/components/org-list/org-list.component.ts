@@ -21,7 +21,7 @@ export interface PeriodicElement {
 export class OrgListComponent implements OnInit {
       dataSource;
     displayedColumns: string[] = ['id','nameDa', 'nameEn', 'abrivation', 'registerNo','registerDate','contactNo','email',
-  'organizationtype_id','donner_id','currentCashAmount','currency','province_id',"more"];
+  'organizationtype_id','currentCashAmount','currency'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   animal:any;

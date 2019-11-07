@@ -62,11 +62,6 @@
 </ng-container>
 
 
-<!-- 
-<ng-container matColumnDef="goals">
-  <mat-header-cell *matHeaderCellDef> اهداف </mat-header-cell>
-  <mat-cell *matCellDef="let element"> {{element.goals}} </mat-cell>
-</ng-container> -->
 
 <ng-container matColumnDef="currentCashAmount">
   <mat-header-cell *matHeaderCellDef> مقدار پول</mat-header-cell>
@@ -77,38 +72,6 @@
   <mat-header-cell *matHeaderCellDef> واحد پولی </mat-header-cell>
   <mat-cell *matCellDef="let element"> {{element.currency}} </mat-cell>
 </ng-container>
-
-<!-- <ng-container matColumnDef="house">
-  <mat-header-cell *matHeaderCellDef> خانه </mat-header-cell>
-  <mat-cell *matCellDef="let element"> {{element.house}} </mat-cell>
-</ng-container> -->
-<!-- 
-<ng-container matColumnDef="street">
-  <mat-header-cell *matHeaderCellDef> سرک</mat-header-cell>
-  <mat-cell *matCellDef="let element"> {{element.street}} </mat-cell>
-</ng-container> -->
-
-<!-- <ng-container matColumnDef="district_id">
-  <mat-header-cell *matHeaderCellDef>ناحیه</mat-header-cell>
-  <mat-cell *matCellDef="let element"> {{element.district_id}} </mat-cell>
-</ng-container> -->
-
-<ng-container matColumnDef="province_id">
-  <mat-header-cell *matHeaderCellDef> ولایت </mat-header-cell>
-  <mat-cell *matCellDef="let element"> {{element.province_id}} </mat-cell>
-</ng-container>
-
-<ng-container matColumnDef="more">
-    <mat-header-cell *matHeaderCellDef> گذینه ها</mat-header-cell>
-    <mat-cell *matCellDef="let element">
-      <a routerLink=""><i class="fa fa-trash btn btn-danger btn-sm "   (click)="deleteOrganization(element)"></i></a>
-      <span class="btn btn-info btn-sm"><i class="fa fa-eye"></i></span>
-      <span class="btn btn-success btn-sm"><i class="fa fa-edit"></i></span>
-    </mat-cell>
-    
-    
-  </ng-container>
-  
 
 
 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

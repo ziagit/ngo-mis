@@ -3,10 +3,26 @@
 
 namespace App\Mis;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Organization extends Model
 {
+    protected $fillable = [
+        'nameDa',
+        'nameEn',
+        'abrivation',
+        'registerNo',
+        'registerDate',
+        'contactNo',
+        'email',
+        'organizationtype_id',
+        'goals',
+        'currentCashAmount',
+        'currency',
+    ];
+    
+
      public function orgType()
     {
         return $this->belongsTo(OrgType::class,"organizationtype_id","id");
@@ -65,6 +81,11 @@ class Organization extends Model
     public function bank()
     {
         return $this->hasMany(Bank::class,"organization_id","id");
+    }
+
+    public function currency () {
+        
+        return $this->hasOne(Currency::class);
     }
 }
 
