@@ -1,10 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatTableDataSource } from '@angular/material';
-import {MatPaginator} from '@angular/material/paginator';
-import { OrgListService } from '../Services/org-list.service';
+import { AddDelegationsComponent } from './dialogs/add-delegations/add-delegations.component';
 
-import { RefreshService } from '../Services/refresh.service';
-import { AddDelegationsComponent } from '../../dialogs/add-delegations/add-delegations.component';
 
 
 

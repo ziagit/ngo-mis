@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { OrgListService } from '../../components/Services/org-list.service';
 import { MatDialog,MAT_DIALOG_DATA } from '@angular/material';
+import { OrgListService } from '../../service/org-list.service';
 
 @Component({
   selector: 'app-delete-organization',

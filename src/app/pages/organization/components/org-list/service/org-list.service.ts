@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import { IOrganization } from './Organization';
+import { IOrganization } from '../Organization';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ export class OrgListService {
   options:any;
 
   constructor(private http: HttpClient) { 
+    
     this.headers.append("enctype","mutipart/form-data");
     this.headers.append("Component-Type","application/json");
     this.headers.append("X-Requested-With","XMLHttpRequest");

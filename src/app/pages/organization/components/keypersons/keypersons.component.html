@@ -1,4 +1,77 @@
 <div>
     <button mat-raised-button color="primary" (click)="openDialog()">وارید کردن افراد کلیدی موسسه</button>
 </div>
-  
+
+      
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+      
+      <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> شماره. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> اسم </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="fatherName">
+        <mat-header-cell *matHeaderCellDef> اسم پدر </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fatherName}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="possition">
+        <mat-header-cell *matHeaderCellDef> مقام </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.possition}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef> نمبر تلفن </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.phone}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> آیمل آدرس </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="NIC">
+        <mat-header-cell *matHeaderCellDef> نمبر تزکره </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.NIC}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef> حالت مدنی </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.gender}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="education">
+        <mat-header-cell *matHeaderCellDef> تحصیل </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.education}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef> آدرس </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.address}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="organization_id">
+        <mat-header-cell *matHeaderCellDef> نام موسسه </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.organization_id}} </mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef> عملیات </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-icon-button color="accent"  (click) = "deletekeyspersonal(element.id)">
+              <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button color="accent"  mat-button (click) = "editKeyspersonal(element)">
+              <mat-icon>edit</mat-icon>
+          </button>
+          
+        </mat-cell>
+      </ng-container>
+      
+     
+      
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

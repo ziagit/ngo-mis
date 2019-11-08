@@ -73,6 +73,22 @@
     <mat-cell *matCellDef="let element"> {{element.currency}} </mat-cell>
   </ng-container>
   
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef> گذینه ها </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent"  (click) = "deletepublicInfo(element.id)">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button color="accent"  mat-button (click) = "editpublicinfo(element)">
+            <mat-icon>edit</mat-icon>
+        </button>
+        
+      </mat-cell>
+    </ng-container>
+    
+
+
   
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

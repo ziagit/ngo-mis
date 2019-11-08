@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-address',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-
-  constructor() { }
+  animal:any;
+  constructor(private dialog:MatDialog) { }
 
   ngOnInit() {
   }
 
-}
+  
+ }
+
+
+
+

@@ -75,9 +75,11 @@ class OrganizationController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Organization $organization)
+    public function update(Request $request,  $organization)
     {
-        //
+        
+        Organization::findOrFail($organization)->update($request->all());
+        return response()->json("successfuly Organization updateted!");
     }
 
     /**

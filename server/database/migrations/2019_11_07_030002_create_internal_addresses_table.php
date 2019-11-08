@@ -18,8 +18,8 @@ class CreateInternalAddressesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('houseNo')->nullable();
             $table->integer('streetNo')->nullable();
-            $table->string('province')->nullable();
-            $table->string('district')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
             $table->unsignedBigInteger('organization_id');
             $table->timestamps();
         });

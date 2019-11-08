@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatTableDataSource } from '@angular/material';
-import { AddOrganizationComponent } from '../../dialogs/add-organization/add-organization.component';
 import { MatPaginator } from '@angular/material/paginator';
-import { OrgListService } from '../Services/org-list.service';
+import { OrgListService } from './service/org-list.service';
+import { AddOrganizationComponent } from './dialogs/add-organization/add-organization.component';
+import { DeleteOrganizationComponent } from './dialogs/delete-organization/delete-organization.component';
 
-import { RefreshService } from '../Services/refresh.service';
-import { DeleteOrganizationComponent } from '../../dialogs/delete-organization/delete-organization.component';
 
 
 
@@ -31,19 +30,18 @@ export class OrgListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private dialog: MatDialog, private orgService: OrgListService, private refresh:RefreshService){
+  constructor(private dialog: MatDialog, private orgService: OrgListService){
     this.getOrg();
   }
 
   ngOnInit(){
-    this.refresh.getRefresh().subscribe((refresh)=>{
-      this.getOrg();
-      console.log(this.getOrg());
-    });
     
+      this.getOrg();
+     
   }
 
-  openDialog(): void {
+  openDialog(): void
+   {
     const dialogRef = this.dialog.open(AddOrganizationComponent, {
       width: '600px',
     });

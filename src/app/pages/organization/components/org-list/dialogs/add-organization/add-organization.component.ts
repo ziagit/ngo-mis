@@ -1,8 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { OrgListService } from '../../components/Services/org-list.service';
-import { RefreshService } from '../../components/Services/refresh.service';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
+import { OrgListService } from '../../service/org-list.service';
 
 
 
@@ -18,13 +17,9 @@ export class AddOrganizationComponent implements OnInit {
   
   district_id:any;
   province_id:any;
-  constructor(private formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) public data:any, private dialog: MatDialog,
-  private addOs:OrgListService, private refesh:RefreshService) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog,
+  private addOs:OrgListService) {
     this.createForm();
-
-
-   
-
      this.addOs.selectOrgs().subscribe((result)=>{
         //  console.log(result);
        this.organizationtype_id = result[0];

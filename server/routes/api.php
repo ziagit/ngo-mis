@@ -22,6 +22,7 @@ Organization Route
 */
 Route::resource("organizations","OrganizationController");
 Route::get("organizationList","OrganizationController@organizationList");
+Route::resource("internaladdress","InternalAddressController");
 
 Route::resource('provinces', 'ProvinceController');
 Route::resource('districts','DistrictController');
@@ -40,7 +41,10 @@ Route::resource("vehicles","VehicleController");
 Route::resource("employees","EmployeeController");
 Route::resource("plans","PlanController");
 Route::resource("delegations","DelegationController");
+
 Route::resource("keyspersonnels","KeyspersonnelController");
+Route::get("getOrganization","KeyspersonnelController@getOrganization");
+
 Route::resource("orgevaluations","OrgevaluationController");
 Route::resource("donners","DonnerController");
 Route::resource("projectDocLists","ProjectDocListController");
