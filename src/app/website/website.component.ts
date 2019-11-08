@@ -8,15 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebsiteComponent implements OnInit {
   chosedLang:string;
+  checkLang:boolean = true;
   constructor(public translate: TranslateService) {
+    /*this.translate.addLangs(['da', 'en', 'ps']);*/
     
-    this.translate.setDefaultLang('da'); 
-    
+    if(localStorage.getItem('language')!=null){
+       this.translate.setDefaultLang('da');   
+     localStorage.setItem('language', 'da');
+    }
+    else{
+      localStorage.setItem('language', localStorage.getItem('language'))
+    }
    }
 changeLang(event:string){
+  if(event == 'da'){
+    this.checkLang = true;
+    this.chosedLang = event;
+  }
+  else{
+    this.checkLang = false;
+    this.chosedLang = event;
+  }
   
-  console.log("insdie parrent: ", event)
-  this.chosedLang = "hello.";
 }
   ngOnInit() {
   }

@@ -12,4 +12,7 @@ export class OrganizationLawsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addOrgLaw1(){
+    
+  }
 }

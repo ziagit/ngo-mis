@@ -43,6 +43,10 @@ Route::resource('delegationTypes', 'DelegationTypeController');
 Route::resource('employeeTypes', 'EmployeeTypeController');
 Route::resource('budjetTypes', 'BudjetTypeController');
 
+// Routes For Website-Admin
+Route::resource('abouts', 'AboutUsController');
+Route::resource('orglaws', 'OrgLawControler');
+
 Route::get("listrelationproject","ProjectController@listrelationproject");
 Route::get("employeerelation","EmployeeController@employeerelation");
 

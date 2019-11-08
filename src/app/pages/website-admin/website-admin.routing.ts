@@ -19,7 +19,7 @@ const routes: Routes = [
             { path: 'about-us', component: AboutUsComponent },
             { path: 'org-registeration', component: OrgRegisterationComponent },
             { path: 'news', component: NewsComponent },
-            { path: 'org-laws', component: OrganizationLawsComponent },
+            { path: 'orglaws', component: OrganizationLawsComponent },
             { path: 'jobs', component: JobsComponent },
             { path: 'contact-us', component: ContactUsComponent },
         ]

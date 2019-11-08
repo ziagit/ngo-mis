@@ -6,9 +6,11 @@
 <app-biography></app-biography>
 <app-about-us></app-about-us>
 -->
-<app-header (selectedLang)="changeLang($event)"></app-header>
+<app-header (setLang)="changeLang($event)"></app-header>
+
   <!-- The slideshow -->
 <app-slideshow></app-slideshow>
+
 
 			<!-- End banner Area -->
 
@@ -20,6 +22,7 @@
 							<div class="single-cat d-flex flex-column">
 								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-magic-wand"></span></span></a>
 								<h4 class="mb-20" style="margin-top: 23px;">Maintenance</h4>
+								<h3 style="color:red;" *ngIf="checkLang">in the name</h3>
 								<p>
 									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
 								</p>

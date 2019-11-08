@@ -14,7 +14,8 @@ class AboutUsController extends Controller
      */
     public function index()
     {
-        //
+         $abouts = AboutUs::all();
+         return response()->json($abouts);
     }
 
     /**
@@ -35,7 +36,16 @@ class AboutUsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $abouts = new AboutUs;
+        $abouts->titleDa = $request->titleDa;
+        $abouts->titleEn = $request->titleEn;
+        $abouts->titlePa = $request->titlePa;
+        $abouts->descriptionDa = $request->descriptionDa;
+        $abouts->descriptionEn = $request->descriptionEn;
+        $abouts->descriptionPa = $request->descriptionPa;
+        $abouts->save();
+        return response()->json(["scucess fully saved "],200);
+
     }
 
     /**
@@ -57,7 +67,8 @@ class AboutUsController extends Controller
      */
     public function edit(AboutUs $aboutUs)
     {
-        //
+        $about = AboutUs::find($aboutUs);
+         return response()->json(["show edit page succesfuly "],$about);
     }
 
     /**
@@ -67,9 +78,18 @@ class AboutUsController extends Controller
      * @param  \App\AboutUs  $aboutUs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AboutUs $aboutUs)
+    public function update(Request $request, $aboutUs)
     {
-        //
+        $about = AboutUs::find($aboutUs);
+        $abouts->titleDa = $request->titleDa;
+        $abouts->titleEn = $request->titleEn;
+        $abouts->titlePa = $request->titlePa;
+        $abouts->descriptionDa = $request->descriptionDa;
+        $abouts->descriptionEn = $request->descriptionEn;
+        $abouts->descriptionPa = $request->descriptionPa;
+        $abouts->save();
+        return response()->json("scucess updated ");
+
     }
 
     /**
@@ -78,8 +98,10 @@ class AboutUsController extends Controller
      * @param  \App\AboutUs  $aboutUs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(AboutUs $aboutUs)
+    public function destroy($aboutUs)
     {
-        //
+        $about = AboutUs::find($aboutUs);
+        $about->delete();
+        return response()->json("about deleted");
     }
 }

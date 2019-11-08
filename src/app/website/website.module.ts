@@ -10,6 +10,7 @@ import { BiographyComponent } from './components/biography/biography.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { websiteRouting } from './website.routing';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { websiteRouting } from './website.routing';
     NewsComponent, 
     BiographyComponent, 
     AboutUsComponent, 
-    FooterComponent
+    FooterComponent, AboutComponent
     ],
 
   imports: [

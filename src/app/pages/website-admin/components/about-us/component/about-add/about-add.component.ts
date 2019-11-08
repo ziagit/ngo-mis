@@ -25,7 +25,7 @@ creatForm(){
 }
 addAbout(e){
   e.preventDefault();
-  this.aboutService.addAbout(this.aboutForm.value).subscribe(res=>{
+  this.aboutService.addAB(this.aboutForm.value).subscribe(res=>{
     console.log("saved: ",res)
   });
 }

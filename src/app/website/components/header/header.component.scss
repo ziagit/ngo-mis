@@ -6,6 +6,20 @@
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
+
+.dir{
+  direction: ltr !important;
+}
+.headerDari{
+  direction: rtl !important;
+}
+.navbarDari{
+  direction: ltr !important;
+}
+// .changeDirection{
+//   position: relative !important;
+//   direction: ltr !important;
+// }
 ::-moz-selection {
   /* Code for Firefox */
   background-color: #fab700;
@@ -3648,19 +3662,10 @@ color: white;
   height: 90%;
 }
 
-.commentform-area .form-control {
-  border: none;
-  background: #f9f9ff;
-}
-
 /*
 ################
                End Blog Details  Page style
 ################
 */
-
-.baqir{
-  color:blue;
-}
 
 

@@ -1,3 +1,4 @@
+import { AboutEditComponent } from './components/about-us/component/about-edit/about-edit.component';
 import { SharedModule } from './../../shared/shared.module';
 import { routing } from './website-admin.routing';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,9 @@ import { GalleriesComponent } from './components/news/galleries/galleries.compon
 import { HomeComponent } from './components/home/home.component';
 import { AddressComponent } from './components/contact-us/address/address.component';
 import { AboutAddComponent } from './components/about-us/component/about-add/about-add.component';
+import { OrgLawAddComponent } from './components/organization-laws/component/org-law-add/org-law-add.component';
+import { OrgLawListComponent } from './components/organization-laws/component/org-law-list/org-law-list.component';
+import { OrgLawEditComponent } from './components/organization-laws/component/org-law-edit/org-law-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +46,16 @@ import { AboutAddComponent } from './components/about-us/component/about-add/abo
     HomeComponent,
     AddressComponent,
     AboutAddComponent,
+    AboutEditComponent,
+    OrgLawAddComponent,
+    OrgLawListComponent,
+    OrgLawEditComponent,
+
   ],
   entryComponents:[
-    AboutAddComponent
+    AboutAddComponent,
+   AboutEditComponent
+    
   ],
   imports: [
     CommonModule,

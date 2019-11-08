@@ -1,3 +1,48 @@
-<p>
-  organization-laws works!
-</p>
+<button mat-raised-button color="primary" (click)="addOrgLaw()">اضافه کردن</button>
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="جستجو">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <label for="">About Us</label>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="titleDa">
+    <th mat-header-cell *matHeaderCellDef> نام دری </th>
+    <td mat-cell *matCellDef="let element"> {{element.titleDa}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="titleEn">
+    <th mat-header-cell *matHeaderCellDef> نام پشتو </th>
+    <td mat-cell *matCellDef="let element"> {{element.titleEn}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="titlePa">
+    <th mat-header-cell *matHeaderCellDef> نام انگلیسی </th>
+    <td mat-cell *matCellDef="let element"> {{element.titlePa}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="descriptionDa">
+    <th mat-header-cell *matHeaderCellDef> نام انگلیسی </th>
+    <td mat-cell *matCellDef="let element"> {{element.descriptionDa}} </td>
+  </ng-container>
+  <ng-container matColumnDef="descriptionEn">
+    <th mat-header-cell *matHeaderCellDef> نام انگلیسی </th>
+    <td mat-cell *matCellDef="let element"> {{element.descriptionEn}} </td>
+  </ng-container>
+  <ng-container matColumnDef="descriptionPa">
+    <th mat-header-cell *matHeaderCellDef> نام انگلیسی </th>
+    <td mat-cell *matCellDef="let element"> {{element.descriptionPa}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
