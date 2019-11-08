@@ -13,14 +13,16 @@ export class AddEmployeeComponent implements OnInit {
   condition:boolean=true;
   notcondition:boolean=false;
   province:any
-  employeetype:any
+  employeetypes:any
   organization:any
+  selectedFile = null;
+  
   orgForm: FormGroup;
   constructor(private formBuilder: FormBuilder,private emservice:EmployeesService, private dialog: MatDialog,private refresh:RefreshService) {
     this.createForm();
     this.emservice.getrealationtable().subscribe((result)=>{
       this.province = result[0];
-      this.employeetype = result[1];
+      this.employeetypes = result[1];
       this.organization = result[2];
     });
     
@@ -31,42 +33,61 @@ export class AddEmployeeComponent implements OnInit {
   createForm() {
     this.orgForm = this.formBuilder.group({
         name: ['', Validators.required],
-        fatherName:['',[Validators.required]],
-        TIN:['',[Validators.required]],
+        fatherName:[''],
+        TIN:[''],
         job: ['', Validators.required],
         education: ['', Validators.required],
         specialty: ['', Validators.required],
         gender: ['', Validators.required],
-        salary: ['', Validators.required,Validators.email],
+        salary: ['', Validators.required],
         country: ['', Validators.required],
-        province: ['', Validators.required],
+        province_id: ['', Validators.required],
         contractStartDate: ['', Validators.required],
         contractEndDate: ['', Validators.required],
         employeeType_id: ['', Validators.required],
         organization_id: ['', Validators.required],
         identity:['',[Validators.required]],
-        remark:[''],
-        photo:['']
+        remarks:[''],
+        photo:[""],
+
     });
   }
   addNewEmployee(data){
     if(this.orgForm.valid){
-      this.emservice.addEmployeedata(data.value).subscribe((result)=>{
+      const fd = new FormData();
+      
+      fd.append("image",this.selectedFile,this.selectedFile.name);
+      fd.append("name",data.value.name);
+      fd.append("fatherName",data.value.fatherName);fd.append("TIN",data.value.TIN);
+      fd.append("job",data.value.job);fd.append("education",data.value.education);fd.append("specialty",data.value.education);
+      fd.append("gender",data.value.gender);fd.append("salary",data.value.salary);
+      fd.append("country",data.value.country);fd.append("province_id",data.value.province_id);
+      fd.append("contractStartDate",data.value.contractStartDate);fd.append("contractEndDate",data.value.contractEndDate);
+      fd.append("employeeType_id",data.value.employeeType_id);fd.append("organization_id",data.value.organization_id);
+      fd.append("remarks",data.value.remarks);
+      fd.append("identity",data.value.identity);
+      this.emservice.addEmployeedata(fd).subscribe((result)=>{
         this.refresh.setRefresh("refresh");
         this.dialog.closeAll();
-      })
+      });
     }
+    else{
+      alert("لطفن هوشیارمندانه عمل کنید !!")
+    }
+    
   }
   employeeType(data){
-    if(data=="خارجی"){
-      console.log(data);
+    if(data=="0"){
       this.condition = false;
       this.notcondition = true;
     }
-    else if(data=="داخلی"){
+    else if(data=="1"){
       this.notcondition = false;
       this.condition=true;
     }
+  }
+  selectFile(event){
+    this.selectedFile = event.target.files[0];
   }
   
 

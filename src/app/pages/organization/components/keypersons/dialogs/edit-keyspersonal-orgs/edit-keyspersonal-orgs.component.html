@@ -1,0 +1,64 @@
+<div class="example-container">
+    <form [formGroup]="orgForm" (ngSubmit)="updatekeyspOrgs(orgForm)">
+      
+      <mat-form-field>
+        <input matInput placeholder="نام  " formControlName="name">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="نام پدر" formControlName="fatherName" >
+      </mat-form-field>
+      
+      <mat-form-field>
+        <input matInput placeholder=" رتبه علمی " formControlName="possition">
+      </mat-form-field>
+  
+    
+      <mat-form-field>
+        <input matInput placeholder=" شماره موبایل " formControlName="phone">
+      </mat-form-field>
+  
+    
+    
+      <mat-form-field>
+        <input matInput placeholder=" ایمل آدرس" formControlName="email">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder=" نمبر تزکره" formControlName="NIC">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder=" انتخاب حالت مدنی" formControlName="gender">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder=" تحصیلات" formControlName="education">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="  آدرس" formControlName="address">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="   انتخاب موسسه  " formControlName="organization_id">
+      </mat-form-field>
+  
+    
+      <!-- <mat-form-field>
+        <mat-label>انتخاب نوعیت موسسه </mat-label>
+        <mat-select placeholder="موسسه انتخاب"  formControlName="organization_id">
+            
+          <mat-option *ngFor="let org of organization_id" [value]="org.id" >{{org.nameDa}}</mat-option> 
+          
+        </mat-select>
+      </mat-form-field> -->
+  
+      
+    
+  
+      <button mat-button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  

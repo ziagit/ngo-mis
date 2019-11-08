@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Organization;
+use App\Mis\Organization,App\Mis\Province,App\Mis\District,App\Mis\Orgassociation,App\Mis\Employee
+    ,App\Mis\OrgType,App\Mis\Sector,App\Mis\Donner,App\Mis\Project,App\Mis\Delegation,
+    App\Mis\Keyspersonnel,App\Mis\Orgevaluation,App\Mis\Bank;
+
 use Illuminate\Http\Request;
 
 class OrganizationController extends Controller
@@ -37,7 +40,10 @@ class OrganizationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $orgs = new Organization();
+        $store =$orgs::create($data);
+        return response()->json($store);
     }
 
     /**
@@ -69,9 +75,11 @@ class OrganizationController extends Controller
      * @param  \App\Organization  $organization
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Organization $organization)
+    public function update(Request $request,  $organization)
     {
-        //
+        
+        Organization::findOrFail($organization)->update($request->all());
+        return response()->json("successfuly Organization updateted!");
     }
 
     /**
@@ -83,5 +91,26 @@ class OrganizationController extends Controller
     public function destroy(Organization $organization)
     {
         //
+    }
+
+    public function organizationList() {
+
+        $orgtype =OrgType::all();
+        // $sector =Sector::all();
+        $district = District::all();
+        $province =Province::all();
+        $orgassciation =Orgassociation::all();
+        $donner =Donner::all();
+        $project =Project::all();
+        $delegation =Delegation::all();
+        $orgevaluation =Orgevaluation::all();
+        $keyspersonnel =Keyspersonnel::all();
+        $employee =Employee::all();
+        $bank =Bank::all();
+        
+        $array = [$orgtype,$district,$province,$orgassciation,$donner,$project,
+                    $delegation,$orgevaluation,$keyspersonnel,$employee,$bank];
+                    
+        return response()->json($array);
     }
 }

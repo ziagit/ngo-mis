@@ -71,9 +71,12 @@ class OrgTypeController extends Controller
      * @param  \App\Mis\OrgType  $orgType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OrgType $orgType)
+    public function update(Request $request, $orgType)
     {
-        //
+        $orgType = OrgType::find($orgType);
+        $orgType->orgType = $request->input('orgType');
+        $orgType->save();
+        return response()->json('successfully updated');
     }
 
     /**

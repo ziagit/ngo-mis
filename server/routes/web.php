@@ -12,7 +12,6 @@
 */
 
 
-Route::resource('provinces','ProvinceController');
 
 
 

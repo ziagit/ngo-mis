@@ -63,9 +63,10 @@ export class EmployeeTypesComponent implements OnInit {
     });
   }
 
-  editEmployeeType(){
+  editEmpType(data){
     const dialogRef = this.dialog.open(EditEmpTypeComponent, {
       width: '400px',
+      data:data,
     });
 
     dialogRef.afterClosed().subscribe(result => {

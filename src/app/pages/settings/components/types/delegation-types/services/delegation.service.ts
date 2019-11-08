@@ -26,4 +26,9 @@ export class DelegationService {
     return this.http.post<delegation>('http://127.0.0.1:8000/api/delegationTypes/',data);
   }
 
+  updateDeleationType(data,id){
+    console.log('from server',data,id);
+    return this.http.put('http://127.0.0.1:8000/api/delegationTypes/'+id,data);
+  }
+
 }

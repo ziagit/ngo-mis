@@ -1,3 +1,58 @@
-<p>
-  districts works!
-</p>
+<div align="end">
+    <button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+</div>
+  
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="districtName">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.districtName}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="districtCode">
+    <th mat-header-cell *matHeaderCellDef> districtCode </th>
+    <td mat-cell *matCellDef="let element"> {{element.districtCode}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="drovince_id">
+    <th mat-header-cell *matHeaderCellDef> drovince_id </th>
+    <td mat-cell *matCellDef="let element"> {{element.drovince_id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> edit </th>
+      <td mat-cell *matCellDef="let element">
+        <i class="fa fa-edit btn btn-success" (click)="editDialog(element)"></i>
+      </td>
+    </ng-container>
+
+
+  <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element">
+        <i class="fa fa-trash btn btn-danger" (click)="deleteDistrictData(element.id)"></i>
+      </td>
+  </ng-container>
+
+    
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+

@@ -4,7 +4,7 @@ import { routing } from './website-admin.routing';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WebsiteAdminComponent } from './website-admin.component';
-import { BiographyComponent } from './components/home/biography/biography.component';
+import { BiographyComponent } from './components/biography/biography.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SlideshowsComponent } from './components/home/slideshows/slideshows.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
@@ -21,10 +21,19 @@ import { VideosComponent } from './components/news/videos/videos.component';
 import { GalleriesComponent } from './components/news/galleries/galleries.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddressComponent } from './components/contact-us/address/address.component';
+import { AddNewsTypesComponent } from './components/news/news-types/dialogs/add-news-types/add-news-types.component';
+import { EditNewsTypesComponent } from './components/news/news-types/dialogs/edit-news-types/edit-news-types.component';
+import { DeleteNewsTypesComponent } from './components/news/news-types/dialogs/delete-news-types/delete-news-types.component';
 import { AboutAddComponent } from './components/about-us/component/about-add/about-add.component';
+<<<<<<< HEAD
 import { OrgLawAddComponent } from './components/organization-laws/component/org-law-add/org-law-add.component';
 import { OrgLawListComponent } from './components/organization-laws/component/org-law-list/org-law-list.component';
 import { OrgLawEditComponent } from './components/organization-laws/component/org-law-edit/org-law-edit.component';
+=======
+import { AddBiographyComponent } from './components/biography/diologs/add-biography/add-biography.component';
+import { EditBiographyComponent } from './components/biography/diologs/edit-biography/edit-biography.component';
+import { DeleteBiographyComponent } from './components/biography/diologs/delete-biography/delete-biography.component';
+>>>>>>> 189c93e0da7f9e4707b4ef4fb370f38a76ceea82
 
 @NgModule({
   declarations: [
@@ -45,12 +54,21 @@ import { OrgLawEditComponent } from './components/organization-laws/component/or
     NewsComponent,
     HomeComponent,
     AddressComponent,
+    AddNewsTypesComponent,
+    EditNewsTypesComponent,
+    DeleteNewsTypesComponent,
     AboutAddComponent,
+<<<<<<< HEAD
     AboutEditComponent,
     OrgLawAddComponent,
     OrgLawListComponent,
     OrgLawEditComponent,
 
+=======
+    AddBiographyComponent,
+    EditBiographyComponent,
+    DeleteBiographyComponent,
+>>>>>>> 189c93e0da7f9e4707b4ef4fb370f38a76ceea82
   ],
   entryComponents:[
     AboutAddComponent,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-biography',
@@ -7,6 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BiographyComponent implements OnInit {
 
+  displayedColumns: string[] = ['id', 'projectCode', 'projectName', 'projectPrice',"budjet_id","govDirectorate",
+  "province_id","district_id"];
+  dataSource;
+
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor() { }
 
   ngOnInit() {

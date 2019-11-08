@@ -5,6 +5,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { AddEquiptTypeComponent } from './equiptTypeDialog/add-equipt-type/add-equipt-type.component';
 import { MatDialog } from '@angular/material/dialog';
+import { RefreshEquiptTypeService } from './services/refresh-equipt-type.service';
+import { EditEquiptTypeComponent } from './edit-equipt-type/edit-equipt-type.component';
 
 
 @Component({
@@ -22,7 +24,11 @@ export class EquipmentTypesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private dialog: MatDialog, private equiService: EquipmentService) { }
+  constructor(private dialog: MatDialog, private equiService: EquipmentService, private refresh:RefreshEquiptTypeService) {
+    this.refresh.getRefresh().subscribe((result)=>{
+      this.getEquiptType();
+    })
+   }
 
   ngOnInit() {
     this.getEquiptType();
@@ -53,6 +59,19 @@ export class EquipmentTypesComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+  editEquipType(data): void {
+    const dialogRef = this.dialog.open(EditEquiptTypeComponent, {
+      width: '400px',
+      data: data,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+  
   
 
 }

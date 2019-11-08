@@ -1,29 +1,16 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatTableDataSource } from '@angular/material';
-import { AddOrganizationComponent } from '../../dialogs/add-organization/add-organization.component';
-import {MatPaginator} from '@angular/material/paginator';
-import { OrgListService } from './org-list.service';
-import { IOrganization } from './Organization';
-import { Router } from '@angular/router';
-import { StepperComponent } from '../stepper/stepper.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { OrgListService } from './service/org-list.service';
+import { AddOrganizationComponent } from './dialogs/add-organization/add-organization.component';
+import { DeleteOrganizationComponent } from './dialogs/delete-organization/delete-organization.component';
+
+
 
 
 export interface PeriodicElement {
  
 }
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'ali', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-org-list',
@@ -31,11 +18,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./org-list.component.scss']
 })
 export class OrgListComponent implements OnInit {
+  
       dataSource;
     displayedColumns: string[] = ['id','nameDa', 'nameEn', 'abrivation', 'registerNo','registerDate','contactNo','email',
-  'organizationtype_id','donner_id','sector_id','goals','currentCashAmount','currency','house','street','district_id','province_id'];
-
-  
+  'organizationtype_id','currentCashAmount','currency'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   animal:any;
@@ -44,39 +30,50 @@ export class OrgListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private dialog: MatDialog, private orgService: OrgListService, private router: Router){
+  constructor(private dialog: MatDialog, private orgService: OrgListService){
     this.getOrg();
   }
 
   ngOnInit(){
     
+      this.getOrg();
+     
   }
 
-  openDialog(): void {
+  openDialog(): void
+   {
     const dialogRef = this.dialog.open(AddOrganizationComponent, {
       width: '600px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
+       console.log('The dialog was closed');
       this.animal = result;
+      
     });
   }
 
   getOrg(){
     this.orgService.getOrg().subscribe(res=>{
+      //  console.log('data', res);
+
      this.dataSource =  new MatTableDataSource(res);
      this.dataSource.paginator = this.paginator; 
+
     });
+
   }
-  openStepper(){
-    const dialogRef=this.dialog.open(StepperComponent,{
-      width: '900px',
-    });
-    dialogRef.afterClosed().subscribe(res=>{
-      console.log("clodes dialog")
-    })
-  }
+
+
+  
+deleteOrganization(data) {
+  const dialogRef = this.dialog.open(DeleteOrganizationComponent, {
+    width: '400px',
+    data:data
+  });
+}
+  
 
  
 

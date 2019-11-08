@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatTableDataSource } from '@angular/material';
+import { AddDelegationsComponent } from './dialogs/add-delegations/add-delegations.component';
+
+
+
 
 @Component({
   selector: 'app-delegations',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DelegationsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
+
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(AddDelegationsComponent, {
+      width: '600px',
+    });
+
+  }
+
 
 }

@@ -1,3 +1,48 @@
-<p>
-  sectors works!
-</p>
+<div align="end">
+    <button mat-raised-button color="accent" (click)="openDialog()">Add</button>
+  </div>
+
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- sectorName Column -->
+    <ng-container matColumnDef="sectorName">
+      <th mat-header-cell *matHeaderCellDef> sectorName </th>
+      <td mat-cell *matCellDef="let element"> {{element.sectorName}} </td>
+    </ng-container>
+
+    <!-- proirity Column -->
+    <ng-container matColumnDef="proirity">
+        <th mat-header-cell *matHeaderCellDef> proirity </th>
+        <td mat-cell *matCellDef="let element"> {{element.proirity}} </td>
+    </ng-container>
+
+    <!-- delete Column -->
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef> edit </th>
+        <td mat-cell *matCellDef="let element">
+          <i class="fa fa-edit btn btn-success btn-circle" (click)="editData(element)"></i>
+        </td>
+    </ng-container>
+
+    <!-- delete Column -->
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> delete </th>
+        <td mat-cell *matCellDef="let element">
+          <i class="fa fa-trash btn btn-danger btn-circle" (click)="deleteSectoreData(element.id)"></i>
+        </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

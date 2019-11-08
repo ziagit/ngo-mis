@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mis\Keyspersonnel;
+use App\Mis\Organization;
 use Illuminate\Http\Request;
 
 class KeyspersonnelController extends Controller
@@ -14,7 +15,8 @@ class KeyspersonnelController extends Controller
      */
     public function index()
     {
-        //
+        $data =Keyspersonnel::all();
+        return response()->json($data);   
     }
 
     /**
@@ -35,7 +37,8 @@ class KeyspersonnelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data =Keyspersonnel::create($request->all());
+        return response()->json($data);
     }
 
     /**
@@ -67,9 +70,10 @@ class KeyspersonnelController extends Controller
      * @param  \App\Mis\Keyspersonnel  $keyspersonnel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Keyspersonnel $keyspersonnel)
+    public function update(Request $request,  $keyspersonnel)
     {
-        //
+        Keyspersonnel::findOrFail($keyspersonnel)->update($request->all());
+        return response()->json("succesfult update!");
     }
 
     /**
@@ -78,8 +82,19 @@ class KeyspersonnelController extends Controller
      * @param  \App\Mis\Keyspersonnel  $keyspersonnel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Keyspersonnel $keyspersonnel)
+    public function destroy( $keyspersonnel)
     {
-        //
+        $keyspersonnel_id =Keyspersonnel::findOrFail($keyspersonnel);
+        if($keyspersonnel_id->delete()) 
+        {
+            return response()->json("success");
+        }
+    }
+
+
+
+    public function getOrganization() {
+        $orgs =Organization::all('id','nameDa','nameEn');
+        return response()->json($orgs);
     }
 }
