@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Mis;
+
+use App\ProjectEmployee;
 use DB;
 
 use Illuminate\Database\Eloquent\Model;
@@ -18,9 +20,9 @@ class Province extends Model
         return $this->belongsToMany(Organization::class,"province_id","Id");
     }
 
-    public function employee()
+    public function orgemployee()
     {
-        return $this->hasMany(Employee::class,"province_id","Id");
+        return $this->hasMany(Orgemployee::class,"province_id","Id");
     }
 
     public function project()
@@ -40,5 +42,8 @@ class Province extends Model
     }
     public function deleteProvince($id){
         DB::table('provinces')->where('id',$id)->delete();
+    }
+    public function projectEmployees(){
+        return $this->hasMany(ProjectEmployee::class,"project_id","id");
     }
 }

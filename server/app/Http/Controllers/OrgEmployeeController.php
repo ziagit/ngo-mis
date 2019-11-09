@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mis\Employee;
+use App\Mis\Orgemployee;
 use Illuminate\Http\Request;
 use App\Mis\Province,App\Mis\EmployeeType,App\Mis\Organization;
 
-class EmployeeController extends Controller
+class OrgEmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class EmployeeController extends Controller
      */
     public function index()
     {
-        $employees = Employee::all("id","name","fatherName","TIN","job","education","gender","salary","country");
+        $employees = orgmployee::all("id","name","fatherName","TIN","job","education","gender","salary","country");
         return response()->json($employees);
     }
 
@@ -45,7 +45,7 @@ class EmployeeController extends Controller
         else{
             $file_name="Nothing file";
         }
-        $employee = new Employee;
+        $employee = new Orgemployee;
         $employee->name=$request->name; 
         $employee->fatherName=$request->fatherName; 
         $employee->TIN=$request->TIN;
@@ -75,7 +75,7 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        $employee = Employee::with('organization')->with("province")->find($id);
+        $employee = Orgemployee::with('organization')->with("province")->find($id);
         
         return response()->json($employee);
     }
@@ -88,7 +88,7 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $employee = Employee::find($id);
+        $employee = Orgemployee::find($id);
         return response()->json($employee);
     }
 
@@ -101,7 +101,7 @@ class EmployeeController extends Controller
      */
     public function update(Request $request,$id)
     {
-        $employee = Employee::find($id);
+        $employee = Orgemployee::find($id);
         $employee->name=$request->name; 
         $employee->fatherName=$request->fatherName; 
         $employee->TIN=$request->TIN;
@@ -131,7 +131,7 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        $employee = Employee::find($id);
+        $employee = Orgemployee::find($id);
         $employee->delete();
         return response()->json("successfully deleted");
     }

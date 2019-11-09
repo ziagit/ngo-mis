@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class EmployeeType extends Model
 {
-    public function employee()
+    public function orgemployees()
     {
-        return $this->hasMany(Employee::class,"employeetype_id","id");
+        return $this->hasMany(Orgemployee::class,"employeetype_id","id");
+    }
+    public function employeeTypes()
+    {
+        return $this->hasMany(EmployeeType::class,"employeetype_id","id");
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Mis;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Employee extends Model
+class Orgemployee extends Model
 {
     public function province(){
 

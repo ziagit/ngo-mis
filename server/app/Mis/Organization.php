@@ -53,9 +53,9 @@ class Organization extends Model
         return $this->hasMany(Orgassociation::class,"organization_id","id");
     }
 
-    public function employee()
+    public function orgemployee()
     {
-        return $this->hasMany(Employee::class,"organization_id","id");
+        return $this->hasMany(Orgemployee::class,"organization_id","id");
     }
 
     public function project()

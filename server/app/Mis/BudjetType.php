@@ -2,6 +2,7 @@
 
 namespace App\Mis;
 
+use App\Revenue;
 use Illuminate\Database\Eloquent\Model;
 
 class BudjetType extends Model
@@ -10,5 +11,8 @@ class BudjetType extends Model
     {
         return $this->belongsToMany(Project::class);
         
+    }
+    public function revenue(){
+        return $this->hasMany(Revenue::class,'budjetType_id','id');
     }
 }

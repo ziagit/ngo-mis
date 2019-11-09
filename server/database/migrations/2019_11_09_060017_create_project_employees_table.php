@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmployeesTable extends Migration
+class CreateProjectEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,18 @@ class CreateEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('employees', function (Blueprint $table) {
+        Schema::create('project_employees', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("fatherName");
-            $table->Integer("TIN");
+            $table->Integer("TIN")->nullable();
             $table->string("job");
             $table->string("education");
             $table->string("specialty");
             $table->string("gender");
             $table->Integer("salary");
             $table->string("country");
+            $table->string("email")->nullable();
             $table->string("identity");
             $table->unsignedBigInteger("province_id");
             $table->string("contractStartDate");
@@ -31,7 +32,8 @@ class CreateEmployeesTable extends Migration
             $table->text("photo");
             $table->unsignedBigInteger("employeetype_id");
             $table->string("remarks");
-            $table->unsignedBigInteger("organization_id");
+            $table->unsignedBigInteger("project_id");
+            $table->unsignedBigInteger("proemployeetype_id");
             $table->timestamps();
         });
     }
@@ -43,6 +45,6 @@ class CreateEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('employees');
+        Schema::dropIfExists('project_employees');
     }
 }

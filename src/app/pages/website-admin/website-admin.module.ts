@@ -25,15 +25,12 @@ import { AddNewsTypesComponent } from './components/news/news-types/dialogs/add-
 import { EditNewsTypesComponent } from './components/news/news-types/dialogs/edit-news-types/edit-news-types.component';
 import { DeleteNewsTypesComponent } from './components/news/news-types/dialogs/delete-news-types/delete-news-types.component';
 import { AboutAddComponent } from './components/about-us/component/about-add/about-add.component';
-<<<<<<< HEAD
 import { OrgLawAddComponent } from './components/organization-laws/component/org-law-add/org-law-add.component';
 import { OrgLawListComponent } from './components/organization-laws/component/org-law-list/org-law-list.component';
 import { OrgLawEditComponent } from './components/organization-laws/component/org-law-edit/org-law-edit.component';
-=======
 import { AddBiographyComponent } from './components/biography/diologs/add-biography/add-biography.component';
 import { EditBiographyComponent } from './components/biography/diologs/edit-biography/edit-biography.component';
 import { DeleteBiographyComponent } from './components/biography/diologs/delete-biography/delete-biography.component';
->>>>>>> 189c93e0da7f9e4707b4ef4fb370f38a76ceea82
 
 @NgModule({
   declarations: [
@@ -58,17 +55,16 @@ import { DeleteBiographyComponent } from './components/biography/diologs/delete-
     EditNewsTypesComponent,
     DeleteNewsTypesComponent,
     AboutAddComponent,
-<<<<<<< HEAD
     AboutEditComponent,
     OrgLawAddComponent,
     OrgLawListComponent,
     OrgLawEditComponent,
 
-=======
+
     AddBiographyComponent,
     EditBiographyComponent,
     DeleteBiographyComponent,
->>>>>>> 189c93e0da7f9e4707b4ef4fb370f38a76ceea82
+
   ],
   entryComponents:[
     AboutAddComponent,
